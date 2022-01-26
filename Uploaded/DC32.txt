@@ -1,0 +1,13 @@
+MRN No :CF-4/17-18MRN Date :13/04/2017Model No :93228AWColor :WHITE Brand=XPELAIR Description=VX120 Axial Extract Fan  ID=I131654521191
+MRN No :CF-227/20-21MRN Date :21/01/2021Model No :0082900Color :NA Brand=Oerre Description=DIVERSO IN 160 CENTRIFUGAL FAN FOR BULT-IN INSTALLATION
+ ID=I221842363430
+MRN N. :CF-55/15-16MRN Date :25/08/2015Model No :89957AWColor :WHITE Brand=XPELAIR Description=Commercial Ceiling Mounted Extract Fan ID=I101826156340
+MRN No :CF-102/16-17MRN Date :10/08/2016Model No :92961AWColor :WHITE Brand=XPELAIR Description=Round Intermittent Bathroom Fan ID=I10156595332
+MRN No :&nbsp;MRN Date :&nbsp;Model No :89683AAColor :WHITE Brand=XPELAIR Description=Circular Air Valve
+Size : 150mm ID=I281151349700
+MRN No :&nbsp;MRN Date :&nbsp;Model No :92664AWColor :WHITE Brand=XPELAIR Description=Slimline Single Speed Axial Fan ID=I20153396430
+MRN No :CF-4/!7-18MRN Date :13/04/2017Model No :93226AWColor :WHITE Brand=XPELAIR Description=VX150 Axial Extract Fan ID=I13165452410
+MRN No :CF-41/15-16MRN Date :28/05/2015Model No :92960AWColor :WHITE Brand=XPELAIR Description=Square Intermittent Bathroom Fan ID=I251050383830
+MRN No :CF-137/17-18MRN Date :01/12/2017Model No :89994AWColor :WHITE Brand=XPELAIR Description=Two Speed High @erformance Axial Fan ID=I8121835660
+MRN No :SF-4/17-18MRN Date :13/04/2017Model No :91386AAColor :NA Brand=XPELAIR Description=XIDP200 inline Plastic Fan ID=I131655599344
+MRN No :CF-211/21-22Dt :10/8/2021 12:00:00 AMModel No :792428-K85103Color :N-A Brand=VIEGA ID=I111610326873

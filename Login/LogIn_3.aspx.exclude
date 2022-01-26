@@ -1,0 +1,53 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LogIn_3.aspx.cs" Inherits="_3_LogIn_3" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .btn {
+            padding: 0px;
+            width: 100%;
+            color: #294779 !important;
+          }
+    </style>
+</head>
+<body>
+   <%-- <div style="margin-left:38%;">
+    <img src="images/Vgh.gif" />
+
+    </div>--%>
+    <form class="login" runat="server">
+        <h1>Value Line App</h1>
+        <asp:TextBox ID="txtUserName" class="login-input" placeholder="User Name" autofocus="autofocus" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" TextMode="Password" class="login-input" placeholder="Password" autofocus="autofocus" runat="server"></asp:TextBox>
+        <asp:Button ID="btnLogin" runat="server" class="login-submit" Text="Login" OnClick="btnLogin_Click" />
+        <p class="login-help"><a href="#">Forgot password?</a></p>
+        <asp:TextBox ID="txtOtp" Visible="false" TextMode="Password" class="login-input" placeholder="Enter Your OTP" autofocus="autofocus" runat="server"></asp:TextBox>
+        <asp:Button ID="btnSubmitOtp" Visible="false" runat="server" class="login-submit" Text="Submit" OnClick="btnSubmitOtp_Click" />
+        <asp:Label ID="lblRandom" runat="server" Text="" Visible="false"></asp:Label>
+        <asp:Label ID="lblMobile" runat="server" Text="" Visible="false"></asp:Label>
+        <asp:Label ID="lblMsg" runat="server" Text="" Visible="false"></asp:Label>
+
+    </form>
+
+    <section class="about">
+        <p class="about-links">
+            <a href="http://datuminfosys.com/" target="_parent">About</a>
+            <a href="http://datuminfosys.com/" target="_parent">Powered By</a>
+        </p>
+        <p class="about-author">
+            &copy; 2014 -
+     
+            <a href="http://datuminfosys.com/" target="_blank">CopyRights</a><br />
+            Design by <a href="http://datuminfosys.com/" target="_blank">Datum Info Systems</a>
+        </p>
+    </section>
+</body>
+</html>
+
+ 

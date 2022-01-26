@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/BATMP1.master" AutoEventWireup="true" CodeFile="WarehouseMP1.master.cs" Inherits="MPs_WarehouseMP1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="toplinksCPH" runat="Server">
+    <li>
+        <a href="/Modules/Warehouse/Warehouse.aspx" title="Warehouse">Warehouse</a>
+        <ul>
+            <li><a href="/Modules/Warehouse/Warehouse.aspx">Warehouse</a></li>
+            <li><a href="/Modules/Warehouse/Manage_Locations.aspx">Manage Locations</a></li>
+            <li><a href="/Modules/Warehouse/InwardStock.aspx">Inward Stock</a></li>
+            <li><a href="/Modules/Warehouse/SpareInward.aspx">Spare Inward</a></li>
+            <li><a href="/Modules/Warehouse/OutwardStock.aspx">Outward Stock</a></li>
+            <li class="last"><a href="/Modules/Warehouse/DamageReport.aspx">Damage Report</a></li>
+        </ul>
+    </li>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

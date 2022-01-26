@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/BATMP1.master" AutoEventWireup="true" CodeFile="ServicesMP1.master.cs" Inherits="MPs_ServicesMP1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="toplinksCPH" runat="Server">
+    <li>
+        <a href="/Modules/Services/ComplaintRegister.aspx" title="Links">Services</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/Services/Courier_Master.aspx">Courier Master</a></li>
+            <li><a href="/Modules/Services/Service_Customers.aspx">Service Customer Information</a></li>
+            <li><a href="/Modules/Services/ComplaintRegister.aspx">Complaint Register</a></li>
+            <li><a href="/Modules/Services/ServiceReport.aspx">Service Report</a></li>
+            <%--<li><a href="/Modules/Services/CustomerInformation.aspx">Customer Info</a></li>--%>
+            <li><a href="/Modules/Services/AMCQuotation.aspx">AMC Quotation</a></li>
+            <li><a href="/Modules/Services/AMCOrder.aspx">AMC Order</a></li>
+            <li><a href="/Modules/Services/AMCWorkOrder.aspx">AMC Order Profile</a></li>
+            <li><a href="/Modules/Services/AMCOrderAcceptance.aspx">AMC Order Acceptance</a></li>
+            <li><a href="/Modules/Services/WarrantyClaim.aspx">Warranty Claim</a></li>
+            <li><a href="/Modules/Services/AMCInvoice.aspx">AMC Invoice</a></li>
+            <li class="last"><a href="/Modules/Services/AMCPaymentsReceived.aspx">AMC Payments Received</a></li>
+            <li><a href="/Modules/Services/CompView.aspx">URL Complaints View</a></li>
+            <li><a href ="/dev_pages/Emp_CR.aspx"></a>URL Raise Complaints</li>
+        </ul>
+    </li>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

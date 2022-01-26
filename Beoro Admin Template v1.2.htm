@@ -1,0 +1,717 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <meta charset="UTF-8">
+        <title>Beoro Admin Template v1.2</title>
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <link rel="icon" type="image/ico" href="http://beoro-admin.tzdthemes.com/favicon.ico">
+        
+    <!-- common stylesheets-->
+        <!-- bootstrap framework css -->
+            <link rel="stylesheet" href="BAT_files/bootstrap.css">
+            <link rel="stylesheet" href="BAT_files/bootstrap-responsive.css">
+        <!-- iconSweet2 icon pack (16x16) -->
+            <link rel="stylesheet" href="BAT_files/icsw2_16.css">
+        <!-- splashy icon pack -->
+            <link rel="stylesheet" href="BAT_files/splashy.css">
+        <!-- flag icons -->
+            <link rel="stylesheet" href="BAT_files/flags.css">
+        <!-- power tooltips -->
+            <link rel="stylesheet" href="BAT_files/jquery.css">
+        <!-- google web fonts -->
+            <link rel="stylesheet" href="BAT_files/css_002.css">
+            <link rel="stylesheet" href="BAT_files/css.css">
+
+    <!-- aditional stylesheets -->
+        <!-- colorbox -->
+            <link rel="stylesheet" href="BAT_files/colorbox.css">
+        <!--fullcalendar -->
+            <link rel="stylesheet" href="BAT_files/fullcalendar_beoro.css">
+
+
+        <!-- main stylesheet -->
+            <link rel="stylesheet" href="BAT_files/beoro.css">
+
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css"><![endif]-->
+        <!--[if IE 9]><link rel="stylesheet" href="css/ie9.css"><![endif]-->
+            
+        <!--[if lt IE 9]>
+            <script src="js/ie/html5shiv.min.js"></script>
+            <script src="js/ie/respond.min.js"></script>
+            <script src="js/lib/flot-charts/excanvas.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body class="bg_d">
+    <!-- main wrapper (without footer) -->    
+        <div class="main-wrapper">
+        <!-- top bar -->
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <div class="pull-right top-search">
+                            <form action="">
+                                <input name="q" id="q-main" type="text">
+                                <button class="btn"><i class="icon-search"></i></button>
+                            </form>
+                        </div>
+                        <div id="fade-menu" class="pull-left">
+                            <ul class="clearfix" id="mobile-nav">
+                                <li class="">
+                                    <a class="arrow_down" href="javascript:void(0)">Forms</a>
+                                    <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=form_elements">Form elements</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=form_validation">Form validation</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class=""><a class="arrow_down" href="javascript:void(0)">Components</a>
+                                    <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=calendar">Calendar</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=charts">Charts</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=contact_list">Contact List</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=datatables">Datatables</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=editable_elements">Editable Elements</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=file_manager">File manager</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=gallery">Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=gmaps">Google Maps</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="arrow_right" href="#">Tables</a>
+                                            <ul style="top: 0px; visibility: visible; left: 160px; width: 160px; display: none;">
+                                                <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=tables_regular">Regular Tables</a></li>
+                                                <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=table_stacking">Stacking Table</a></li>
+                                                <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=table_examples">Table examples</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=wizard">Wizard</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class=""><a class="arrow_down" href="javascript:void(0)">UI Elements</a>
+                                    <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=alerts_buttons">Alerts, Buttons</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=grid">Grid</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=icons">Icons</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=js_grid">JS Grid</a></li>
+                                        <li>
+                                            <a href="http://beoro-admin.tzdthemes.com/index.php?page=notifications">Notifications</a>
+                                        </li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=tabs_accordions">Tabs, Accordions</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=tooltips_popovers">Tooltips, Popovers</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=typography">Typography</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=widgets">Widgets</a></li>
+                                    </ul>
+                                </li>
+                                <li class=""><a class="arrow_down" href="javascript:void(0)">Other pages</a>
+                                    <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=ajax_content">Ajax content</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=blank">Blank page</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=blog_page">Blog page</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=blog_page_single">Blog page (single)</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=chat">Chat</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/error_404.php">Error 404</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=help_faq">Help/Faq</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=invoices">Invoices</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/login.php">Login Page</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=mailbox">Mailbox</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=user_profile">User profile</a></li>
+                                        <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=settings">Site Settings</a></li>
+                                    </ul>
+                                </li>
+                                <li class=""><a class="arrow_down" href="javascript:void(0)">Sub-menu</a>
+                                    <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+                                        <li><a href="#">Section 1</a></li>
+                                        <li><a href="#">Section 2</a></li>
+                                        <li><a href="#">Section 3</a></li>
+                                        <li class="">
+                                            <a class="arrow_right" href="#">Section 4</a>
+                                            <ul style="top: 0px; visibility: visible; left: 160px; width: 160px; display: none;">
+                                                <li><a href="#">Section 4.1</a></li>
+                                                <li><a href="#">Section 4.2</a></li>
+                                                <li><a href="#">Section 4.3</a></li>
+                                                <li class="">
+                                                    <a class="arrow_right" href="#">Section 4.4</a>
+                                                    <ul style="top: 0px; visibility: visible; left: 160px; width: 160px; display: none;">
+                                                        <li><a href="#">Section 4.4.1</a></li>
+                                                        <li><a href="#">Section 4.4.2</a></li>
+                                                        <li><a href="#">Section 4.4.4</a></li>
+                                                        <li><a href="#">Section 4.4.5</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Section5</a></li>
+                                        <li><a href="#">Section6</a></li>
+                                    </ul>
+                                </li>
+                            </ul><select class="selectnav" id="selectnav1"><option selected="selected" value="">- Navigation -</option><option value="javascript:void(0)">Forms</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=form_elements">- Form elements</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=form_validation">- Form validation</option><option value="javascript:void(0)">Components</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=calendar">- Calendar</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=charts">- Charts</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=contact_list">- Contact List</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=datatables">- Datatables</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=editable_elements">- Editable Elements</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=file_manager">- File manager</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=gallery">- Gallery</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=gmaps">- Google Maps</option><option value="http://beoro-admin.tzdthemes.com/#">- Tables</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=tables_regular">-- Regular Tables</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=table_stacking">-- Stacking Table</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=table_examples">-- Table examples</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=wizard">- Wizard</option><option value="javascript:void(0)">UI Elements</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=alerts_buttons">- Alerts, Buttons</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=grid">- Grid</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=icons">- Icons</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=js_grid">- JS Grid</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=notifications">- Notifications</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=tabs_accordions">- Tabs, Accordions</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=tooltips_popovers">- Tooltips, Popovers</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=typography">- Typography</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=widgets">- Widgets</option><option value="javascript:void(0)">Other pages</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=ajax_content">- Ajax content</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=blank">- Blank page</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=blog_page">- Blog page</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=blog_page_single">- Blog page (single)</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=chat">- Chat</option><option value="http://beoro-admin.tzdthemes.com/error_404.php">- Error 404</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=help_faq">- Help/Faq</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=invoices">- Invoices</option><option value="http://beoro-admin.tzdthemes.com/login.php">- Login Page</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=mailbox">- Mailbox</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=user_profile">- User profile</option><option value="http://beoro-admin.tzdthemes.com/index.php?page=settings">- Site Settings</option><option value="javascript:void(0)">Sub-menu</option><option value="http://beoro-admin.tzdthemes.com/#">- Section 1</option><option value="http://beoro-admin.tzdthemes.com/#">- Section 2</option><option value="http://beoro-admin.tzdthemes.com/#">- Section 3</option><option value="http://beoro-admin.tzdthemes.com/#">- Section 4</option><option value="http://beoro-admin.tzdthemes.com/#">-- Section 4.1</option><option value="http://beoro-admin.tzdthemes.com/#">-- Section 4.2</option><option value="http://beoro-admin.tzdthemes.com/#">-- Section 4.3</option><option value="http://beoro-admin.tzdthemes.com/#">-- Section 4.4</option><option value="http://beoro-admin.tzdthemes.com/#">--- Section 4.4.1</option><option value="http://beoro-admin.tzdthemes.com/#">--- Section 4.4.2</option><option value="http://beoro-admin.tzdthemes.com/#">--- Section 4.4.4</option><option value="http://beoro-admin.tzdthemes.com/#">--- Section 4.4.5</option><option value="http://beoro-admin.tzdthemes.com/#">- Section5</option><option value="http://beoro-admin.tzdthemes.com/#">- Section6</option></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- header -->
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="span3">
+                            <div class="main-logo"><a href="http://beoro-admin.tzdthemes.com/index.php?page=dashboard"><img src="BAT_files/beoro_logo.png" alt="Beoro Admin"></a></div>
+                        </div>
+                        <div class="span5">
+                            <nav class="nav-icons">
+                                <ul>
+                                    <li><a href="javascript:void(0)" class="ptip_s"><i class="icsw16-home"></i></a></li>
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="icsw16-create-write"></i> <span class="caret"></span></a>
+                                        <ul role="menu" class="dropdown-menu">
+                                            <li role="presentation"><a href="#" role="menuitem">Action</a></li>
+                                            <li role="presentation"><a href="#" role="menuitem">Another action</a></li>
+                                            <li class="divider" role="presentation"></li>
+                                            <li role="presentation"><a href="#" role="menuitem">Separated link</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="javascript:void(0)" class="ptip_s"><i class="icsw16-mail"></i><span class="badge badge-info">6</span></a></li>
+                                    <li><a href="javascript:void(0)" class="ptip_s"><i class="icsw16-speech-bubbles"></i><span class="badge badge-important">14</span></a></li>
+                                    <li class="active"><span class="ptip_s"><i class="icsw16-graph"></i></span></li>
+                                    <li><a href="javascript:void(0)" class="ptip_s"><i class="icsw16-cog"></i></a></li>
+                                </ul>
+                             </nav>
+                        </div>
+                        <div class="span4">
+                            <div class="user-box">
+                                <div class="user-box-inner">
+                                    <img src="BAT_files/avatar.png" alt="" class="user-avatar img-avatar">
+                                    <div class="user-info">
+                                        Welcome, <strong>Jonathan</strong>
+                                        <ul class="unstyled">
+                                            <li><a href="http://beoro-admin.tzdthemes.com/index.php?page=user_profile">Settings</a></li>
+                                            <li>·</li>
+                                            <li><a href="http://beoro-admin.tzdthemes.com/login.php">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <!-- breadcrumbs -->
+            <div class="container">
+                <ul id="breadcrumbs">
+                    <li><a href="javascript:void(0)"><i class="icon-home"></i></a></li>
+                    <li><a href="javascript:void(0)">Content</a></li>
+                    <li><a href="javascript:void(0)">Article: Lorem ipsum dolor...</a></li>
+                    <li><a href="javascript:void(0)">Comments</a></li>
+                    <li><span>Lorem ipsum dolor sit amet...</span></li>
+                </ul>
+            </div>
+            
+        <!-- main content -->
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="w-box">
+                            <div class="w-box-header">
+                                <h4>Analytics</h4>
+                                <i class="icsw16-graph icsw16-white pull-right"></i>
+                            </div>
+                            <div class="w-box-content cnt_a">
+                                <div role="application" style="overflow: hidden; width: 100%;" class="slidewrap"><div class="pagination" style="display:inline-block;margin:0"><ul class="rcarousel-tabs" role="tablist navigation"><li class="rcarousel-active-tab active" role="presentation"><a tabindex="0" aria-selected="true" href="#rcarousel-1-0-slide0" aria-controls="rcarousel-1-0-slide0" id="rcarousel-1-0-tab0" role="tab">Pageviews</a></li><li role="presentation"><a tabindex="-1" aria-selected="false" href="#rcarousel-1-0-slide1" aria-controls="rcarousel-1-0-slide1" id="rcarousel-1-0-tab1" role="tab">Users</a></li><li role="presentation"><a tabindex="-1" aria-selected="false" href="#rcarousel-1-0-slide2" aria-controls="rcarousel-1-0-slide2" id="rcarousel-1-0-tab2" role="tab">Sales</a></li></ul></div>
+                                    <ul aria-activedescendant="rcarousel-1-0-slide0" style="margin-left: 0%; float: left; width: 300%; transition: all 0.6s ease 0s;" class="slider" id="sliderName">
+                                        <li aria-hidden="false" aria-labelledby="rcarousel-1-0-tab0" id="rcarousel-1-0-slide0" role="tabpanel document" style="float: left; width: 33.3333%;" class="slide rcarousel-active-slide">  
+                                            <span class="hide headName">Pageviews</span>
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <div style="padding: 0px; position: relative;" id="ch_pages" class="chart_a"><canvas style="width: 748px; height: 200px;" height="200" width="748" class="flot-base"></canvas><canvas style="width: 748px; height: 200px; position: absolute; left: 0px; top: 0px;" height="200" width="748" class="flot-overlay"></canvas><div class="legend"><div style="position: absolute; width: 62px; height: 22px; top: 13px; right: 25px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:25px;;font-size:smaller;color:#666"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(255,173,51);overflow:hidden"></div></div></td><td class="legendLabel">Data 1</td></tr></tbody></table></div></div>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <div class="span10 offset1">
+                                                    <div class="row-fluid">
+                                                        <div class="span4">
+                                                            <div class="anlt_box">
+                                                                <p class="anlt_heading">Last 24h<span class="up">+12%</span></p>
+                                                                <p class="anlt_content">2 131</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span4">
+                                                            <div class="anlt_box">
+                                                                <p class="anlt_heading">Last 7 days<span class="down">-5%</span></p>
+                                                                <p class="anlt_content">14 483</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span4">
+                                                            <div class="anlt_box">
+                                                                <p class="anlt_heading">Last Month<span class="up">+14%</span></p>
+                                                                <p class="anlt_content">64 250</p>
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li aria-hidden="true" aria-labelledby="rcarousel-1-0-tab1" id="rcarousel-1-0-slide1" role="tabpanel document" style="float: left; width: 33.3333%;" class="slide">
+                                            <span class="hide headName">Users</span>
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <div style="padding: 0px; position: relative;" id="ch_users" class="chart_a"><canvas style="width: 748px; height: 200px;" height="200" width="748" class="flot-base"></canvas><canvas style="width: 748px; height: 200px; position: absolute; left: 0px; top: 0px;" height="200" width="748" class="flot-overlay"></canvas><div class="legend"><div style="position: absolute; width: 124px; height: 22px; top: 13px; right: 25px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:25px;;font-size:smaller;color:#666"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0,148,187);overflow:hidden"></div></div></td><td class="legendLabel">Data 1</td><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(134,174,0);overflow:hidden"></div></div></td><td class="legendLabel">Data 2</td></tr></tbody></table></div></div>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <div class="span10 offset1">
+                                                    <div class="row-fluid">
+                                                        <div class="span6">
+                                                            <div class="anlt_box">
+                                                                <p class="anlt_heading">Last 24h<span class="up">+8%</span></p>
+                                                                <p class="anlt_content">184</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span6">
+                                                            <div class="anlt_box">
+                                                                <p class="anlt_heading">Last 7 days<span class="up">+20%</span></p>
+                                                                <p class="anlt_content">1468</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li aria-hidden="true" aria-labelledby="rcarousel-1-0-tab2" id="rcarousel-1-0-slide2" role="tabpanel document" style="float: left; width: 33.3333%;" class="slide">
+                                            <span class="hide headName">Sales</span>
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <div style="padding: 0px; position: relative;" id="ch_sales" class="chart_a"><canvas style="width: 748px; height: 200px;" height="200" width="748" class="flot-base"></canvas><canvas style="width: 748px; height: 200px; position: absolute; left: 0px; top: 0px;" height="200" width="748" class="flot-overlay"></canvas><div class="legend"><div style="position: absolute; width: 186px; height: 22px; top: 13px; right: 17px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:17px;;font-size:smaller;color:#666"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0,148,187);overflow:hidden"></div></div></td><td class="legendLabel">Data 1</td><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(134,174,0);overflow:hidden"></div></div></td><td class="legendLabel">Data 2</td><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(242,183,5);overflow:hidden"></div></div></td><td class="legendLabel">Data 3</td></tr></tbody></table></div></div>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid">
+                                                <div class="span10 offset1">
+                                                    <div class="row-fluid">
+                                                        <div class="span6">
+                                                            <div class="anlt_box">
+                                                                <p class="anlt_heading">Last 24h<span class="up">+20%</span></p>
+                                                                <p class="anlt_content">$1 843</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span6">
+                                                            <div class="anlt_box">
+                                                                <p class="anlt_heading">Last 7 days<span class="down">-10%</span></p>
+                                                                <p class="anlt_content">$11 638</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="w-box w-box-green hideable">
+                            <div class="w-box-header"><i class="icon-minus icon-white"></i>
+                                <h4>Todo list</h4>
+                                <div class="pull-right">
+                                    <span class="label"><span class="jQ-todoAll-count">7</span> tasks</span>
+                                </div>
+                            </div>
+                            <div class="w-box-content todo-list">
+                                <div class="add_box input-append">
+                                    <input class="span10" placeholder="Add item" id="addTask" type="text"><button class="btn btn-small" type="button"><i class="icon-plus"></i></button>
+                                </div>
+                                <h4>Personal (<span class="todo-nb">3</span>)</h4>
+                                <ul class="connectedSortable ui-sortable">
+                                    <li class="high-pr"><input class="todo-check" type="checkbox"> Buy groceries</li>
+                                    <li class="low-pr completed"><input checked="checked" class="todo-check" type="checkbox"> Do laundry</li>
+                                    <li class="low-pr"><input class="todo-check" type="checkbox"> Meeting with Macy</li>
+                                    <li class="high-pr"><input class="todo-check" type="checkbox"> Pick up kids</li>
+                                </ul>
+                                <h4>Work (<span class="todo-nb">2</span>)</h4>
+                                <ul class="connectedSortable ui-sortable">
+                                    <li class="medium-pr"><input class="todo-check" type="checkbox"> Send press releases</li>
+                                    <li class="low-pr"><input class="todo-check" type="checkbox"> Buy books</li>
+                                    <li class="high-pr completed"><input checked="checked" class="todo-check" type="checkbox"> Update main site</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <div class="w-box w-box-orange">
+                            <div class="w-box-header">
+                                <h4>Chat</h4>
+                                <div class="pull-right">
+                                    <div class="toggle-group">
+                                        <span data-toggle="dropdown" class="dropdown-toggle">Actions <span class="caret"></span></span>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-box-content">
+                                <div class="ch-messages">   
+                                    <div class="ch-message-item clearfix">
+                                        <img src="BAT_files/avatar_1.png" alt="" class="ch-image img-avatar">
+                                        <div class="ch-content">
+                                            <p class="ch-name">
+                                                <strong>Summer Throssell</strong>
+                                                <span class="ch-time">10:54</span>
+                                            </p>
+                                            Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Cras sit amet nisl nec nunc sollicitudin 
+bibendum. Pellentesque orci massa, venenatis nec porttitor eget, euismod
+ id diam.
+                                        </div>
+                                    </div>
+                                    <div class="ch-message-item clearfix">
+                                        <img src="BAT_files/avatar_2.png" alt="" class="ch-image img-avatar">
+                                        <div class="ch-content">
+                                            <p class="ch-name">
+                                                <strong>Declan Pamphlett</strong>
+                                                <span class="ch-time">10:54</span>
+                                            </p>
+                                            Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Cras sit amet nisl nec nunc sollicitudin 
+bibendum. Pellentesque orci massa, venenatis nec porttitor eget, euismod
+ id diam. Praesent pretium dapibus ornare. Morbi pharetra nulla at elit 
+tincidunt eget auctor eros sollicitudin. Vestibulum in velit neque.
+                                        </div>
+                                    </div>
+                                    <div class="ch-message-item clearfix">
+                                        <img src="BAT_files/avatar_3.png" alt="" class="ch-image img-avatar">
+                                        <div class="ch-content">
+                                            <p class="ch-name">
+                                                <strong>Erin Church</strong>
+                                                <span class="ch-time">10:54</span>
+                                            </p>
+                                            Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Cras sit amet nisl nec nunc sollicitudin 
+bibendum. Pellentesque orci massa, venenatis nec porttitor eget, euismod
+ id diam. Praesent pretium dapibus ornare. Morbi pharetra nulla at elit 
+tincidunt eget auctor eros sollicitudin. Vestibulum in velit neque.
+                                            Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Cras sit amet nisl nec nunc sollicitudin 
+bibendum. Pellentesque orci massa, venenatis nec porttitor eget, euismod
+ id diam. Praesent pretium dapibus ornare. Morbi pharetra nulla at elit 
+tincidunt eget auctor eros sollicitudin. Vestibulum in velit neque.
+                                        </div>
+                                    </div>
+                                    <div class="ch-message-item clearfix">
+                                        <img src="BAT_files/avatar_4.png" alt="" class="ch-image img-avatar">
+                                        <div class="ch-content">
+                                            <p class="ch-name">
+                                                <strong>Anthony Pound</strong>
+                                                <span class="ch-time">10:54</span>
+                                            </p>
+                                            Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Cras sit amet nisl nec nunc sollicitudin 
+bibendum. Pellentesque orci massa, venenatis nec porttitor eget, euismod
+ id diam. Praesent pretium dapibus ornare. Morbi pharetra nulla at elit 
+tincidunt eget auctor eros sollicitudin. Vestibulum in velit neque.
+                                            Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Cras sit amet nisl nec nunc sollicitudin 
+bibendum. Pellentesque orci massa, venenatis nec porttitor eget, euismod
+ id diam. Praesent pretium dapibus ornare. Morbi pharetra nulla at elit 
+tincidunt eget auctor eros sollicitudin. Vestibulum in velit neque.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ch-message-item clearfix" id="ch-message-temp" style="display:none">
+                                    <img src="BAT_files/avatar.png" alt="" class="ch-image img-avatar">
+                                    <div class="ch-content">
+                                        <p class="ch-name">
+                                            <strong>Jonathan Smith</strong>
+                                            <span class="ch-time"></span>
+                                        </p>
+                                        <span class="ch-text"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-box-footer">
+                                <div class="ch-message-add control-group">
+                                    <div class="input-append">
+                                        <input class="span9 ch-message-input" placeholder="Add message" type="text">
+                                        <button type="button" class="btn ch-message-send">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="span7">
+                        <div class="w-box">
+                            <div class="w-box-header">
+                                <h4>Latest images</h4>
+                                <div class="pull-right">
+                                    <div class="toggle-group">
+                                        <span data-toggle="dropdown" class="dropdown-toggle">Actions <span class="caret"></span></span>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Separated link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-box-content cnt_a">
+                                <ol id="small-filters" class="nav-beoro">
+                                    <li data-filter="single_item" class="active">All</li>
+                                    <li data-filter="this_week">This week</li>
+                                    <li data-filter="last_week">Last week</li>
+                                </ol>
+                                <div style="height: 406px;" id="small_grid" class="wmk_grid">
+                                    <ul>
+                                        <li style="position: absolute; top: 0px; left: 19px; display: list-item;" class="single_item last_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image01.jpg"><img src="BAT_files/Image01_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 0px; left: 143px; display: list-item;" class="single_item this_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image02.jpg"><img src="BAT_files/Image02_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 0px; left: 267px; display: list-item;" class="single_item last_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image03.jpg"><img src="BAT_files/Image03_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 0px; left: 391px; display: list-item;" class="single_item this_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image04.jpg"><img src="BAT_files/Image04_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 0px; left: 515px; display: list-item;" class="single_item last_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image05.jpg"><img src="BAT_files/Image05_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 108px; left: 19px; display: list-item;" class="single_item this_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image06.jpg"><img src="BAT_files/Image06_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 108px; left: 143px; display: list-item;" class="single_item this_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image07.jpg"><img src="BAT_files/Image07_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 108px; left: 391px; display: list-item;" class="single_item this_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image08.jpg"><img src="BAT_files/Image08_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 199px; left: 267px; display: list-item;" class="single_item this_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image09.jpg"><img src="BAT_files/Image09_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 199px; left: 515px; display: list-item;" class="single_item this_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image10.jpg"><img src="BAT_files/Image10_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 225px; left: 19px; display: list-item;" class="single_item last_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image11.jpg"><img src="BAT_files/Image11_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 225px; left: 391px; display: list-item;" class="single_item last_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image12.jpg"><img src="BAT_files/Image12_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                            <li style="position: absolute; top: 289px; left: 143px; display: list-item;" class="single_item this_week">
+                                            <a class="cboxElement" rel="gallery" href="http://beoro-admin.tzdthemes.com/gallery/Image13.jpg"><img src="BAT_files/Image13_tn.jpg" alt=""><span class="zoomOverlay"></span></a>
+                                            <p class="imgInfo">Lorem ipsum dolor...</p>
+                                        </li>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div class="w-box hideable">
+                            <div class="w-box-header"><i class="icon-minus icon-white"></i>
+                                <h4>Latest comments</h4>
+                                <i class="icsw16-speech-bubble icsw16-white pull-right"></i>
+                            </div>
+                            <div class="w-box-content">
+                                <table class="table table-striped table-list">
+                                    <tbody>
+                                        <tr>
+                                            <td class="list-image"><a href="javascript:void(0)" class="ptip_ne"><i class="splashy-comments"></i></a></td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="list-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus dictum rhoncus...</a>
+                                                <span class="minor">on October 24 @ 7:23</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="list-image"><a href="javascript:void(0)" class="ptip_ne"><i class="splashy-comments"></i></a></td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="list-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus dictum rhoncus...</a>
+                                                <span class="minor">on October 24 @ 7:23</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="list-image"><a href="javascript:void(0)" class="ptip_ne"><i class="splashy-comments"></i></a></td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="list-text">Lorem
+ ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus dictum 
+rhoncus. Duis quis pretium massa. Integer laoreet erat id neque 
+interdum...</a>
+                                                <span class="minor">on October 24 @ 7:23</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="list-image"><a href="javascript:void(0)" class="ptip_ne"><i class="splashy-comments"></i></a></td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="list-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus dictum rhoncus...</a>
+                                                <span class="minor">on October 24 @ 7:23</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="list-image"><a href="javascript:void(0)" class="ptip_ne"><i class="splashy-comments"></i></a></td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="list-text">Lorem ipsum dolor sit amet...</a>
+                                                <span class="minor">on October 24 @ 7:23</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="span8">
+                        <div class="w-box w-box-blue">
+                            <div class="w-box-header">
+                            </div>
+                            <div class="w-box-content">
+                                <div class="fc" id="calendar_widget"><div class="fc-header" style="width:100%"><div class="fc-header-left"><span class="fc-button fc-button-month fc-state-default fc-corner-left fc-state-active"><span class="fc-button-content">month</span></span><span class="fc-button fc-button-agendaWeek fc-state-default"><span class="fc-button-content">week</span></span><span class="fc-button fc-button-agendaDay fc-state-default fc-corner-right"><span class="fc-button-content">day</span></span></div><div class="fc-header-center"><span class="fc-header-title"><h2>August 2014</h2></span></div><div class="fc-header-right"><span class="fc-button fc-button-prev fc-state-default fc-corner-left"><span class="fc-button-content"><i class="icon-chevron-left icon-white cal_prev"></i></span></span><span class="fc-button fc-button-next fc-state-default fc-corner-right"><span class="fc-button-content"><i class="icon-chevron-right icon-white cal_next"></i></span></span></div></div><div class="fc-content" style="position: relative; min-height: 1px;"><div unselectable="on" class="fc-view fc-view-month fc-grid" style="position: relative; -moz-user-select: none;"><table class="fc-border-separate" style="width:100%" cellspacing="0"><thead><tr class="fc-first fc-last"><th style="width: 109px;" class="fc-mon fc-widget-header fc-first">Mon</th><th style="width: 108px;" class="fc-tue fc-widget-header">Tue</th><th style="width: 108px;" class="fc-wed fc-widget-header">Wed</th><th style="width: 108px;" class="fc-thu fc-widget-header">Thu</th><th style="width: 108px;" class="fc-fri fc-widget-header">Fri</th><th style="width: 108px;" class="fc-sat fc-widget-header">Sat</th><th class="fc-sun fc-widget-header fc-last">Sun</th></tr></thead><tbody><tr class="fc-week0 fc-first"><td class="fc-mon fc-widget-content fc-day0 fc-first fc-other-month"><div style="min-height: 90px;"><div class="fc-day-number">28</div><div class="fc-day-content"><div style="position: relative; height: 17px;">&nbsp;</div></div></div></td><td class="fc-tue fc-widget-content fc-day1 fc-other-month"><div><div class="fc-day-number">29</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-wed fc-widget-content fc-day2 fc-other-month"><div><div class="fc-day-number">30</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-thu fc-widget-content fc-day3 fc-other-month"><div><div class="fc-day-number">31</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-fri fc-widget-content fc-day4"><div><div class="fc-day-number">1</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sat fc-widget-content fc-day5"><div><div class="fc-day-number">2</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sun fc-widget-content fc-day6 fc-last"><div><div class="fc-day-number">3</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td></tr><tr class="fc-week1"><td class="fc-mon fc-widget-content fc-day7 fc-first"><div style="min-height: 90px;"><div class="fc-day-number">4</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-tue fc-widget-content fc-day8"><div><div class="fc-day-number">5</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-wed fc-widget-content fc-day9"><div><div class="fc-day-number">6</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-thu fc-widget-content fc-day10"><div><div class="fc-day-number">7</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-fri fc-widget-content fc-day11"><div><div class="fc-day-number">8</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sat fc-widget-content fc-day12"><div><div class="fc-day-number">9</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sun fc-widget-content fc-day13 fc-last"><div><div class="fc-day-number">10</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td></tr><tr class="fc-week2"><td class="fc-mon fc-widget-content fc-day14 fc-first"><div style="min-height: 90px;"><div class="fc-day-number">11</div><div class="fc-day-content"><div style="position: relative; height: 17px;">&nbsp;</div></div></div></td><td class="fc-tue fc-widget-content fc-day15"><div><div class="fc-day-number">12</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-wed fc-widget-content fc-day16"><div><div class="fc-day-number">13</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-thu fc-widget-content fc-day17"><div><div class="fc-day-number">14</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-fri fc-widget-content fc-day18"><div><div class="fc-day-number">15</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sat fc-widget-content fc-day19"><div><div class="fc-day-number">16</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sun fc-widget-content fc-day20 fc-last"><div><div class="fc-day-number">17</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td></tr><tr class="fc-week3"><td class="fc-mon fc-widget-content fc-day21 fc-first"><div style="min-height: 90px;"><div class="fc-day-number">18</div><div class="fc-day-content"><div style="position: relative; height: 34px;">&nbsp;</div></div></div></td><td class="fc-tue fc-widget-content fc-day22"><div><div class="fc-day-number">19</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-wed fc-widget-content fc-day23"><div><div class="fc-day-number">20</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-thu fc-widget-content fc-day24"><div><div class="fc-day-number">21</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-fri fc-widget-content fc-day25"><div><div class="fc-day-number">22</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sat fc-widget-content fc-day26"><div><div class="fc-day-number">23</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sun fc-widget-content fc-day27 fc-last fc-state-highlight fc-today"><div><div class="fc-day-number">24</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td></tr><tr class="fc-week4"><td class="fc-mon fc-widget-content fc-day28 fc-first"><div style="min-height: 90px;"><div class="fc-day-number">25</div><div class="fc-day-content"><div style="position: relative; height: 17px;">&nbsp;</div></div></div></td><td class="fc-tue fc-widget-content fc-day29"><div><div class="fc-day-number">26</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-wed fc-widget-content fc-day30"><div><div class="fc-day-number">27</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-thu fc-widget-content fc-day31"><div><div class="fc-day-number">28</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-fri fc-widget-content fc-day32"><div><div class="fc-day-number">29</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sat fc-widget-content fc-day33"><div><div class="fc-day-number">30</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sun fc-widget-content fc-day34 fc-last"><div><div class="fc-day-number">31</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td></tr><tr class="fc-week5 fc-last"><td class="fc-mon fc-widget-content fc-day35 fc-first fc-other-month"><div style="min-height: 92px;"><div class="fc-day-number">1</div><div class="fc-day-content"><div style="position: relative; height: 0px;">&nbsp;</div></div></div></td><td class="fc-tue fc-widget-content fc-day36 fc-other-month"><div><div class="fc-day-number">2</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-wed fc-widget-content fc-day37 fc-other-month"><div><div class="fc-day-number">3</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-thu fc-widget-content fc-day38 fc-other-month"><div><div class="fc-day-number">4</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-fri fc-widget-content fc-day39 fc-other-month"><div><div class="fc-day-number">5</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sat fc-widget-content fc-day40 fc-other-month"><div><div class="fc-day-number">6</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td><td class="fc-sun fc-widget-content fc-day41 fc-last fc-other-month"><div><div class="fc-day-number">7</div><div class="fc-day-content"><div style="position:relative">&nbsp;</div></div></div></td></tr></tbody></table><div style="position:absolute;z-index:8;top:0;left:0"><div class="fc-event fc-event-skin fc-event-hori fc-event-draggable fc-corner-left fc-corner-right" style="position: absolute; z-index: 8; left: 439px; width: 102px; top: 44px;"><div class="fc-event-inner fc-event-skin"><span class="fc-event-title">All Day Event</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><a href="http://google.com/" class="fc-event fc-event-skin fc-event-hori fc-event-draggable fc-corner-left fc-corner-right" style="position: absolute; z-index: 8; left: 2px; width: 321px; top: 226px;"><div class="fc-event-inner fc-event-skin"><span class="fc-event-title">Click for Google</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></a><div class="fc-event fc-event-skin fc-event-hori fc-event-draggable fc-corner-left fc-corner-right" style="position: absolute; z-index: 8; left: 112px; width: 429px; top: 317px;"><div class="fc-event-inner fc-event-skin"><span class="fc-event-title">Long Event</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-skin fc-event-hori fc-event-draggable fc-corner-left fc-corner-right" style="position: absolute; z-index: 8; left: 657px; width: 107px; top: 317px;"><div class="fc-event-inner fc-event-skin"><span class="fc-event-time">12p</span><span class="fc-event-title">Lunch</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-skin fc-event-hori fc-event-draggable fc-corner-left fc-corner-right" style="position: absolute; z-index: 8; left: 330px; width: 102px; top: 334px;"><div class="fc-event-inner fc-event-skin"><span class="fc-event-time">4p</span><span class="fc-event-title">Repeating Event</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-skin fc-event-hori fc-event-draggable fc-corner-left fc-corner-right" style="position: absolute; z-index: 8; left: 330px; width: 102px; top: 408px;"><div class="fc-event-inner fc-event-skin"><span class="fc-event-time">4p</span><span class="fc-event-title">Repeating Event</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div><div class="fc-event fc-event-skin fc-event-hori fc-event-draggable fc-corner-left fc-corner-right" style="position: absolute; z-index: 8; left: 2px; width: 103px; top: 408px;"><div class="fc-event-inner fc-event-skin"><span class="fc-event-time">7p</span><span class="fc-event-title">Birthday Party</span></div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div></div></div></div></div></div>
+                            </div>
+                         </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="footer_space"></div>
+        </div> 
+
+    <!-- footer --> 
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span5">
+                        <div>© Your Company 2012</div>
+                    </div>
+                    <div class="span7">
+                        <ul class="unstyled">
+                            <li><a href="#">First link</a></li>
+                            <li>·</li>
+                            <li><a href="#">Second link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    <!-- Common JS -->
+        <!-- jQuery framework -->
+            <script src="BAT_files/ga.js" async="" type="text/javascript"></script><script src="BAT_files/jquery_015.js"></script>
+            <script src="BAT_files/jquery-migrate.js"></script>
+        <!-- bootstrap Framework plugins -->
+            <script src="BAT_files/bootstrap.js"></script>
+        <!-- top menu -->
+            <script src="BAT_files/jquery_003.js"></script>
+        <!-- top mobile menu -->
+            <script src="BAT_files/selectnav.js"></script>
+        <!-- actual width/height of hidden DOM elements -->
+            <script src="BAT_files/jquery_006.js"></script>
+        <!-- jquery easing animations -->
+            <script src="BAT_files/jquery_009.js"></script>
+        <!-- power tooltips -->
+            <script src="BAT_files/jquery_012.js"></script>
+        <!-- date library -->
+            <script src="BAT_files/moment.js"></script>
+        <!-- common functions -->
+            <script src="BAT_files/beoro_common.js"></script>
+
+
+    <!-- Dashboard JS -->
+        <!-- jQuery UI -->
+            <script src="BAT_files/jquery-ui-1.js"></script>
+        <!-- touch event support for jQuery UI -->
+            <script src="BAT_files/jquery_002.js"></script>
+        <!-- colorbox -->
+            <script src="BAT_files/jquery_004.js"></script>
+        <!-- fullcalendar -->
+            <script src="BAT_files/fullcalendar.js"></script>
+        <!-- flot charts -->
+            <script src="BAT_files/jquery.js"></script>
+            <script src="BAT_files/jquery_005.js"></script>
+            <script src="BAT_files/jquery_013.js"></script>
+            <script src="BAT_files/jquery_007.js"></script>
+            <script src="BAT_files/jquery_011.js"></script>
+            <script src="BAT_files/jquery_010.js"></script>
+        <!-- responsive carousel -->
+            <script src="BAT_files/plugin.js"></script>
+        <!-- responsive image grid -->
+            <script src="BAT_files/jquery_008.js"></script>
+            <script src="BAT_files/jquery_014.js"></script>
+
+            <script src="BAT_files/beoro_dashboard.js"></script>
+
+<script>
+    if($(window).width() > '1280') {
+        $('body').append('<a href="javascript:void" class="fluid_lay" style="position:fixed;top:6px;right:10px;z-index:10000" title="fluid layout"><i class="splashy-arrow_state_grey_left"></i><i class="splashy-arrow_state_grey_right"></i></a>');
+        $('.fluid_lay').click(function() {
+            var url = window.location.href;    
+            if (url.indexOf('?') > -1){
+               url += '&fluid=1'
+            }else{
+               url += '?fluid=1'
+            }
+            window.location.href = url;
+        });
+        $(window).on('resize',function() {
+            if($(window).width() > '1280') {
+                $('.fluid_lay').show();
+            } else {
+                $('.fluid_lay').hide();
+            }
+        })
+    }
+</script><a href="javascript:void" class="fluid_lay" style="position: fixed; top: 6px; right: 10px; z-index: 10000;" title="fluid layout"><i class="splashy-arrow_state_grey_left"></i><i class="splashy-arrow_state_grey_right"></i></a>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37020220-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+<div id="powerTip"></div><div class="bg_switch"><a href="#" class="bg_a"></a><a href="#" class="bg_b"></a><a href="#" class="bg_c"></a><a href="#" class="bg_d"></a><a href="#" class="bg_e"></a><a href="#" class="bg_f"></a><a href="#" class="bg_none"></a></div><a href="javascript:void(0)" class="scrollup" style="display: none;"><i class="icon-chevron-up icon-white"></i></a><div style="display: none;" id="cboxOverlay"></div><div style="display: none;" tabindex="-1" role="dialog" class="" id="colorbox"><div id="cboxWrapper"><div><div style="float: left;" id="cboxTopLeft"></div><div style="float: left;" id="cboxTopCenter"></div><div style="float: left;" id="cboxTopRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxMiddleLeft"></div><div style="float: left;" id="cboxContent"><div style="float: left;" id="cboxTitle"></div><div style="float: left;" id="cboxCurrent"></div><button id="cboxPrevious"></button><button id="cboxNext"></button><button id="cboxSlideshow"></button><div style="float: left;" id="cboxLoadingOverlay"></div><div style="float: left;" id="cboxLoadingGraphic"></div><button id="cboxClose"></button></div><div style="float: left;" id="cboxMiddleRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxBottomLeft"></div><div style="float: left;" id="cboxBottomCenter"></div><div style="float: left;" id="cboxBottomRight"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div style="display: none; position: absolute;" id="flotTip"></div></body></html>

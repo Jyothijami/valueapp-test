@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MPs/HRMP1.master" AutoEventWireup="true" CodeFile="HRMaster.master.cs" Inherits="Modules_HR_HRMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" runat="Server">
+    
+    <table class="stacktable">
+        <tr>
+            <td style="vertical-align: top; width: 20%">
+                <asp:Button ID="btnMemo" runat="server" Text="Memo" Width="130px" PostBackUrl="~/Modules/HR/EmpMemo.aspx" />
+                <br />
+                <asp:Button ID="btnCircular" runat="server" Text="Circulars" Width="130px" PostBackUrl="~/Modules/HR/Circular.aspx" />
+                <br />
+                <asp:Button ID="btnSalaryDetails" runat="server" Text="Salary Details" Width="130px" PostBackUrl="~/Modules/HR/SalaryBreakUps.aspx" />
+                <br />
+                <%--<asp:Button ID="btnLeaveDetails" runat="server" Text="Leave Details" Width="130px" PostBackUrl="~/Modules/HR/LeaveForm.aspx" />
+                <br />--%>
+                    <asp:Button ID="btnUpdatePersonalEMpDeatils" runat="server" Text="Permission" Width="130px" PostBackUrl="~/Modules/HR/Emp_PersonalDetailsUpdate.aspx" />
+                <br />
+                <asp:Button ID="btnApplications" runat="server" Text="Applications" Width="130px" OnClick="btnApplications_Click" />
+                <br />
+                <div style="text-align:left">
+                    <asp:Panel ID="Panel1" runat="server" Width="130px">
+                        <asp:Menu ID="PanelApps" runat="server" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" StaticSubMenuIndent="10px" Width="100%" Visible="False">
+                            <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#F7F6F3" />
+                            <DynamicSelectedStyle BackColor="#5D7B9D" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Modules/HR/EmpOnDutyForm.aspx" Text="On Duty Form" Value="On Duty Form"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Modules/HR/EmpOneHourPermission.aspx" Text="One Hour Permission" Value="One Hour Permission"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Modules/HR/EmpOverTimeForm.aspx" Text="Over Time" Value="Over Time"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Modules/HR/EmpShiftChange.aspx" Text="Shift Change" Value="Shift Change"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Modules/HR/LeaveApplication.aspx" Text="Apply Leave" Value="Apply Leave"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Modules/HR/TicketDetails.aspx" Text="Ticket Details" Value="Ticket Details"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Modules/HR/PaySlip.aspx" Text="pay Slip" Value="pay Slip"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#5D7B9D" />
+                            <StaticItemTemplate>
+                                <%# Eval("Text") %>
+                            </StaticItemTemplate>
+                        </asp:Menu>
+                        <br />
+                    </asp:Panel>
+                </div>
+
+            </td>
+
+            <td style="width: 80%; vertical-align: 5%;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td style="vertical-align: top; width: 20%">
+
+                <br />
+
+            </td>
+        </tr>
+    </table>
+    <%--</ContentTemplate>
+        </asp:UpdatePanel>--%>
+</asp:Content>
+

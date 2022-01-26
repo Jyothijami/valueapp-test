@@ -1,0 +1,98 @@
+USE [21-04-2015]
+GO
+/****** Object:  StoredProcedure [dbo].[USP_StockReport_Serach]    Script Date: 05/07/2015 09:35:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[USP_StockReport_Serach12] 
+@CompanyName int=null,
+@Location varchar(50)=null,
+@Brand bigint=null,
+@CatId bigint=null,
+@SubCatId bigint=null,
+@ModelNo int=null,
+@Color int=null,
+@FromDate datetime=null,
+@ToDate datetime=null
+as
+begin
+
+declare @QueryStat varchar(max)=' SELECT
+    brand.PRODUCT_COMPANY_NAME as Brand,
+    p.ITEM_CODE  as "Item Code",
+    it.ITEM_MODEL_NO as "Model No",
+    it.Item_name as "Series Name",
+    (select COUNT(*) from v_inward where cast(dt_added as DATE)<>CAST(GETDATE() as DATE)  and item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name  )- (select COUNT(*) from v_outward where cast(dt_added as DATE)<>CAST(GETDATE() as DATE) and item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name)as "Opening Stock",
+    (select COUNT(*) from v_inward where cast(dt_added as DATE)=CAST(GETDATE() as DATE) and item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name ) as "Day Inward Stock",
+    (select COUNT(*) from v_inward where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name) as "Total Inward Stock",
+    (select COUNT(*) from v_outward where cast(dt_added as DATE)=CAST(GETDATE() as DATE)and item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name ) as "Day Outward Stock",
+    (select COUNT(*) from v_outward where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name) as "Total Outward Stock",
+      (select COUNT(*) from v_block where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name) as "Total Block Stock",
+    ((select COUNT(*) from v_inward where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name)-(select COUNT(*) from v_outward where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name  )-
+    (select COUNT(*) from v_block where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name  )) as "Total Available Stock",
+    (select COUNT(*) from v_block where cast(dt_added as DATE)=CAST(GETDATE() as DATE)and item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name)as "Day Block Stock",
+    (select COUNT(*) from v_block where item_code=p.item_code) as "Total Block Stock",
+  
+    
+    ((select COUNT(*) from v_block where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name)+((select COUNT(*) from v_inward where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name)-(select COUNT(*) from v_outward where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name  )-(select COUNT(*) from v_block where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and wh_name=p.wh_name  )))as "Closing Stock",
+    --p.cp_id as "Company Id",
+    p.wh_name as "Warehouse Location",
+    --p.COLOUR_ID as "Color Id",
+    cm.COLOUR_NAME as "Color",
+    cp.CP_Short_NAME as "Company Name"
+    from v_inward  p 
+
+left join v_outward out
+on p.item_code=out.item_code
+left join v_block blo
+on p.item_code=blo.item_code
+left join YANTRA_ITEM_MAST it
+on p.item_code = it.ITEM_CODE
+
+left join YANTRA_COMP_PROFILE cp
+on p.cp_id = cp.CP_ID
+
+left join YANTRA_LKUP_COLOR_MAST cm
+on p.COLOUR_ID = cm.COLOUR_ID
+
+left join YANTRA_LKUP_PRODUCT_COMPANY brand
+on brand.PRODUCT_COMPANY_ID = it.BRAND_ID
+
+where (select COUNT(*) from inward where item_code=p.item_code and cp_id=p.cp_id and colour_id=p.colour_id and whlocid=p.whlocid and cast(dt_added as DATE)<=cast (p.dt_added as date))>0'
+ 
+ 
+	declare @cond varchar(max)=''
+	
+	declare @Group varchar(Max)='  group by p.item_code,p.cp_id,p.colour_id,p.wh_name ,it.Item_name,it.ITEM_MODEL_NO,cp.CP_Short_NAME,cm.COLOUR_NAME,brand.PRODUCT_COMPANY_NAME
+'
+	
+	if @CompanyName is not null
+	set @cond +=' and p.cp_id='''+ CAST(@CompanyName as varchar(50))+''' '
+	
+	if @Location is not null
+	set @cond +=' and p.wh_name='''+ CAST(@Location as varchar(50))+''' '
+	
+	if @Brand is not null
+	set @cond +=' and it.BRAND_ID='''+ CAST(@Brand as varchar(50))+''' '
+	
+	if @CatId is not null
+	set @cond +=' and it.IC_ID='''+ CAST(@CatId as varchar(50))+''' '
+	
+	if @SubCatId is not null
+	set @cond +=' and it.IT_TYPE_ID='''+ CAST(@SubCatId as varchar(50))+''' '
+	
+	if @ModelNo is not null
+	set @cond +=' and p.item_code='''+ CAST(@ModelNo as varchar(50))+''' '
+	
+	if @Color is not null
+	set @cond +=' and p.colour_id='''+ CAST(@Color as varchar(50))+''' '
+		
+	if @FromDate is not null
+	set @cond +=' and p.dt_added>='''+ CAST(@FromDate as varchar(50))+''' '
+	
+	if @ToDate is not null
+	set @cond +=' and p.dt_added<='''+ CAST(@ToDate as varchar(50))+''' '
+	
+	exec(@QueryStat+@cond+@Group)
+End

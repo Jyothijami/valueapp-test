@@ -1,0 +1,156 @@
+#region upload
+    protected void btnUpload_Click(object sender, EventArgs e)
+    {
+
+        string filePath = FileUpload1.PostedFile.FileName;
+        string filename = Path.GetFileName(filePath);
+        string ext = Path.GetExtension(filename);
+        string contenttype = String.Empty;
+
+
+
+        //Set the contenttype based on File Extension
+
+        switch (ext)
+        {
+
+            case ".doc":
+
+                contenttype = "application/vnd.ms-word";
+
+                break;
+
+            case ".docx":
+
+                contenttype = "application/vnd.ms-word";
+
+                break;
+
+            case ".xls":
+
+                contenttype = "application/vnd.ms-excel";
+
+                break;
+
+            case ".xlsx":
+
+                contenttype = "application/vnd.ms-excel";
+
+                break;
+
+            case ".jpg":
+
+                contenttype = "image/jpg";
+
+                break;
+
+            case ".png":
+
+                contenttype = "image/png";
+
+                break;
+
+            case ".gif":
+
+                contenttype = "image/gif";
+
+                break;
+
+            case ".pdf":
+
+                contenttype = "application/pdf";
+
+                break;
+
+        }
+
+        if (contenttype != String.Empty)
+        {
+            Stream fs = FileUpload1.PostedFile.InputStream;
+            BinaryReader br = new BinaryReader(fs);
+            Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
+
+            //insert the file into database
+
+
+
+
+            string strQuery = "insert into PEP_DOCUMENTS_UPLOAD SELECT ISNULL(MAX(slno),0)+1, 1,@Name, @ContentType, @Data from PEP_DOCUMENTS_UPLOAD";
+
+            SqlCommand cmd = new SqlCommand(strQuery);
+
+            cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = filename;
+
+            cmd.Parameters.Add("@ContentType", SqlDbType.VarChar).Value = contenttype;
+
+            cmd.Parameters.Add("@Data", SqlDbType.Binary).Value = bytes;
+            
+            cmd.CommandType = CommandType.Text;
+            
+            
+            string connect = ConfigurationManager.ConnectionStrings["Peepal_DEVConnectionString"].ConnectionString ;
+
+            SqlConnection conn = new SqlConnection(connect);
+
+
+
+            
+            cmd.Connection = conn;
+            
+            conn.Open();
+
+            int a = cmd.ExecuteNonQuery();
+            
+                    
+            if (a > 0) 
+            {
+                MessageBox.Show(this, "File Uploaded Successfully");
+                
+            }
+            else
+            {
+                MessageBox.Show(this, "File Uploading Failed..!");
+
+            }
+
+
+        }
+
+        else
+        {
+
+            MessageBox.Show (this, "File format not recognised. Upload Image/Word/PDF/Excel formats");
+
+        }
+
+
+    }
+#endregion
+
+
+
+    protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Peepal_DEVConnectionString"].ToString()))
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select Name,type,data from PEP_DOCUMENTS_UPLOAD where slno =@ID", con);
+            cmd.Parameters.AddWithValue("ID", GridView2.SelectedRow.Cells[1].Text);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                Response.Clear();
+                Response.Buffer = true;
+
+                Response.ContentType = dr["type"].ToString();
+                Response.AddHeader("content-disposition", "attachment;filename=" + dr["Name"].ToString());
+                Response.Charset = "";
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                Response.BinaryWrite((byte[])dr["data"]);
+
+                Response.End();
+            }
+        }
+    }

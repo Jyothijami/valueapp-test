@@ -1,0 +1,346 @@
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Dispatch.aspx.cs" Inherits="Modules_SM_Dispatch" Title="Untitled Page" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+<table border="0" cellpadding="0" cellspacing="0" class="pagehead">
+        <tr>
+            <td>
+                Dispatch instrutions</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="width: 100px">
+            </td>
+            <td style="width: 100px">
+            </td>
+            <td style="width: 100px">
+            </td>
+            <td style="width: 100px">
+            </td>
+            <td style="width: 100px">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <asp:GridView id="GridView1" runat="server">
+                </asp:GridView></td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Button id="btnAdd" runat="server" Text="Add New" /></td>
+                        <td>
+                            <asp:Button id="btnEdit" runat="server" Text="Edit" /></td>
+                        <td>
+                            <asp:Button id="btnDelete" runat="server" Text="Delete" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <table id="tblsub" runat="server" width="100%">
+                    <tr>
+                        <td colspan="4" style="text-align: left">
+                            Add Dispatch Instrutions</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right" align="right">
+                            <asp:Label id="lblSearch" runat="server" Text="Search Customer" Width="110px"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtSearchModel" runat="server">
+                            </asp:TextBox><asp:SqlDataSource id="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCon %>"
+                                SelectCommand="SP_Customer_SEARCH_SELECT" SelectCommandType="StoredProcedure">
+                                <selectparameters>
+                    <asp:ControlParameter ControlID="txtSearchModel" Name="SearchValue" PropertyName="Text"
+                        Type="String"  />
+                </selectparameters>
+                            </asp:SqlDataSource></td>
+                        <td style="width: 99px; text-align: left">
+                            <asp:Button id="btnSearchModelNo" runat="server" BorderStyle="None" CausesValidation="False"
+                                CssClass="gobutton" EnableTheming="False" onclick="btnSearchModelNo_Click" Text="Go" /></td>
+                        <td style="width: 100px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right" align="right">
+                            <asp:Label id="lblCustomer" runat="server" Text="Customer Name" Width="104px"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:DropDownList id="ddlCustomerName" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCustomerName_SelectedIndexChanged">
+                            </asp:DropDownList></td>
+                        <td style="width: 99px; text-align: right" align="right">
+                            <asp:Label id="lblRegion" runat="server" Text="Region"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtRegion" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right" align="right">
+                            <asp:Label id="lblAddress" runat="server" Text="Address"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtAddress" runat="server" ReadOnly="True" TextMode="MultiLine">
+                            </asp:TextBox></td>
+                        <td style="width: 99px; text-align: right" align="right">
+                            <asp:Label id="lblPhone" runat="server" Text="Phone"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtPhone" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right" align="right">
+                            <asp:Label id="lblEmail" runat="server" Text="Email"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtEmail" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                        <td style="width: 99px; text-align: right" align="right">
+                            <asp:Label id="lblMobile" runat="server" Text="Mobile"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtMobile" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right" align="right">
+                            <asp:Label id="Label4" runat="server" Text="Unit Name"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:DropDownList id="ddlUnitName" runat="server">
+                            </asp:DropDownList></td>
+                        <td style="width: 99px">
+                        </td>
+                        <td style="width: 100px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right">
+                        </td>
+                        <td style="width: 100px; text-align: left">
+                        </td>
+                        <td style="width: 99px">
+                        </td>
+                        <td style="width: 100px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right">
+                            </td>
+                        <td style="width: 100px; text-align: left">
+                            </td>
+                        <td style="width: 99px; text-align: right">
+                            </td>
+                        <td style="width: 100px; text-align: left">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: left">
+                            Dispatch Details</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center">
+                            <table>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label id="Label12" runat="server" Text="Label"></asp:Label></td>
+                                    <td style="width: 100px">
+                                    </td>
+                                    <td style="width: 100px">
+                                        <asp:Label id="Label15" runat="server" Text="Label"></asp:Label></td>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label id="Label13" runat="server" Text="Label"></asp:Label></td>
+                                    <td style="width: 100px">
+                                    </td>
+                                    <td style="width: 100px">
+                                        <asp:Label id="Label14" runat="server" Text="Label"></asp:Label></td>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label id="Label16" runat="server" Text="Label"></asp:Label></td>
+                                    <td style="width: 100px">
+                                    </td>
+                                    <td style="width: 100px">
+                                        <asp:Label id="Label17" runat="server" Text="Label"></asp:Label></td>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label id="Label18" runat="server" Text="Label"></asp:Label></td>
+                                    <td style="width: 100px">
+                                    </td>
+                                    <td style="width: 100px">
+                                    </td>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                    </td>
+                                    <td style="width: 100px">
+                                    </td>
+                                    <td style="width: 100px">
+                                    </td>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                            </table>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center">
+                            </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right">
+                            <asp:Label id="Label1" runat="server" Text="Delivery Date" Width="102px"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtDeliveryDate" runat="server" ReadOnly="True">
+                            </asp:TextBox><asp:Image id="Image1" runat="server" ImageUrl="~/Images/Calendar.png"
+                                Visible="False">
+                            </asp:Image><cc1:CalendarExtender ID="Calendarextender1" runat="server" Enabled="False"
+                                Format="dd/MM/yyyy" PopupButtonID="Image1" TargetControlID="txtDeliveryDate">
+                            </cc1:CalendarExtender>
+                            <cc1:MaskedEditExtender ID="Maskededitextender1" runat="server" DisplayMoney="Left"
+                                Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtDeliveryDate"
+                                UserDateFormat="MonthDayYear">
+                            </cc1:MaskedEditExtender>
+                        </td>
+                        <td style="width: 99px; text-align: right">
+                            <asp:Label id="Label2" runat="server" Text="Delivery Time" Width="103px"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtDeliveryTime" runat="server">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right">
+                            <asp:Label id="Label3" runat="server" Text="Company"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:DropDownList id="ddlCompany" runat="server">
+                            </asp:DropDownList></td>
+                        <td style="width: 99px; text-align: right">
+                        </td>
+                        <td style="width: 100px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right">
+                            <asp:Label id="Label5" runat="server" Text="Remarks"></asp:Label></td>
+                        <td colspan="3" style="text-align: left">
+                            <asp:TextBox id="txtRemarks" runat="server" EnableTheming="False" TextMode="MultiLine"
+                                Width="561px">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right">
+                            <asp:Label id="Label6" runat="server" Text="Old Dues"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtOldDues" runat="server">
+                            </asp:TextBox></td>
+                        <td style="width: 99px; text-align: right"><asp:Label id="Label11" runat="server" Text="Payment Be Collected" Width="139px"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right" align="right">
+                            <asp:Label id="Label7" runat="server" Text="Transport Charges" Width="127px"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtTransportCharges" runat="server">
+                            </asp:TextBox></td>
+                        <td style="width: 99px; text-align: right" align="right">
+                            <asp:Label id="Label9" runat="server" Text="Packing Charges" Width="105px"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtPackingCharges" runat="server">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right" align="right">
+                            <asp:Label id="Label8" runat="server" Text="Executive"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:TextBox id="txtExecutive" runat="server">
+                            </asp:TextBox></td>
+                        <td style="width: 99px; text-align: right">
+                        </td>
+                        <td style="width: 100px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right">
+                        </td>
+                        <td style="width: 100px; text-align: left">
+                        </td>
+                        <td style="width: 99px; text-align: right">
+                        </td>
+                        <td style="width: 100px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right" align="right">
+                            <asp:Label id="Label10" runat="server" Text="Prepared By"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:DropDownList id="ddlPreparedBy" runat="server">
+                            </asp:DropDownList></td>
+                        <td style="width: 99px; text-align: right" align="right">
+                            <asp:Label id="lblApprovedBy" runat="server" Text="Approved By"></asp:Label></td>
+                        <td style="width: 100px; text-align: left">
+                            <asp:DropDownList id="ddlApprovedby" runat="server">
+                            </asp:DropDownList></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px; text-align: right">
+                        </td>
+                        <td style="width: 100px; text-align: left">
+                        </td>
+                        <td style="width: 99px; text-align: right">
+                        </td>
+                        <td style="width: 100px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Button id="btnSave" runat="server" Text="Save" /></td>
+                                    <td>
+                                        <asp:Button id="btnApprove" runat="server" Text="Approve" /></td>
+                                    <td>
+                                        <asp:Button id="btnRefresh" runat="server" Text="Refresh" /></td>
+                                    <td colspan="2">
+                                        <asp:Button id="btnExit" runat="server" Text="Exit" /></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100px">
+            </td>
+            <td style="width: 100px">
+            </td>
+            <td style="width: 100px">
+            </td>
+            <td style="width: 100px">
+            </td>
+            <td style="width: 100px">
+            </td>
+        </tr>
+    </table>
+    <br />
+</asp:Content>
+
+
+ 

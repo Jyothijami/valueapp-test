@@ -1,0 +1,373 @@
+<Canvas
+  xmlns="http://schemas.microsoft.com/client/2007" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Background="Transparent">
+
+	<Canvas.Resources>
+
+	</Canvas.Resources>
+	<Canvas x:Name="BackBorder_Canvas">
+		<Rectangle x:Name="BackBorder" Width="715" RadiusX="5" RadiusY="5" Height="24" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#DDDDDDDC" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Polygon  x:Name="BackBorder_Polygon" Stroke="Gray" StrokeThickness="0.5" StrokeLineJoin="Round" IsHitTestVisible="False">
+			<Polygon.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="White" Offset="0" />
+					<GradientStop Color="LightSkyBlue" Offset="1" />
+				</LinearGradientBrush>
+			</Polygon.Fill>
+		</Polygon>
+
+	</Canvas>
+	<Canvas x:Name="Master_Menu_Border" Canvas.Top="25">
+		<Rectangle x:Name="Master_Menu_Rectangle" Width="716" RadiusX="5" RadiusY="5" Height="125" StrokeThickness="3">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="-4.5" />
+					<GradientStop Color="#00000000" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,0">
+					<GradientStop  Color="#40000000" Offset="-1" />
+
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Polygon  x:Name="Master_Menu_Polygon" Stroke="Gray" StrokeThickness="0.5" StrokeLineJoin="Round" IsHitTestVisible="False">
+			<Polygon.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="White" Offset="0" />
+					<GradientStop Color="LightSkyBlue" Offset="1" />
+				</LinearGradientBrush>
+			</Polygon.Fill>
+		</Polygon>
+	</Canvas>
+
+	<Canvas x:Name="MainMenu_OverLight_Canvas" >
+		<Rectangle x:Name="MainMenu_OverLight" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#48D1CC" Offset="0.4" />
+					<GradientStop Color="White" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+	</Canvas>
+
+
+	<!--Tab Labels-->
+	<!--<Canvas x:Name="Ribbon_Tabs_Labels">-->
+	<!--Home Tab Label-->
+	<!--///////////////////Master/////////////////////////-->
+	<Canvas x:Name="Master_Canvas" >
+		<Rectangle x:Name="Master_Rectangle" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFFFFFFF" Offset="0" />
+					<GradientStop Color="#9BDDFF" Offset="0.5" />
+					<GradientStop Color="#FFFFFFFF" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>		
+		<TextBlock Text="Master" x:Name="Master" MouseEnter="MouseEnter" MouseLeftButtonUp="MouseLeftClick" MouseLeave="MouseLeave"  FontSize="12" Canvas.Left="5" Canvas.Top="3" Foreground="White" Cursor="Hand"/>
+	</Canvas>
+	<!--///////////////////SM/////////////////////////-->
+	<Canvas x:Name="SM_Canvas">
+		<Rectangle x:Name="SM_Rectangle" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFFFFFFF" Offset="0" />
+					<GradientStop Color="#9BDDFF" Offset="0.5" />
+					<GradientStop Color="#FFFFFFFF" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<TextBlock Text="Sales &amp; Marketing" x:Name="SM" MouseEnter="MouseEnter" MouseLeftButtonUp="MouseLeftClick" MouseLeave="MouseLeave"  FontSize="12" Canvas.Left="5" Canvas.Top="3" Foreground="White" Cursor="Hand"/>
+	</Canvas>
+	<!--///////////////////Planning///////////////////-->
+	
+	<!--///////////////////Manufacturing///////////////////-->
+	
+	<!--///////////////////SCM///////////////////-->
+	<Canvas x:Name="SCM_Canvas">
+		<Rectangle x:Name="SCM_Rectangle" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFFFFFFF" Offset="0" />
+					<GradientStop Color="#9BDDFF" Offset="0.5" />
+					<GradientStop Color="#FFFFFFFF" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<TextBlock Text="SCM" x:Name="SCM" MouseEnter="MouseEnter" MouseLeftButtonUp="MouseLeftClick" MouseLeave="MouseLeave"  FontSize="12" Canvas.Left="5" Canvas.Top="3" Foreground="White" Cursor="Hand"  />
+	</Canvas>
+	<!--///////////////////Inventory///////////////////-->
+	<Canvas x:Name="Inventory_Canvas" Canvas.Left="302">
+		<Rectangle x:Name="Inventory_Rectangle" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFFFFFFF" Offset="0" />
+					<GradientStop Color="#9BDDFF" Offset="0.5" />
+					<GradientStop Color="#FFFFFFFF" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<TextBlock Text="Inventory" x:Name="Inventory" MouseEnter="MouseEnter" MouseLeftButtonUp="MouseLeftClick" MouseLeave="MouseLeave"  FontSize="12" Canvas.Left="5" Canvas.Top="3" Foreground="White" Cursor="Hand"  />
+	</Canvas>
+	<!--///////////////////Support///////////////////-->
+	<Canvas x:Name="Support_Canvas" Canvas.Left="372">
+		<Rectangle x:Name="Support_Rectangle" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFFFFFFF" Offset="0" />
+					<GradientStop Color="#9BDDFF" Offset="0.5" />
+					<GradientStop Color="#FFFFFFFF" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<TextBlock Text="Services" x:Name="Support" MouseEnter="MouseEnter" MouseLeftButtonUp="MouseLeftClick" MouseLeave="MouseLeave"  FontSize="12" Canvas.Left="5" Canvas.Top="3" Foreground="White" Cursor="Hand"  />
+	</Canvas>
+	<!--///////////////////Excise///////////////////-->
+	
+	<!--///////////////////HR///////////////////-->
+	<Canvas x:Name="HR_Canvas" Canvas.Left="485">
+		<Rectangle x:Name="HR_Rectangle" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFFFFFFF" Offset="0" />
+					<GradientStop Color="#9BDDFF" Offset="0.5" />
+					<GradientStop Color="#FFFFFFFF" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<TextBlock Text="HR" x:Name="HR" MouseEnter="MouseEnter" MouseLeftButtonUp="MouseLeftClick" MouseLeave="MouseLeave"  FontSize="12" Canvas.Left="5" Canvas.Top="3" Foreground="White" Cursor="Hand"  />
+	</Canvas>
+	<!--///////////////////Finance///////////////////-->
+	
+	<!--///////////////////BA & BI///////////////////-->
+	
+	<!--///////////////////CPC///////////////////-->
+	
+	<!--///////////////////Reports///////////////////-->
+	<Canvas x:Name="Reports_Canvas" >
+		<Rectangle x:Name="Reports_Rectangle" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFFFFFFF" Offset="0" />
+					<GradientStop Color="#9BDDFF" Offset="0.5" />
+					<GradientStop Color="#FFFFFFFF" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>		
+		<TextBlock Text="Reports" x:Name="Reports" MouseEnter="MouseEnter" MouseLeftButtonUp="MouseLeftClick" MouseLeave="MouseLeave"  FontSize="12" Canvas.Left="5" Canvas.Top="3" Foreground="White" Cursor="Hand"  />
+	</Canvas>
+
+	<Canvas x:Name="Help_Canvas">
+		<Rectangle x:Name="Help_Rectangle" RadiusX="5" RadiusY="5" Height="23" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFFFFFFF" Offset="0" />
+					<GradientStop Color="#9BDDFF" Offset="0.5" />
+					<GradientStop Color="#FFFFFFFF" Offset="1.5" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<TextBlock Text="Help" x:Name="Help" MouseEnter="MouseEnter" MouseLeftButtonUp="MouseLeftClick" MouseLeave="MouseLeave"  FontSize="12" Canvas.Left="5" Canvas.Top="3" Foreground="White" Cursor="Hand"  />
+	</Canvas>
+
+	<Canvas x:Name="SelectLight" >
+		<Rectangle x:Name="SelectLight_Rect" RadiusX="5" RadiusY="5" Height="16" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<!--HighlightFill-->
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop  Color="#ADDFFF" Offset="0.5" />
+					<GradientStop  Color="White" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Polygon x:Name="SelectLight_Arrow" Opacity="0" Canvas.Top="8" Canvas.Left="8" Points="1,0.125 0.75,0.6 0.5,0.125" Stroke="#067b94" StrokeThickness="5" >
+		</Polygon>
+	</Canvas>
+	<Canvas x:Name="OverLight">
+		<Rectangle x:Name="OverLight_Rect" RadiusX="5" RadiusY="5" Height="16" StrokeThickness="0.5">
+			<Rectangle.Stroke>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="Gray" Offset="0" />
+					<GradientStop Color="#00000000" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Stroke>
+			<Rectangle.Fill>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#48D1CC" Offset="0.4" />
+					<GradientStop Color="White" Offset="1" />
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Polygon x:Name="OverLight_Arrow" Opacity="0" Canvas.Top="8" Canvas.Left="8" Points="0.5,0.25 0.25,0.375 0.25,0.125" Stroke="#067b94" StrokeThickness="5" >
+		</Polygon>
+	</Canvas>
+
+	<Canvas x:Name="Master_Menu_Canvas" Canvas.Top="140" Opacity="0" >
+		<TextBlock Text="Master" x:Name="Master_1" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Master" x:Name="Master_2" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Master" x:Name="Master_3" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Master" x:Name="Master_4" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+	</Canvas>
+
+	<Canvas x:Name="SM_Menu_Canvas" Canvas.Top="140" Opacity ="0" >
+		<TextBlock Text="SM" x:Name="SM_1" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SM" x:Name="SM_2" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SM" x:Name="SM_3" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SM" x:Name="SM_4" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SM" x:Name="SM_5" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SM" x:Name="SM_6" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SM" x:Name="SM_7" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="50" Foreground="White" Cursor="Hand"/>
+	</Canvas>
+
+
+	<Canvas x:Name="SCM_Menu_Canvas" Canvas.Top="140"  Opacity="0">
+		<TextBlock Text="SCM" x:Name="SCM_1" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SCM" x:Name="SCM_2" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SCM" x:Name="SCM_3" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SCM" x:Name="SCM_4" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SCM" x:Name="SCM_5" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SCM" x:Name="SCM_6" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SCM" x:Name="SCM_7" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="50" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="SCM" x:Name="SCM_8" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="50" Foreground="White" Cursor="Hand"/>
+
+	</Canvas>
+
+	<Canvas x:Name="Inventory_Menu_Canvas" Canvas.Top="140"  Opacity="0">
+		<TextBlock Text="Inventory" x:Name="Inventory_1" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Inventory" x:Name="Inventory_2" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Inventory" x:Name="Inventory_3" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Inventory" x:Name="Inventory_4" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Inventory" x:Name="Inventory_5" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Inventory" x:Name="Inventory_6" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Inventory" x:Name="Inventory_7" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="50" Foreground="White" Cursor="Hand"/>
+
+	</Canvas>
+
+	<Canvas x:Name="Support_Menu_Canvas" Canvas.Top="140"  Opacity="0">
+		<TextBlock Text="Support" x:Name="Support_1" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Support" x:Name="Support_2" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Support" x:Name="Support_3" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Support" x:Name="Support_4" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Support" x:Name="Support_5" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Support" x:Name="Support_6" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Support" x:Name="Support_7" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="50" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Support" x:Name="Support_8" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="50" Foreground="White" Cursor="Hand"/>
+
+	</Canvas>
+
+	<Canvas x:Name="HR_Menu_Canvas" Canvas.Top="140"  Opacity="0">
+		<!--<TextBlock Text="HR" x:Name="HR_1" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="HR" x:Name="HR_2" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="HR" x:Name="HR_3" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="HR" x:Name="HR_4" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="HR" x:Name="HR_5" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="HR" x:Name="HR_6" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="30" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="HR" x:Name="HR_7" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="50" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="HR" x:Name="HR_8" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="50" Foreground="White" Cursor="Hand"/>-->
+
+	</Canvas>
+
+	<Canvas x:Name="Reports_Menu_Canvas" Canvas.Top="140"  Opacity="0">
+		<TextBlock Text="Reports" x:Name="Reports_1" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="30" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Reports" x:Name="Reports_2" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="280" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+		<TextBlock Text="Reports" x:Name="Reports_3" MouseEnter="ItemsMouseEnter" MouseLeftButtonUp="ItemsMouseLeftClick" MouseLeave="ItemsMouseLeave" FontSize="11" Canvas.Left="530" Canvas.Top="10" Foreground="White" Cursor="Hand"/>
+	</Canvas>
+	
+	<Canvas x:Name="Help_Menu_Canvas" Canvas.Top="140"  Opacity="0">
+		
+	</Canvas>
+
+	<TextBlock Text="|" x:Name="Pipe1" FontSize="12" Canvas.Left="0" Canvas.Top="3" Foreground="White"/>
+	<TextBlock Text="|" x:Name="Pipe2" FontSize="12" Canvas.Left="0" Canvas.Top="3" Foreground="White"/>
+	<TextBlock Text="|" x:Name="Pipe3" FontSize="12" Canvas.Left="0" Canvas.Top="3" Foreground="White"/>
+	<TextBlock Text="|" x:Name="Pipe4" FontSize="12" Canvas.Left="0" Canvas.Top="3" Foreground="White"/>
+	<TextBlock Text="|" x:Name="Pipe5" FontSize="12" Canvas.Left="0" Canvas.Top="3" Foreground="White"/>
+	<TextBlock Text="|" x:Name="Pipe6" FontSize="12" Canvas.Left="0" Canvas.Top="3" Foreground="White"/>
+	<TextBlock Text="|" x:Name="Pipe7" FontSize="12" Canvas.Left="0" Canvas.Top="3" Foreground="White"/>
+
+</Canvas>

@@ -1,0 +1,80 @@
+#####################
+Interview Details Table
+###############
+USE [Vlt2]
+GO
+
+/****** Object:  Table [dbo].[Emp_InterviewDetails]    Script Date: 09/14/2014 14:11:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Emp_InterviewDetails](
+	[InterviewId] [bigint] NOT NULL,
+	[EnrollmentId] [bigint] NULL,
+	[InterviewerName] [nvarchar](50) NULL,
+	[DateOfInterview] [datetime] NULL,
+	[TimeOfInterview] [nvarchar](50) NULL,
+	[Location] [nvarchar](50) NULL,
+	[InterviewStatus] [nvarchar](50) NULL,
+	[GrossSalary] [decimal](18, 2) NULL,
+	[OfferStatus] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Emp_InterviewDetails]  WITH CHECK ADD  CONSTRAINT [FK_Emp_InterviewDetails_Emp_Enrollment] FOREIGN KEY([EnrollmentId])
+REFERENCES [dbo].[Emp_Enrollment] ([EnrollmentId])
+GO
+
+ALTER TABLE [dbo].[Emp_InterviewDetails] CHECK CONSTRAINT [FK_Emp_InterviewDetails_Emp_Enrollment]
+GO
+
+
+
+
+##################################
+New Employee Enrollment Table
+#################################
+
+USE [Vlt2]
+GO
+
+/****** Object:  Table [dbo].[Emp_Enrollment]    Script Date: 09/14/2014 14:12:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Emp_Enrollment](
+	[EnrollmentId] [bigint] NOT NULL,
+	[EnrollmentDate] [date] NULL,
+	[FirstName] [varchar](50) NULL,
+	[MiddleName] [varchar](50) NULL,
+	[LastName] [varchar](50) NULL,
+	[MobileNo] [varchar](50) NULL,
+	[EmailId] [varchar](50) NULL,
+	[Education] [varchar](50) NULL,
+	[Address] [varchar](max) NULL,
+	[Resume] [varchar](50) NULL,
+	[DateOfBirth] [date] NULL,
+	[Age] [int] NULL,
+	[Status] [varchar](50) NULL,
+ CONSTRAINT [PK_Emp_Enrollment] PRIMARY KEY CLUSTERED 
+(
+	[EnrollmentId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

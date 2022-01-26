@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MPage1.master.cs" Inherits="dev_pages_MPage1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+         <link href="../css/bootstrap.min.css" rel="stylesheet" />
+        <table cellpadding="5" cellspacing="5" style="width:100%">
+            <tr>
+                <td style="vertical-align:top; width:10px;">
+                    <asp:TreeView ID="TreeView1" runat="server" Visible="false" Width="10%">
+                        <Nodes>
+                            <asp:TreeNode NavigateUrl="~/dev_pages/Default.aspx" Text="Home" Value="Home"></asp:TreeNode>
+                            <asp:TreeNode Text="Widgets" Value="Widgets">
+                                <asp:TreeNode NavigateUrl="~/dev_pages/Manage_Widgets.aspx" Text="Manage Widgets" Value="Manage Widgets"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="Log Files" Value="Log Files">
+                                <asp:TreeNode NavigateUrl="~/dev_pages/view_Logs.aspx" Text="View Logs" Value="View Logs"></asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </td>
+                <td style="vertical-align:top;">
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>

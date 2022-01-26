@@ -1,0 +1,1270 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="SalesQuotation_Details.aspx.cs" Inherits="Modules_SM_SalesQuotation_Details" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+                <table border="0" cellpadding="0" cellspacing="0" id="tblQuotationDetails" runat="server"
+                    visible="false" width="100%">
+                    <tr>
+                        <td class="profilehead" colspan="4">
+                            general details</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left; width: 357px;">
+                        </td>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="Label1" runat="server" Text="Enquiry No" Width="72px"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:DropDownList ID="ddlEnquiryNo" runat="server" OnSelectedIndexChanged="ddlEnquiryNo_SelectedIndexChanged"
+                                AutoPostBack="True" Enabled="False">
+                            </asp:DropDownList><asp:Label ID="Label36" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*" Visible="False"></asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator4"
+                                    runat="server" ControlToValidate="ddlEnquiryNo" ErrorMessage="Please Select  the Enquiry No."
+                                    InitialValue="0">*</asp:RequiredFieldValidator></td>
+                        <td style="text-align: right;">
+                            <asp:Label ID="Label2" runat="server" Text="Enquiry Date" Width="96px"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtEnquiryDate" runat="server" CssClass="datetext" EnableTheming="False"
+                                ReadOnly="True"></asp:TextBox>&nbsp;<asp:Image ID="imgEnquiryDate" runat="server"
+                                    ImageUrl="~/Images/Calendar.png" Visible="False" /><cc1:CalendarExtender Format="dd/MM/yyyy"
+                                        ID="ceEnquiryDate" runat="server" PopupButtonID="imgEnquiryDate" TargetControlID="txtEnquiryDate"
+                                        Enabled="False">
+                                    </cc1:CalendarExtender>
+                            <cc1:MaskedEditExtender ID="meeEnquiryDate" runat="server" DisplayMoney="Left" Mask="99/99/9999"
+                                MaskType="Date" TargetControlID="txtEnquiryDate" UserDateFormat="MonthDayYear">
+                            </cc1:MaskedEditExtender>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="TD18" style="height: 22px; text-align: right">
+                            <asp:Label ID="lblCustomer" runat="server" Text="Customer"></asp:Label></td>
+                        <td style="height: 22px; text-align: left; width: 357px;">
+                            <asp:DropDownList ID="ddlCustomer" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCustomer_SelectedIndexChanged"
+                                Enabled="False">
+                            </asp:DropDownList><asp:Label ID="Label20" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="ddlCustomer"
+                                ErrorMessage="Please Select the Customer" InitialValue="0">*</asp:RequiredFieldValidator></td>
+                        <td style="height: 22px; text-align: right">
+                            <asp:Label ID="lblRegion" runat="server" Text="Region"></asp:Label></td>
+                        <td style="height: 22px; text-align: left">
+                            <asp:TextBox ID="txtRegion" runat="server" ReadOnly="True"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="height: 22px; text-align: right">
+                            <asp:Label ID="Label21" runat="server" Text="Industry Type"></asp:Label></td>
+                        <td style="height: 22px; text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtIndustryType" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                        <td style="height: 22px; text-align: right">
+                            <asp:Label ID="lblInitName" runat="server" Text="Unit Name" Width="74px"></asp:Label></td>
+                        <td style="height: 22px; text-align: left">
+                            <asp:DropDownList ID="ddlUnitName" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlUnitName_SelectedIndexChanged"
+                                Enabled="False">
+                                <asp:ListItem Value="0">--</asp:ListItem>
+                                <asp:ListItem Value="0">--Select Customer--</asp:ListItem>
+                            </asp:DropDownList><asp:RequiredFieldValidator ID="rfvUnitName" runat="server" ControlToValidate="ddlUnitName"
+                                ErrorMessage="Please Select the Unit Name" InitialValue="0">*</asp:RequiredFieldValidator></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblUnitAddress" runat="server" Text="Unit Address" Width="106px"></asp:Label></td>
+                        <td colspan="3" style="text-align: left">
+                            <asp:TextBox ID="txtUnitAddress" runat="server" CssClass="multilinetext" EnableTheming="False"
+                                Font-Names="Verdana" Font-Size="8pt" TextMode="MultiLine" Width="569px"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblContactPerson" runat="server" Text="Contact Person"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtContactPerson" runat="server" ReadOnly="True"></asp:TextBox><asp:DropDownList
+                                ID="ddlContactPerson" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlContactPerson_SelectedIndexChanged"
+                                Visible="False" Enabled="False">
+                                <asp:ListItem Value="0">--</asp:ListItem>
+                                <asp:ListItem Value="0">--Select Unit Name--</asp:ListItem>
+                            </asp:DropDownList><asp:RequiredFieldValidator ID="rfvContactPerson" runat="server"
+                                ControlToValidate="ddlContactPerson" ErrorMessage="Please Select the Contact Person"
+                                InitialValue="0">*</asp:RequiredFieldValidator></td>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtEmail" runat="server" ReadOnly="True"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td id="TD28" style="text-align: right">
+                            <asp:Label ID="lblPhoneNo" runat="server" Text="Phone No" Width="74px"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtPhoneNo" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                        <td style="text-align: right">
+                            <asp:Label ID="Label45" runat="server" Text="Mobile" Width="74px"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtMobile" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; height: 19px;">
+                        </td>
+                        <td style="text-align: left; height: 19px; width: 357px;">
+                        </td>
+                        <td style="text-align: right; height: 19px;">
+                        </td>
+                        <td style="text-align: left; height: 19px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            &nbsp;<asp:GridView id="gvEnquiryProducts" runat="server" AutoGenerateColumns="False" OnRowDataBound="gvEnquiryProducts_RowDataBound1"><columns>
+<asp:BoundField DataField="ItemCode" HeaderText="Item Code">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="ModelNo" HeaderText="Model No">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="ItemName" HeaderText="Item Name">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="UOM" HeaderText="UOM">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="Quantity" HeaderText="Quantity">
+<ItemStyle HorizontalAlign="Right"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="Specifications" NullDisplayText="-" HeaderText="Specifications">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="Remarks" NullDisplayText="-" HeaderText="Remarks"></asp:BoundField>
+<asp:BoundField DataField="Priority" HeaderText="Priority"></asp:BoundField>
+<asp:BoundField DataField="DocCharges" NullDisplayText="-" HeaderText="Doc Charges"></asp:BoundField>
+<asp:BoundField DataField="DocInFavourOf" NullDisplayText="-" HeaderText="Doc In Favour Of"></asp:BoundField>
+<asp:BoundField DataField="EMDCharges" NullDisplayText="-" HeaderText="EMD Charges"></asp:BoundField>
+<asp:BoundField DataField="EMDInFavourOf" NullDisplayText="-" HeaderText="EMD In Favour Of"></asp:BoundField>
+<asp:BoundField DataField="Room" HeaderText="Room"></asp:BoundField>
+<asp:BoundField DataField="Color" HeaderText="Color"></asp:BoundField>
+</columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td runat="server" style="text-align: right" id="Td1">
+                        </td>
+                        <td style="text-align: left; width: 357px;">
+                        </td>
+                        <td style="text-align: right">
+                        </td>
+                        <td style="text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="profilehead" colspan="4">
+                            quotation details</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left; width: 357px;">
+                        </td>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblQuotationNo" runat="server" Text="Quotation No" Width="88px"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtQuotationNo" runat="server" ReadOnly="True"></asp:TextBox></td>
+                        <td style="text-align: right;">
+                            <asp:Label ID="lblQuotationDate" runat="server" Text="Quotation Date" Width="96px"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtQuotationDate" runat="server" CssClass="datetext" EnableTheming="False"></asp:TextBox>&nbsp;<asp:Image
+                                ID="imgQuotationDate" runat="server" ImageUrl="~/Images/Calendar.png"></asp:Image>
+                            <asp:CustomValidator ID="CustomValidator1" runat="server" ClientValidationFunction="DateCustomValidate"
+                                ControlToValidate="txtQuotationDate" ErrorMessage="Please Enter the Quotation Date in DD/MM/YYYY Format or Check  Year in 2000 to 2099 Range or not"
+                                SetFocusOnError="True">*</asp:CustomValidator>
+                            <cc1:CalendarExtender Format="dd/MM/yyyy" ID="ceQuotationDate" runat="server" PopupButtonID="imgQuotationDate"
+                                TargetControlID="txtQuotationDate">
+                            </cc1:CalendarExtender>
+                            <cc1:MaskedEditExtender ID="MaskedEditInstallDate" runat="server" DisplayMoney="Left"
+                                Mask="99/99/9999" MaskType="Date" TargetControlID="txtQuotationDate" UserDateFormat="MonthDayYear">
+                            </cc1:MaskedEditExtender>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label id="Label34" runat="server" Text="Company "></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:DropDownList id="ddlCompany" runat="server">
+                            </asp:DropDownList>
+                            <asp:Label ID="Label66" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ddlCompany"
+                                ErrorMessage="Select Company Name" InitialValue="0">*</asp:RequiredFieldValidator></td>
+                        <td style="text-align: right"><asp:Label ID="Label64" runat="server" Text="Quotation Type" Width="96px"></asp:Label>
+                        </td>
+                        <td style="text-align: left">
+                            &nbsp;<asp:RadioButton id="rbIndividual" runat="server" GroupName="i"
+                                Text="Discount Structure" AutoPostBack="True" OnCheckedChanged="rbProject_CheckedChanged" Checked="True"></asp:RadioButton>
+                            <asp:RadioButton id="rbProject" runat="server" GroupName="i" OnCheckedChanged="rbProject_CheckedChanged"
+                                Text="Special Rate" AutoPostBack="True">
+                            </asp:RadioButton></td>
+                    </tr>
+                    <tr>
+                        <td class="profilehead" colspan="4" style="text-align: left">
+                            item details</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label id="lblSearch" runat="server" Text="Search:" Width="84px" Visible="False"></asp:Label></td>
+                        <td style="width: 357px; text-align: left">
+                            <asp:TextBox id="txtSearchModel" runat="server" Visible="False"></asp:TextBox><asp:RequiredFieldValidator id="RequiredFieldValidator17" runat="server"
+                                ControlToValidate="txtSearchModel" ErrorMessage="Please Enter ModelNo For Search"
+                                ValidationGroup="Search" Visible="False">*</asp:RequiredFieldValidator><asp:Button id="btnSearchModelNo"
+                                    runat="server" BorderStyle="None" CausesValidation="False" CssClass="gobutton"
+                                    EnableTheming="False" onclick="btnSearchModelNo_Click" Text="Go" ValidationGroup="Search" Visible="False" /></td>
+                        <td style="text-align: right">
+                            <asp:Label id="lblSearchBrand" runat="server" Text="Search By Brand" Visible="False">
+                            </asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:DropDownList id="ddlBrand" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlBrand_SelectedIndexChanged"
+                                Visible="False">
+                            </asp:DropDownList></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; height: 19px;"><asp:Label id="Label65" runat="server" Text="Select Model"></asp:Label></td>
+                        <td style="text-align: left; height: 19px; width: 357px;">
+                            <asp:RadioButton id="rdbAll" runat="server" Text="All" AutoPostBack="True" GroupName="a" OnCheckedChanged="rdbAll_CheckedChanged">
+                            </asp:RadioButton>
+                            <asp:RadioButton id="rdbOnlyfromLead" runat="server" Text="Only from Lead" AutoPostBack="True" GroupName="a" OnCheckedChanged="rdbOnlyfromLead_CheckedChanged" Checked="True">
+                            </asp:RadioButton></td>
+                        <td style="text-align: right; height: 19px;">
+                            <asp:Label id="Label4" runat="server" Text="Model No "></asp:Label></td>
+                        <td style="text-align: left; height: 19px;">
+                            <asp:DropDownList id="ddlModelNo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlModelNo_SelectedIndexChanged">
+                            </asp:DropDownList></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; height: 42px;">
+                            <asp:Label id="lblEssentials" runat="server" Text="Essentials"></asp:Label></td>
+                        <td style="text-align: left; width: 357px; height: 42px;">
+                            <asp:CheckBoxList id="chklitemcolor" runat="server" CellPadding="0" CellSpacing="0"
+                                RepeatColumns="4" RepeatDirection="Horizontal" AutoPostBack="True" OnSelectedIndexChanged="chklitemcolor_SelectedIndexChanged">
+                            </asp:CheckBoxList>
+                            <asp:DropDownList id="ddlEssentials" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEssentials_SelectedIndexChanged">
+                            </asp:DropDownList></td>
+                        <td style="text-align: right; height: 42px;">
+                            <asp:Label ID="lblItemName" runat="server" Text="Model Name" Width="95px"></asp:Label></td>
+                        <td style="text-align: left; height: 42px;">
+                            <asp:TextBox id="txtItemName" runat="server">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label id="Label25" runat="server" Text="Item Category "></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox id="txtItemCategory" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                        <td style="text-align: right">
+                            <asp:Label id="Label58" runat="server" Text="Item SubCategory "></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox id="txtItemSubCategory" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label id="Label59" runat="server" Text="Color "></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox id="txtColor" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
+                            <asp:DropDownList id="ddlColor" runat="server">
+                            </asp:DropDownList></td>
+                        <td style="text-align: right">
+                            <asp:Label id="Label60" runat="server" Text="Brand "></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox id="txtBrand" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblUOM" runat="server" Text="UOM"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtItemUOM" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                        <td style="text-align: right">
+                            <asp:Label id="Label61" runat="server" Text="Room "></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox id="txtRoom" runat="server">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="height: 21px; text-align: right">
+                            <asp:Label ID="Label22" runat="server" Text="Item Specification"></asp:Label></td>
+                        <td colspan="3" style="height: 21px; text-align: left">
+                            <asp:TextBox ID="txtItemSpec" runat="server" CssClass="multilinetext" EnableTheming="False"
+                                ReadOnly="True" TextMode="MultiLine" Width="613px"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px; text-align: right">
+                            <asp:Label ID="lblQuantity" runat="server" Text="Quantity" Width="54px"></asp:Label></td>
+                        <td style="height: 19px; text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtQunatity" runat="server">
+                            </asp:TextBox><asp:Label ID="Label26" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtQunatity"
+                                ErrorMessage="Please Enter the Quantity" ValidationGroup="qi">*</asp:RequiredFieldValidator><cc1:FilteredTextBoxExtender
+                                    ID="ftxteQuantity" runat="server" FilterType="Numbers" TargetControlID="txtQunatity">
+                                </cc1:FilteredTextBoxExtender>
+                        </td>
+                        <td style="height: 19px; text-align: right">
+                            <asp:Label ID="lblRate" runat="server" Text="Rate" Width="30px"></asp:Label></td>
+                        <td style="height: 19px; text-align: left"><asp:DropDownList ID="ddlRate" runat="server" EnableTheming="False" Width="67px" CssClass="dropdownlist" Enabled="False">
+                        </asp:DropDownList><asp:TextBox ID="txtRate" runat="server" Width="88px" CssClass="textboxqt" EnableTheming="False"></asp:TextBox><asp:Label ID="Label27" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtRate"
+                                ErrorMessage="Please Enter the Rate" ValidationGroup="qi">*</asp:RequiredFieldValidator><cc1:FilteredTextBoxExtender
+                                    ID="ftxteRate" runat="server" TargetControlID="txtRate" ValidChars=".0123456789">
+                                </cc1:FilteredTextBoxExtender>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; height: 94px;">
+                            <asp:Label ID="Label33" runat="server" Text="Discount" Width="54px"></asp:Label></td>
+                        <td style="text-align: left; width: 357px; height: 94px;">
+                            <asp:TextBox ID="txtDiscount" runat="server"></asp:TextBox><asp:Label ID="Label55"
+                                runat="server" EnableTheming="False" ForeColor="Red" Text="*">
+                            </asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server"
+                                ControlToValidate="txtDiscount" ErrorMessage="Please Enter the Discount" ValidationGroup="qi">*</asp:RequiredFieldValidator><cc1:FilteredTextBoxExtender
+                                    ID="FilteredTextBoxExtender1" runat="server" TargetControlID="txtDiscount" ValidChars=".0123456789">
+                                </cc1:FilteredTextBoxExtender>
+                        </td>
+                        <td style="text-align: right; height: 94px;">
+                            <asp:Label ID="Label56" runat="server" Text="Special Price"></asp:Label></td>
+                        <td style="text-align: left; height: 94px;">
+                            <asp:TextBox ID="txtSpPrice" runat="server"></asp:TextBox><asp:Label ID="Label57"
+                                runat="server" EnableTheming="False" ForeColor="Red" Text="*">
+                            </asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server"
+                                ControlToValidate="txtSpPrice" ErrorMessage="Please Enter the Special Price"
+                                ValidationGroup="qi">*</asp:RequiredFieldValidator><cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender2"
+                                    runat="server" TargetControlID="txtSpPrice" ValidChars=".0123456789">
+                                </cc1:FilteredTextBoxExtender>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 21px; text-align: right">
+                            <asp:Label id="Label62" runat="server" Text="Item Image "></asp:Label></td>
+                        <td style="height: 21px; text-align: left; width: 357px;">
+                            <asp:Image id="Image1" runat="server" Height="85px" ImageUrl="~/Images/noimage400x300.gif"
+                                Width="140px">
+                            </asp:Image></td>
+                        <td style="height: 21px; text-align: right">
+                            <asp:Label id="Label63" runat="server" Text="Technical Drawings " Width="78px"></asp:Label></td>
+                        <td style="height: 21px; text-align: left">
+                            <asp:Image id="Image2" runat="server" Height="85px" ImageUrl="~/Images/noimage400x300.gif"
+                                Width="140px">
+                            </asp:Image></td>
+                    </tr>
+                    <tr>
+                        <td style="height: 26px; text-align: right">
+                        </td>
+                        <td style="height: 26px; text-align: right; width: 357px;">
+                            <asp:Button ID="btnAdd" runat="server" BackColor="Transparent" BorderStyle="None"
+                                CssClass="loginbutton" EnableTheming="False" Text="Add" OnClick="btnAdd_Click"
+                                ValidationGroup="qi" />
+                        </td>
+                        <td style="height: 26px; text-align: left">
+                            <asp:Button ID="btnItemRefresh" runat="server" BackColor="Transparent" BorderStyle="None"
+                                CssClass="loginbutton" EnableTheming="False" Text="Refresh" OnClick="btnItemRefresh_Click"
+                                CausesValidation="False" /></td>
+                        <td style="height: 26px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 13px; text-align: right">
+                        </td>
+                        <td style="height: 13px; text-align: left; width: 357px;">
+                        </td>
+                        <td style="height: 13px; text-align: right">
+                        </td>
+                        <td style="height: 13px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:GridView ID="gvQuotationItems" runat="server" AutoGenerateColumns="False" OnRowDataBound="gvQuotationItems_RowDataBound"
+                                OnRowDeleting="gvQuotationItems_RowDeleting" OnRowEditing="gvQuotationItems_RowEditing" ShowFooter="True">
+                                <footerstyle backcolor="#1AA8BE" />
+                                <Columns>
+<asp:CommandField ShowEditButton="True"></asp:CommandField>
+<asp:CommandField ShowDeleteButton="True"></asp:CommandField>
+<asp:BoundField DataField="ItemCode" HeaderText="Item Code">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="ModelNo" HeaderText="Model No"></asp:BoundField>
+<asp:BoundField DataField="ItemName" HeaderText="Item Name">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="UOM" HeaderText="UOM">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="Quantity" HeaderText="Quantity">
+<ItemStyle HorizontalAlign="Right"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="Currency" HeaderText="Currency"></asp:BoundField>
+<asp:BoundField DataField="Rate" HeaderText="Rate">
+<ItemStyle HorizontalAlign="Right"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField HeaderText="Amount">
+<ItemStyle HorizontalAlign="Right"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="Discount" NullDisplayText="-" HeaderText="Disc %"></asp:BoundField>
+<asp:BoundField DataField="SpPrice" NullDisplayText="-" HeaderText="Special Price">
+<ItemStyle HorizontalAlign="Right"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Right"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="Room" HeaderText="Room"></asp:BoundField>
+<asp:BoundField DataField="CurrencyId" HeaderText="Currency Id"></asp:BoundField>
+<asp:BoundField DataField="Color" HeaderText="Color"></asp:BoundField>
+<asp:BoundField DataField="ColorId" HeaderText="ColorId"></asp:BoundField>
+</Columns>
+                            </asp:GridView><asp:GridView id="gvSubItems" runat="server" AutoGenerateColumns="False" OnRowDeleting="gvSubItems_RowDeleting" OnRowDataBound="gvSubItems_RowDataBound"><columns>
+<asp:CommandField ShowDeleteButton="True"></asp:CommandField>
+<asp:BoundField DataField="ITEM_CODE" HeaderText="Item Code"></asp:BoundField>
+<asp:BoundField DataField="SUBITEM_CODE" HeaderText="SubItem Code"></asp:BoundField>
+</columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="profilehead" colspan="4" id="tdEMDHeader" runat="server" visible="false">
+                            EMD Details</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left; width: 357px;">
+                        </td>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right" id="tdDDNolbl" runat="server" visible="false">
+                            <asp:Label ID="Label46" runat="server" Text="DD No"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;" id="tdDDNoField" runat="server" visible="false">
+                            <asp:TextBox ID="txtDDNo" runat="server">
+                            </asp:TextBox><asp:Label ID="Label41" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*"> </asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server"
+                                    ControlToValidate="txtDDNo" ErrorMessage="Please Enter the DD No">*</asp:RequiredFieldValidator>
+                            <cc1:FilteredTextBoxExtender ID="ftxteDDNo" runat="server" TargetControlID="txtDDNo"
+                                ValidChars=".0123456789">
+                            </cc1:FilteredTextBoxExtender>
+                        </td>
+                        <td style="text-align: right" id="tdDDDatelbl" runat="server" visible="false">
+                            <asp:Label ID="Label47" runat="server" Text="DD Date"></asp:Label></td>
+                        <td style="text-align: left" id="tdDDDateField" runat="server" visible="false">
+                            <asp:TextBox ID="txtDDDate" runat="server" CssClass="datetext" EnableTheming="False">
+                            </asp:TextBox><asp:Image ID="imgDDDate" runat="server" ImageUrl="~/Images/Calendar.png">
+                            </asp:Image><asp:Label ID="Label42" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*"> </asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server"
+                                    ControlToValidate="txtDDDate" ErrorMessage="Please Select  the DD Date">*</asp:RequiredFieldValidator><asp:CustomValidator
+                                        ID="CustomValidator2" runat="server" ClientValidationFunction="DateCustomValidate"
+                                        ControlToValidate="txtDDDate" ErrorMessage="Please Enter the DD Date in DD/MM/YYYY Format or Check  Year in 2000 to 2099 Range or not"
+                                        SetFocusOnError="True">*</asp:CustomValidator><cc1:CalendarExtender Format="dd/MM/yyyy"
+                                            ID="ceDDDate" runat="server" PopupButtonID="imgDDDate" TargetControlID="txtDDDate">
+                                        </cc1:CalendarExtender>
+                            <cc1:MaskedEditExtender ID="meeDDDate" runat="server" DisplayMoney="Left" Mask="99/99/9999"
+                                MaskType="Date" TargetControlID="txtDDDate" UserDateFormat="MonthDayYear">
+                            </cc1:MaskedEditExtender>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px; text-align: right" id="tdBankNamelbl" runat="server" visible="false">
+                            <asp:Label ID="Label48" runat="server" Text="Bank Name"></asp:Label></td>
+                        <td colspan="3" style="height: 19px; text-align: left" id="tdBankNameField" runat="server"
+                            visible="false">
+                            &nbsp;<asp:TextBox ID="txtBankName" runat="server" EnableTheming="False" Width="521px"
+                                CssClass="textbox"></asp:TextBox><asp:Label ID="Label51" runat="server" EnableTheming="False"
+                                    ForeColor="Red" Text="*"> </asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator9"
+                                        runat="server" ControlToValidate="txtBankName" ErrorMessage="Please Enter the Bank Name">*</asp:RequiredFieldValidator></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right" id="tdEMDChargeslbl" runat="server" visible="false">
+                            <asp:Label ID="lbl" runat="server" Text="EMD Charges"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;" id="tdEMDChargesField" runat="server"
+                            visible="false">
+                            <asp:TextBox ID="txtEMDCharges" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                        <td style="text-align: right" id="tdInfavourOflbl" runat="server" visible="false">
+                            <asp:Label ID="Label50" runat="server" Text="In Favour Of"></asp:Label></td>
+                        <td style="text-align: left" id="tdInfavourofField" runat="server"
+                            visible="false">
+                            <asp:TextBox ID="txtInFavourofEMD" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; height: 19px;">
+                        </td>
+                        <td style="text-align: left; width: 357px; height: 19px;">
+                        </td>
+                        <td style="text-align: right; height: 19px;">
+                        </td>
+                        <td style="text-align: left; height: 19px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="profilehead" colspan="4" style="height: 19px; text-align: left">
+                            terms &amp; conditions</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left; width: 357px;">
+                        </td>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">
+                            <asp:Label ID="Label5" runat="server" Text="Delivery"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtDelivery" runat="server" TextMode="MultiLine"></asp:TextBox><asp:Label ID="Label28"
+                                runat="server" EnableTheming="False" ForeColor="Red" Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="rfvDelivery" runat="server" ControlToValidate="txtDelivery"
+                                ErrorMessage="Please Enter the Delivery">*</asp:RequiredFieldValidator>&nbsp;
+                        </td>
+                        <td style="text-align: right;">
+                            <asp:Label ID="Label18" runat="server" Text="Payment Terms"></asp:Label></td>
+                        <td style="text-align: left;">
+                            <asp:TextBox ID="txtPaymentTerms" runat="server" TextMode="MultiLine"></asp:TextBox><asp:Label ID="Label35"
+                                runat="server" EnableTheming="False" ForeColor="Red" Text="*">
+                            </asp:Label><asp:RequiredFieldValidator ID="rfvPayTerms" runat="server" ControlToValidate="txtPaymentTerms"
+                                ErrorMessage="Please Enter the Payment Terms">*</asp:RequiredFieldValidator></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="Label19" runat="server" Text="packing charges"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtPackingCharges" runat="server"></asp:TextBox><asp:Label ID="Label29"
+                                runat="server" EnableTheming="False" ForeColor="Red" Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="rfvPackingChrgs" runat="server" ControlToValidate="txtPackingCharges"
+                                ErrorMessage="Please Enter the Packing Charges">*</asp:RequiredFieldValidator></td>
+                        <td style="text-align: right">
+                            <asp:Label ID="Label10" runat="server" Text="Guarantee"></asp:Label>
+                        </td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtGuarantee" runat="server"></asp:TextBox><asp:Label ID="Label31"
+                                runat="server" EnableTheming="False" ForeColor="Red" Text="*">
+                            </asp:Label><asp:RequiredFieldValidator ID="rfvGuarantee" runat="server" ControlToValidate="txtGuarantee"
+                                ErrorMessage="Please Enter the Guarantee">*</asp:RequiredFieldValidator></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            </td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:RadioButton ID="rbVAT" runat="server" Checked="True" GroupName="vatcst" Text="VAT" /><asp:RadioButton
+                                ID="rbCST" runat="server" GroupName="vatcst" Text="C.S. Tax" /><asp:RadioButton
+                                ID="rbincluding" runat="server" GroupName="vatcst" Text="Including" /></td>
+                        <td align="right">
+                            <asp:Label ID="Label13" runat="server" Text="Insurance"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtInsurance" runat="server"></asp:TextBox><asp:Label ID="Label32"
+                                runat="server" EnableTheming="False" ForeColor="Red" Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="rfvInsurance" runat="server" ControlToValidate="txtInsurance"
+                                ErrorMessage="Please Enter the Insurance">*</asp:RequiredFieldValidator></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblVATCST" runat="server" Text="VAT"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:TextBox ID="txtVAT" runat="server">
+                            </asp:TextBox><asp:Label ID="lblPercent" runat="server" EnableTheming="True" Text="%"></asp:Label>
+                            <cc1:FilteredTextBoxExtender ID="ftxteVAT" runat="server" TargetControlID="txtVAT"
+                                ValidChars=".0123456789">
+                            </cc1:FilteredTextBoxExtender>
+                        </td>
+                        <td style="text-align: right">
+                            <asp:Label ID="Label15" runat="server" Text="validity"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtValidity" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="Label9" runat="server" Text="Despatch Mode"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:DropDownList ID="ddlDespatchMode" runat="server">
+                            </asp:DropDownList><asp:Label ID="Label39" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*">
+                            </asp:Label><asp:RequiredFieldValidator ID="rfvDespatchMode" runat="server" ControlToValidate="ddlDespatchMode"
+                                ErrorMessage="Please Select the Despatch Mode" InitialValue="0">*</asp:RequiredFieldValidator>&nbsp;</td>
+                        <td style="text-align: right">
+                            <asp:Label ID="Label11" runat="server" Text="Transportation Charges"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtTransCharges" runat="server" TextMode="MultiLine"></asp:TextBox>&nbsp;<asp:Label ID="Label40"
+                                runat="server" EnableTheming="False" ForeColor="Red" Text="*">
+                            </asp:Label><asp:RequiredFieldValidator ID="rfvTransCharges" runat="server" ControlToValidate="txtTransCharges"
+                                ErrorMessage="Please Enter the Transportation Charges">*</asp:RequiredFieldValidator></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="Label6" runat="server" Text="Other Details"></asp:Label></td>
+                        <td style="text-align: left" colspan="3">
+                            <asp:TextBox ID="txtOtherSpecs" runat="server" CssClass="multilinetext" EnableTheming="False"
+                                TextMode="MultiLine" Width="613px"></asp:TextBox>&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblFOB" runat="server" Text="FOB"></asp:Label></td>
+                        <td style="width: 357px; text-align: left">
+                            <asp:TextBox ID="txtFOB" runat="server">
+                            </asp:TextBox><cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" TargetControlID="txtFOB"
+                                ValidChars=".0123456789">
+                            </cc1:FilteredTextBoxExtender>
+                        </td>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblCIF" runat="server" Text="CIF"></asp:Label></td>
+                        <td style="text-align: left">
+                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" TargetControlID="txtCIF"
+                                ValidChars=".0123456789">
+                            </cc1:FilteredTextBoxExtender>
+                            <asp:TextBox ID="txtCIF" runat="server">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: left" class="profilehead">
+                            Follow Up Details</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left; width: 357px;">
+                        </td>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblResponsiblePerson" runat="server" Text="Responsible Person" Width="121px"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:DropDownList ID="ddlResponsiblePerson" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlResponsiblePerson_SelectedIndexChanged">
+                            </asp:DropDownList><asp:Label ID="Label43" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="rfvResPerson" runat="server" ControlToValidate="ddlResponsiblePerson"
+                                ErrorMessage="Please Select the Responsible Person" InitialValue="0">*</asp:RequiredFieldValidator></td>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblFollowupEmail" runat="server" Text="Assigned EmailId"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:TextBox ID="txtFollowupEmail" runat="server" ReadOnly="True"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; height: 22px;">
+                            <asp:Label ID="lblSalesPerson" runat="server" Text="Sales Person"></asp:Label></td>
+                        <td style="text-align: left;">
+                            <asp:DropDownList ID="ddlSalesPerson" runat="server">
+                            </asp:DropDownList><asp:Label ID="Label44" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*">
+                            </asp:Label>
+                            <asp:RequiredFieldValidator ID="rfvSalesPerson" runat="server" ControlToValidate="ddlSalesPerson"
+                                ErrorMessage="Please Select the Sales Person" InitialValue="0">*</asp:RequiredFieldValidator></td>
+                        <td style="text-align: right; height: 22px;">
+                            <asp:Label ID="Label49" runat="server" Text="Assigned Phone No" Width="121px"></asp:Label></td>
+                        <td style="text-align: left; height: 22px;">
+                            <asp:TextBox ID="txtFollowupPhoneNo" runat="server" ReadOnly="True">
+                            </asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                        </td>
+                        <td style="text-align: left; width: 357px;">
+                        </td>
+                        <td style="text-align: right">
+                        </td>
+                        <td style="text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: left" class="profilehead">
+                            other details</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                        </td>
+                        <td style="text-align: left; width: 357px;">
+                        </td>
+                        <td style="text-align: right">
+                        </td>
+                        <td style="text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                        </td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:CheckBox ID="chkIsExpectedOrder" runat="server" Text="Expected Order"></asp:CheckBox></td>
+                        <td style="text-align: right">
+                        </td>
+                        <td style="text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="profilehead" colspan="4" style="text-align: left">
+                            Reference Details</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left; width: 357px;">
+                        </td>
+                        <td style="height: 19px; text-align: right">
+                        </td>
+                        <td style="height: 19px; text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblPreparedBy" runat="server" Text="Prepared By"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:DropDownList ID="ddlPreparedBy" runat="server" Enabled="False">
+                            </asp:DropDownList></td>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblApprovedBy" runat="server" Text="Approved By"></asp:Label></td>
+                        <td style="text-align: left">
+                            <asp:DropDownList ID="ddlApprovedBy" runat="server" Enabled="False">
+                            </asp:DropDownList></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Label ID="lblCheckedBy" runat="server" Text="Checked By" Visible="False"></asp:Label></td>
+                        <td style="text-align: left; width: 357px;">
+                            <asp:DropDownList ID="ddlCheckedBy" runat="server" Enabled="False" Visible="False">
+                            </asp:DropDownList></td>
+                        <td style="text-align: right">
+                        </td>
+                        <td style="text-align: left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 19px">
+                        </td>
+                        <td style="height: 19px; width: 357px;">
+                        </td>
+                        <td style="height: 19px">
+                        </td>
+                        <td style="height: 19px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="height: 49px">
+                            <table id="tblButtons" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                            <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click"
+                                CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnFollowUp" runat="server" Text="Follow Up" CausesValidation="False"
+                                            OnClick="btnFollowUp_Click" /></td>
+                                    <td style="height: 24px">
+                                    </td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnRevise" runat="server" Text="Revise" OnClick="btnRevise_Click"
+                                            CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                            <asp:Button id="btnApprove" runat="server" OnClick="Button1_Click" Text="Approve" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnRegret" runat="server" Text="Obsolete" OnClick="btnRegret_Click" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnSalesOrder" runat="server" Text="Purchase Order" OnClick="btnSalesOrder_Click"
+                                            CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnRefresh" runat="server" Text="Refresh" OnClick="btnRefresh_Click"
+                                            CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnSend" runat="server" Text="Send E-Mail" OnClick="btnSend_Click"
+                                            CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnPrint" runat="server" Text="Print" OnClick="btnPrint_Click" CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnPrintTB" runat="server" Text="Print T.B." OnClick="btnPrint_Click" CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnPrintCB" runat="server" Text="Print C.B." OnClick="btnPrint_Click" CausesValidation="False" /></td>
+                                    <td style="height: 24px">
+                                        <asp:Button ID="btnClose" runat="server" Text="Close" OnClick="btnClose_Click" CausesValidation="False" /></td>
+                                </tr>
+                            </table>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <table id="tblPrint" runat="server" border="0" cellpadding="0" cellspacing="0" visible="false" width="100%">
+                                <tr>
+                                    <td colspan="3">
+                                        <table>
+                                            <tr>
+                                                <td class="profilehead" colspan="4" style="text-align: left">
+                                        Special Price With Model Number 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height: 22px">
+                                        <asp:RadioButton id="rdbProject" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbProject_CheckedChanged" Text="Project Price" Width="102px">
+                                        </asp:RadioButton></td>
+                                                <td style="height: 22px">
+                                        <asp:RadioButton id="rdbPrDrawings" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbPrDrawings_CheckedChanged" Text="Project Price With Drawings">
+                                        </asp:RadioButton></td>
+                                                <td style="height: 22px">
+                                        <asp:RadioButton id="rdbSpecialPrice" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="RadioButton3_CheckedChanged" Text="Special Price">
+                                        </asp:RadioButton></td>
+                                                <td style="height: 22px">
+                                        <asp:RadioButton id="rdbSpWithDrawings" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbSpWithDrawings_CheckedChanged" Text="Special Price With Drawings">
+                                        </asp:RadioButton></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="profilehead" colspan="4" style="text-align: left">
+                                                    With Out Model Number</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                        <asp:RadioButton id="rdbProjectpriceMn" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbProjectpriceMn_CheckedChanged" Text="Project Price" Width="102px">
+                                        </asp:RadioButton></td>
+                                                <td>
+                                        <asp:RadioButton id="rdbProjectdrawingsandmn" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbProjectdrawingsandmn_CheckedChanged" Text="Project Price With Drawings">
+                                        </asp:RadioButton></td>
+                                                <td>
+                                                    <asp:RadioButton id="rdbspecialpricemn" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbspecialpricemn_CheckedChanged" Text="Special Price">
+                                    </asp:RadioButton></td>
+                                                <td>
+                                                    <asp:RadioButton id="rdbspwdmn" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbspwdmn_CheckedChanged" Text="Special Price With Drawings">
+                                    </asp:RadioButton></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table id="tblDiscountSelect" runat="server" visible="false">
+                                <tr>
+                                    <td class="profilehead" colspan="4">
+                                        Discount Structure With Model Number </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:RadioButton id="rdbDiscountPrice" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbDiscountPrice_CheckedChanged" Text="Discount Price">
+                                        </asp:RadioButton></td>
+                                    <td>
+                                        <asp:RadioButton id="rdbDiscountWithoutDrawings" runat="server" AutoPostBack="True"
+                                            GroupName="a" OnCheckedChanged="rdbDiscountWithoutDrawings_CheckedChanged" Text="Without Images">
+                                        </asp:RadioButton></td>
+                                    <td style="text-align: left">
+                                        <asp:RadioButton id="rdbWithoutRatesDiscount" runat="server" AutoPostBack="True"
+                                            GroupName="a" OnCheckedChanged="rdbWithoutRatesDiscount_CheckedChanged" Text="Without Rates" Width="118px">
+                                        </asp:RadioButton></td>
+                                    <td style="text-align: left">
+                                        <asp:RadioButton id="rdbWithoutImagesDr" runat="server" AutoPostBack="True"
+                                            GroupName="a" OnCheckedChanged="rdbWithoutImagesDr_CheckedChanged" Text="With Drawings">
+                                        </asp:RadioButton>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="profilehead" colspan="4">
+                                        Without Model No </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:RadioButton id="rdbDiscountPriceNOModelno" runat="server" AutoPostBack="True" GroupName="a"
+                                            OnCheckedChanged="rdbDiscountPriceNOModelno_CheckedChanged" Text="Discount Price">
+                                        </asp:RadioButton></td>
+                                    <td>
+                                        <asp:RadioButton id="rdbWithoutModelnoandDrwings" runat="server" AutoPostBack="True"
+                                            GroupName="a" OnCheckedChanged="rdbWithoutModelnoandDrwings_CheckedChanged" Text="Without Images">
+                                        </asp:RadioButton></td>
+                                    <td style="text-align: left">
+                                        <asp:RadioButton id="rdbWithoutratesandMn" runat="server" AutoPostBack="True"
+                                            GroupName="a" OnCheckedChanged="rdbWithoutratesandMn_CheckedChanged" Text="Without Rates">
+                                        </asp:RadioButton></td>
+                                    <td style="text-align: left">
+                                        <asp:RadioButton id="rdbWithoutDrawingsmn" runat="server" AutoPostBack="True"
+                                            GroupName="a" OnCheckedChanged="rdbWithoutDrawingsmn_CheckedChanged" Text="With Drawings">
+                                        </asp:RadioButton></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <table id="tblFollowUp" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                visible="false" width="100%">
+                                <tr>
+                                    <td class="profilehead" colspan="2">
+                                        follow up details</td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 19px; text-align: right">
+                                    </td>
+                                    <td style="height: 19px; text-align: left">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right">
+                                        <asp:Label ID="Label24" runat="server" Text="Name" Width="76px"></asp:Label></td>
+                                    <td style="text-align: left">
+                                        <asp:TextBox ID="txtFollowUpName" runat="server" ReadOnly="True"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right">
+                                        <asp:Label ID="Label23" runat="server" Text="Follow Up Description" Width="150px"></asp:Label></td>
+                                    <td style="text-align: left">
+                                        <asp:TextBox ID="txtFollowUpDesc" runat="server" CssClass="multilinetext" EnableTheming="False"
+                                            Height="40px" TextMode="MultiLine" Width="560px"></asp:TextBox></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 22px; text-align: right">
+                                        <asp:Label ID="lblTechnicalDiscussions" runat="server" Text="Technical Discussions"
+                                            Width="146px"></asp:Label></td>
+                                    <td style="height: 22px; text-align: left">
+                                        <asp:DropDownList ID="ddlTechnicalDiscussions" runat="server" AutoPostBack="True">
+                                            <asp:ListItem>--</asp:ListItem>
+                                            <asp:ListItem>Open</asp:ListItem>
+                                            <asp:ListItem>Closed</asp:ListItem>
+                                        </asp:DropDownList><asp:Label ID="Label52" runat="server" EnableTheming="False" ForeColor="Red"
+                                            Text="*"></asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server"
+                                                ControlToValidate="ddlTechnicalDiscussions" ErrorMessage="Please Select Technical Discussions"
+                                                InitialValue="--" ValidationGroup="follow">*</asp:RequiredFieldValidator></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 22px; text-align: right">
+                                        <asp:Label ID="lblCommercialNegociations" runat="server" Text="Commercial Negotiations"
+                                            Width="173px"></asp:Label></td>
+                                    <td style="height: 22px; text-align: left">
+                                        <asp:DropDownList ID="ddlCommercialNegociations" runat="server" AutoPostBack="True">
+                                            <asp:ListItem>--</asp:ListItem>
+                                            <asp:ListItem>Open</asp:ListItem>
+                                            <asp:ListItem>Closed</asp:ListItem>
+                                        </asp:DropDownList><asp:Label ID="Label53" runat="server" EnableTheming="False" ForeColor="Red"
+                                            Text="*"></asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server"
+                                                ControlToValidate="ddlCommercialNegociations" ErrorMessage="Please Select Commerical Negotiations"
+                                                InitialValue="--" ValidationGroup="follow">*</asp:RequiredFieldValidator></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right">
+                                        <asp:Label ID="lblCompetatorsExistance" runat="server" Text="Competators Existance"
+                                            Width="155px"></asp:Label></td>
+                                    <td style="text-align: left">
+                                        <asp:DropDownList ID="ddlCompetatorsExistance" runat="server" OnSelectedIndexChanged="ddlCompetatorsExistance_SelectedIndexChanged"
+                                            AutoPostBack="True">
+                                            <asp:ListItem>--</asp:ListItem>
+                                            <asp:ListItem>Exist</asp:ListItem>
+                                            <asp:ListItem>Does Not Exist</asp:ListItem>
+                                        </asp:DropDownList><asp:Label ID="Label54" runat="server" EnableTheming="False" ForeColor="Red"
+                                            Text="*"></asp:Label></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right" id="tdRemarkslbl" runat="server" visible="false">
+                                        <asp:Label ID="lblRemarks" runat="server" Text="Remarks" Width="62px"></asp:Label></td>
+                                    <td style="text-align: left" id="tdRemarksField" runat="server" visible="false">
+                                        <asp:TextBox ID="txtRemarks" runat="server" CssClass="multilinetext" EnableTheming="False"
+                                            Height="40px" TextMode="MultiLine" Width="560px"></asp:TextBox><asp:Label ID="lblRemarksMandatory"
+                                                runat="server" EnableTheming="False" ForeColor="Red" Text="*"></asp:Label><asp:RequiredFieldValidator
+                                                    ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtRemarks" ErrorMessage="Please Enter Remarks"
+                                                    ValidationGroup="follow">*</asp:RequiredFieldValidator></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; height: 35px;" id="tdOrderExpDatelbl" runat="server"
+                                        visible="false">
+                                        <asp:Label ID="lblExpectedFwpDate" runat="server" Text="Order Expected Date" Width="137px"></asp:Label></td>
+                                    <td style="text-align: left; height: 35px;" id="tdOrderExpDateField" runat="server"
+                                        visible="false">
+                                        <asp:TextBox ID="txtExpectedFwpDate" runat="server" CssClass="datetext" EnableTheming="False"></asp:TextBox>
+                                        <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Calendar.png">
+                                        </asp:Image>
+                                        <asp:Label
+                                            ID="lblExpectedDateMandatory" runat="server" EnableTheming="False" ForeColor="Red"
+                                            Text="*"></asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server"
+                                                ControlToValidate="txtExpectedFwpDate" ErrorMessage="Please Enter Order Expected Date"
+                                                ValidationGroup="follow">*</asp:RequiredFieldValidator></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; height: 21px;">
+                                    </td>
+                                    <td style="height: 21px"><cc1:CalendarExtender Format="dd/MM/yyyy"
+                                            ID="CalendarExtender1" runat="server" PopupButtonID="Image3" TargetControlID="txtExpectedFwpDate">
+                                    </cc1:CalendarExtender>
+                                        <cc1:MaskedEditExtender ID="MaskedEditExtender1" runat="server" DisplayMoney="Left" Mask="99/99/9999"
+                                MaskType="Date" TargetControlID="txtExpectedFwpDate" UserDateFormat="MonthDayYear">
+                                        </cc1:MaskedEditExtender>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <table id="Table2">
+                                            <tr>
+                                                <td>
+                                                    <asp:Button ID="btnFollowUpSave" runat="server" Text="Save" OnClick="btnFollowUpSave_Click"
+                                                        ValidationGroup="follow" /></td>
+                                                <td>
+                                                    <asp:Button ID="btnFollowUpRefresh" runat="server" Text="Refresh" OnClick="btnFollowUpRefresh_Click"
+                                                        CausesValidation="False" /></td>
+                                                <td>
+                                                    <asp:Button ID="btnFollowUpHistory" runat="server" Text="History" OnClick="btnFollowUpHistory_Click"
+                                                        CausesValidation="False" /></td>
+                                                <td>
+                                                    <asp:Button ID="btnFollowUpClose" runat="server" Text="Close" OnClick="btnFollowUpClose_Click"
+                                                        CausesValidation="False" /></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="height: 9px">
+                                        <table id="tblFollowUpHistory" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                            width="100%" visible="false">
+                                            <tr>
+                                                <td class="profilehead" colspan="3">
+                                                    follow up history</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:GridView ID="gvFollowUp" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                                                        DataSourceID="sdsFollowUp" OnRowDataBound="gvFollowUp_RowDataBound">
+                                                        <Columns>
+<asp:BoundField HtmlEncode="False" DataFormatString="{0:dd/MM/yyyy}" DataField="FU_DATE" SortExpression="FU_DATE" HeaderText="Date"></asp:BoundField>
+<asp:BoundField DataField="EMP_FIRST_NAME" SortExpression="EMP_FIRST_NAME" HeaderText="Name">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="FU_DESC" SortExpression="FU_DESC" HeaderText="Description">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+
+<HeaderStyle HorizontalAlign="Left"></HeaderStyle>
+</asp:BoundField>
+<asp:BoundField DataField="FU_TECH_DISCUSSIONS" HeaderText="Tech Diss.">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+</asp:BoundField>
+<asp:BoundField DataField="FU_COMM_NEGOS" HeaderText="Comm. Negos">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+</asp:BoundField>
+<asp:BoundField DataField="FU_COMP_EXISTANCE" HeaderText="Comp. Existance">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+</asp:BoundField>
+<asp:BoundField DataField="FU_REMARKS" SortExpression="FU_REMARKS" HeaderText="Remarks">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+</asp:BoundField>
+<asp:BoundField HtmlEncode="False" DataFormatString="{0:dd/MM/yyyy}" DataField="FU_FWP_EXPEXTED_DATE" SortExpression="FU_FWP_EXPEXTED_DATE" HeaderText="Expected Date">
+<ItemStyle HorizontalAlign="Left"></ItemStyle>
+</asp:BoundField>
+</Columns>
+                                                        <SelectedRowStyle BackColor="LightSteelBlue" />
+                                                    </asp:GridView>
+                                                    <asp:Label ID="lblQuotIdHiddenForFollowUp" runat="server" Visible="False"></asp:Label>
+                                                    <asp:SqlDataSource ID="sdsFollowUp" runat="server" ConnectionString="<%$ ConnectionStrings:DBCon %>"
+                                                        SelectCommand="SELECT   [YANTRA_QUOT_FOLLOWUP_DET] .[FU_DATE],&#13;&#10;[YANTRA_QUOT_FOLLOWUP_DET] .[FU_DESC],&#13;&#10;[YANTRA_QUOT_FOLLOWUP_DET] .[FU_TECH_DISCUSSIONS],&#13;&#10;[YANTRA_QUOT_FOLLOWUP_DET] .[FU_COMM_NEGOS],&#13;&#10;[YANTRA_QUOT_FOLLOWUP_DET] .[FU_COMP_EXISTANCE],&#13;&#10;[YANTRA_QUOT_FOLLOWUP_DET] .[FU_REMARKS],&#13;&#10;[YANTRA_QUOT_FOLLOWUP_DET] .[FU_FWP_EXPEXTED_DATE],&#13;&#10;[YANTRA_EMPLOYEE_MAST].[EMP_FIRST_NAME] &#13;&#10;FROM [YANTRA_EMPLOYEE_MAST],[YANTRA_QUOT_FOLLOWUP_DET] &#13;&#10;WHERE [YANTRA_EMPLOYEE_MAST].EMP_ID=[YANTRA_QUOT_FOLLOWUP_DET] .EMP_ID&#13;&#10; AND [YANTRA_QUOT_FOLLOWUP_DET] .QUOT_ID=@QUOT_ID &#13;&#10;ORDER BY [YANTRA_QUOT_FOLLOWUP_DET] .[FU_DATE] DESC">
+                                                        <SelectParameters>
+<asp:ControlParameter PropertyName="Text" DefaultValue="0" Name="QUOT_ID" ControlID="lblQuotIdHiddenForFollowUp"></asp:ControlParameter>
+</SelectParameters>
+                                                    </asp:SqlDataSource>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right">
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:Panel ID="Panel1" runat="server">
+                                <table border="0" cellpadding="0" cellspacing="0" style="font-size: 8pt; font-family: Verdana;
+                                    background-image: url(Images/ConfirmBox2.PNG); background-repeat: repeat;">
+                                    <tr>
+                                        <td style="text-align: left; height: 126px;" background="../../Images/ConfirmBox1.PNG"
+                                            width="55">
+                                        </td>
+                                        <td style="height: 126px;" background="../../Images/ConfirmBox2.PNG" align="center"
+                                            valign="top">
+                                            <table>
+                                                <tr>
+                                                    <td colspan="3" rowspan="1" style="height: 43px; text-align: left">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3" style="text-align: left">
+                                                        <asp:Label ID="lblMessage" runat="server">After Approve the Quotation Do You Want To Send Quotation To Customer ?</asp:Label></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3" style="height: 17px; text-align: left"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3" style="text-align: center">
+                                                        <asp:Button ID="btnConfirmYes" runat="server" Font-Names="Verdana" Font-Size="8pt"
+                                                            Height="23px" Text="Yes" Width="80px" EnableTheming="False" OnClick="btnConfirmYes_Click"
+                                                            CausesValidation="False" />
+                                                        &nbsp;
+                                                        <asp:Button ID="btnConfirmNo" runat="server" Font-Names="Verdana" Font-Size="8pt"
+                                                            Height="23px" Text="No" Width="80px" EnableTheming="False" CausesValidation="False" /></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="height: 126px" background="../../Images/ConfirmBox3.PNG" width="27">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
+                            <cc1:ModalPopupExtender ID="ModalPopupExtender" runat="server" PopupControlID="Panel1"
+                                TargetControlID="btnForApproveHidden" RepositionMode="None">
+                            </cc1:ModalPopupExtender>
+                            <asp:Button ID="btnForApproveHidden" runat="server" Text="for approve hidden" CausesValidation="False" />
+                        </td>
+                    </tr>
+                </table>
+                <table id="tblHiddenFields" runat="server" visible="false">
+                    <tr>
+                        <td>
+                            <asp:Button ID="btnNew" runat="server" Text="New" OnClick="btnNew_Click" CausesValidation="False"
+                                Visible="False" /></td>
+                        <td>
+                            <asp:Label ID="Label16" runat="server" Text="Jurisdiction" Visible="False"></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="txtJurisdiction" runat="server" Visible="False"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <asp:Label ID="Label14" runat="server" Text="Erection/Commissioning" Visible="False"></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="txtErrection" runat="server" Visible="False"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            </td>
+                        <td>
+                            <asp:Label ID="Label17" runat="server" Text="Inspection" Visible="False"></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="txtInspection" runat="server" Visible="False"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            </td>
+                        <td>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <asp:Label ID="Label8" runat="server" Text="C.S. Tax" Visible="False"></asp:Label></td>
+                        <td>
+                            <asp:TextBox ID="txtCST" runat="server" Visible="False"></asp:TextBox><asp:Label
+                                ID="Label30" runat="server" EnableTheming="False" Text="%" Visible="False"></asp:Label><cc1:FilteredTextBoxExtender
+                                    ID="ftxteCST" runat="server" TargetControlID="txtCST" ValidChars=".0123456789">
+                                </cc1:FilteredTextBoxExtender>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
+                    ShowSummary="False"></asp:ValidationSummary>
+                <asp:ValidationSummary ID="ValidationSummary2" runat="server" ValidationGroup="qi"
+                    ShowMessageBox="True" ShowSummary="False"></asp:ValidationSummary>
+                <asp:ValidationSummary ID="ValidationSummary3" runat="server" ShowMessageBox="True"
+                    ShowSummary="False" ValidationGroup="follow"></asp:ValidationSummary><br />
+                            <asp:Label ID="Label3" runat="server" Text="Currency Type" Visible="False"></asp:Label><asp:DropDownList ID="ddlCurrencyType" runat="server" AutoPostBack="True" Visible="False">
+                            </asp:DropDownList><asp:Label ID="Label37" runat="server" EnableTheming="False" ForeColor="Red"
+                                Text="*" Visible="False"></asp:Label><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="ddlCurrencyType"
+                                ErrorMessage="Please Select Currency Type" InitialValue="0" Visible="False">*</asp:RequiredFieldValidator><br />
+                            <asp:Label ID="Label7" runat="server" Text="Excise Duty" Visible="False"></asp:Label><asp:TextBox ID="txtExciseDuty" runat="server" Visible="False"></asp:TextBox><asp:Label ID="Label38"
+                                runat="server" EnableTheming="False" Text="%" Visible="False"></asp:Label><cc1:FilteredTextBoxExtender
+                                    ID="ftxteExciseDuty" runat="server" TargetControlID="txtExciseDuty" ValidChars=".0123456789" Enabled="True">
+                                </cc1:FilteredTextBoxExtender>
+                                        <asp:Button ID="btnApproves" runat="server" Text="Approves" OnClick="btnApprove_Click" Visible="False" />
+                        <asp:SqlDataSource
+                                        id="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DBCon %>"
+                                        SelectCommand="SP_MODELNO_SEARCH_SELECT" SelectCommandType="StoredProcedure"><selectparameters>
+<asp:Parameter Type="Int64" DefaultValue="0" Name="BranbId"></asp:Parameter>
+<asp:ControlParameter PropertyName="Text" Type="String" DefaultValue="0" Name="SearchValue" ControlID="txtSearchModel"></asp:ControlParameter>
+</selectparameters>
+                                    </asp:SqlDataSource>
+                        <cc1:FilteredTextBoxExtender
+                                    ID="ftxtePackingCharges" runat="server" TargetControlID="txtPackingCharges" ValidChars=".0123456789">
+                                </cc1:FilteredTextBoxExtender>
+            
+</asp:Content>
+
+
+ 

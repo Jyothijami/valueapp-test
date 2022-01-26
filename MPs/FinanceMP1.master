@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/BATMP1.master" AutoEventWireup="true" CodeFile="FinanceMP1.master.cs" Inherits="MPs_FinanceMP1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="toplinksCPH" runat="Server">
+     <li>
+        <a href="/Modules/Inventory/Invoice.aspx" title="Settings">Finance</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/Vouchers/vouchers.aspx">Vouchers</a></li>
+            <li><a href="/Modules/Inventory/Invoice.aspx">Sales Invoice</a></li>
+            <li><a href="/Modules/SCM/SalesReturn.aspx">Sales Return</a></li>
+            <li><a href="/Modules/Inventory/PaymentsReceived.aspx">Payments Received From Sales</a></li>
+            <%--<li><a href="/Modules/Inventory/Payments.aspx">Payments Received From Services</a></li>--%>
+            <li><a href="/Modules/Inventory/StatementOfAccount1.aspx">Statement Of Account</a></li>
+            <li><a href="/Modules/Inventory/CashInvoice.aspx">Sample & Cash Invoice</a></li>
+            <li class="last"><a href="/Modules/SCM/SampleReturn.aspx">Sample Return</a></li>
+        </ul>
+    </li>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

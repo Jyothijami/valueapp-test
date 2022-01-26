@@ -1,0 +1,356 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ModalPop.master.cs" Inherits="ModalPop" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <title>Alumil</title>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"  
+type="text/javascript"></script>   
+<!--include jQuery Validation Plugin-->  
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"  
+type="text/javascript"></script>  
+  
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" type="text/css"/>
+
+     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/londinium-theme.css" rel="stylesheet" type="text/css" />
+    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+       <link rel="stylesheet" href='https://cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.min.css'
+        media="screen" />
+   <%-- <link rel="stylesheet" href='https://cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.css'
+        media="screen" />--%>
+     <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+     <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+       
+  
+     <script type="text/javascript">
+
+
+         $(document).ready(function () {
+
+             $(function () {
+                 initdropdown();
+
+             })
+
+         });
+
+
+
+         function initdropdown() {
+             $('.select-full').select2();
+             //$("#datatable-tasks").dataTable();
+
+         }
+
+
+    </script>
+
+
+
+   <%--<script type="text/javascript">
+       //On Page Load
+       $(function () {
+           $('[id*=hai]').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
+               "responsive": true,
+               "sPaginationType": "full_numbers",
+               "paging": false,
+           });
+       });
+
+       //On UpdatePanel Refresh
+       //var prm = Sys.WebForms.PageRequestManager.getInstance();
+       //if (prm != null) {
+       //    prm.add_endRequest(function (sender, e) {
+       //        if (sender._postBackSettings.panelsToUpdate != null) {
+       //            $('[id*=hai]').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
+       //                "responsive": true,
+       //                "sPaginationType": "full_numbers",
+       //                "paging": false,
+       //            });
+       //        }
+       //    });
+       //};
+</script>--%>
+
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" >
+             <ControlBundles>
+             <cc1:ControlBundle Name="Group2" />
+             </ControlBundles>
+         </cc1:ToolkitScriptManager>
+
+
+       
+   
+      <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional"  >
+            <ContentTemplate>
+
+                <script type="text/javascript">
+
+                    Sys.Application.add_load(initdropdown);
+
+        </script>
+
+
+
+
+
+
+    <div>
+
+
+
+        <div class="modal-dialog modal-lg" style="width:100%">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Details</h4>
+                </div>
+                <div class="modal-body">
+                    <asp:Panel ID="Panel1" runat="server">
+
+                        <div class="form-horizontal">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+
+
+
+                                   
+
+
+
+                                   <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+
+
+
+
+
+
+
+
+
+        
+        </asp:ContentPlaceHolder>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                </div>
+               
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+
+                   </ContentTemplate>
+        </asp:UpdatePanel>
+
+    </form>
+
+
+
+
+
+
+    
+     <%--  <script type="text/ecmascript" src='<%= ResolveUrl("~/select/select2.js") %>'></script>--%>
+ 
+   <%-- <script type="text/ecmascript" src='<%= ResolveUrl("~/js/jquery.min.js") %>'></script>
+    <script type="text/ecmascript" src='<%= ResolveUrl("~/js/jquery-ui.min.js") %>'></script>--%>
+    <script type="text/ecmascript" src='<%= ResolveUrl("~/js/bootstrap.min.js") %>'></script>
+   
+    <script type="text/ecmascript" src='<%= ResolveUrl("~/js/plugins/interface/datatables.min.js") %>'></script>
+    <script type="text/ecmascript" src='<%= ResolveUrl("~/js/plugins/forms/validate.min.js") %>'></script>
+    <script type="text/ecmascript" src='<%= ResolveUrl("~/js/plugins/forms/select2.min.js") %>'></script>
+    <script type="text/javascript" src='https://cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.min.js'> </script>
+    
+
+   
+
+
+
+
+
+
+    <script type="text/javascript">
+
+        $(function () {
+
+
+
+            /* # Default Layout Options
+     ================================================== */
+
+            //===== Wrapping content inside .page-content =====//
+
+            $('.page-content').wrapInner('<div class="page-content-inner"></div>');
+
+
+
+            //===== Applying offcanvas class =====//
+
+            $(document).on('click', '.offcanvas', function () {
+                $('body').toggleClass('offcanvas-active');
+            });
+
+
+
+            //===== Default navigation =====//
+
+            $('.navigation').find('li.active').parents('li').addClass('active');
+            $('.navigation').find('li').not('.active').has('ul').children('ul').addClass('hidden-ul');
+            $('.navigation').find('li').has('ul').children('a').parent('li').addClass('has-ul');
+
+
+            $(document).on('click', '.sidebar-toggle', function (e) {
+                e.preventDefault();
+
+                $('body').toggleClass('sidebar-narrow');
+
+                if ($('body').hasClass('sidebar-narrow')) {
+                    $('.navigation').children('li').children('ul').css('display', '');
+
+                    $('.sidebar-content').hide().delay().queue(function () {
+                        $(this).show().addClass('animated fadeIn').clearQueue();
+                    });
+                }
+
+                else {
+                    $('.navigation').children('li').children('ul').css('display', 'none');
+                    $('.navigation').children('li.active').children('ul').css('display', 'block');
+
+                    $('.sidebar-content').hide().delay().queue(function () {
+                        $(this).show().addClass('animated fadeIn').clearQueue();
+                    });
+                }
+            });
+
+
+            $('.navigation').find('li').has('ul').children('a').on('click', function (e) {
+                e.preventDefault();
+
+                if ($('body').hasClass('sidebar-narrow')) {
+                    $(this).parent('li > ul li').not('.disabled').toggleClass('active').children('ul').slideToggle(250);
+                    $(this).parent('li > ul li').not('.disabled').siblings().removeClass('active').children('ul').slideUp(250);
+                }
+
+                else {
+                    $(this).parent('li').not('.disabled').toggleClass('active').children('ul').slideToggle(250);
+                    $(this).parent('li').not('.disabled').siblings().removeClass('active').children('ul').slideUp(250);
+                }
+            });
+
+
+
+            //===== Panel Options (collapsing, closing) =====//
+
+            /* Collapsing */
+            $('[data-panel=collapse]').click(function (e) {
+                e.preventDefault();
+                var $target = $(this).parent().parent().next('div');
+                if ($target.is(':visible')) {
+                    $(this).children('i').removeClass('icon-arrow-up9');
+                    $(this).children('i').addClass('icon-arrow-down9');
+                }
+                else {
+                    $(this).children('i').removeClass('icon-arrow-down9');
+                    $(this).children('i').addClass('icon-arrow-up9');
+                }
+                $target.slideToggle(200);
+            });
+
+            /* Closing */
+            $('[data-panel=close]').click(function (e) {
+                e.preventDefault();
+                var $panelContent = $(this).parent().parent().parent();
+                $panelContent.slideUp(200).remove(200);
+            });
+
+
+
+            //===== Disabling main navigation links =====//
+
+            $('.navigation .disabled a, .navbar-nav > .disabled > a').click(function (e) {
+                e.preventDefault();
+            });
+
+
+
+        });
+
+
+
+
+
+        //===== Loading button =====//
+
+        $('.btn-loading').click(function () {
+            var btn = $(this)
+            btn.button('loading')
+            setTimeout(function () {
+                btn.button('reset')
+            }, 3000)
+        });
+
+
+        //===== Add fadeIn animation to dropdown =====//
+
+        $('.dropdown, .btn-group').on('show.bs.dropdown', function (e) {
+            $(this).find('.dropdown-menu').first().stop(true, true).fadeIn(100);
+        });
+
+
+        //===== Add fadeOut animation to dropdown =====//
+
+        $('.dropdown, .btn-group').on('hide.bs.dropdown', function (e) {
+            $(this).find('.dropdown-menu').first().stop(true, true).fadeOut(100);
+        });
+
+
+        //===== Prevent dropdown from closing on click =====//
+
+        $('.popup').click(function (e) {
+            e.stopPropagation();
+        });
+
+
+    </script>
+    
+
+   <%-- <script type="text/ecmascript" src='<%= ResolveUrl("~/js/plugins/interface/jgrowl.min.js") %>'></script>--%>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿body {
+}
+
+.subh1{
+    border-bottom: 2px solid #d5d5d5;
+    padding:10px;
+    display:block;
+    width:100%;
+    font-size:22px
+}
+.subh2{
+    border-bottom: 2px solid #d5d5d5;
+    padding:10px;
+    display:block;
+    width:100%;
+    font-size:20px
+}
+.ulsidelinks{
+    list-style: none outside none;
+    position: fixed;
+    right: -130px;
+    top: 115px;
+    transition: 1s;
+}
+.ulsidelinks:hover{
+    list-style: none outside none;
+    position: fixed;
+    right: 0px;
+    top: 115px;
+    transition: 1s;
+}
+.usl > a {
+    background-color: #ffcccc;
+    display: block;
+    margin: 1px;
+    padding: 6px 10px 6px 20px;
+    width: 120px;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+.usl > a:hover {
+    font-weight:bold;
+    padding: 6px 20px 6px 10px;
+    text-decoration:none;
+}
+.isanchor{
+    padding:30px;
+}
+.pagehead td:last-child {
+    text-align:right;
+}
+#maincntdiv{
+    min-height:450px;
+}
+.tablelayout1{
+    width:100%;
+}
+.tablelayout1 td{
+    padding:3px;
+}
+.graphdiv_Ajay
+{
+    margin-top:30px;
+    margin-left:400px;
+    margin-bottom:30px;
+}
+.graphsdiv {
+    float:left;
+    margin:10px;
+}

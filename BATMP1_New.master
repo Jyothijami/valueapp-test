@@ -1,0 +1,834 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="BATMP1_New.master.cs" Inherits="BATMP1" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="button.css" rel="stylesheet" />
+    <%--Tempalte--%> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <meta charset="UTF-8" />
+    <title>|| Value App ||</title>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <%--<link rel="icon" type="image/ico" href="http://valuelineapp.com/favicon.ico" />--%>
+
+    <!-- common stylesheets-->
+    <!-- bootstrap framework css -->
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/BAT_files/bootstrap-responsive.css" />
+    <!-- iconSweet2 icon pack (16x16) -->
+    <link rel="stylesheet" href="/BAT_files/icsw2_16.css" />
+    <!-- splashy icon pack -->
+    <link rel="stylesheet" href="/BAT_files/splashy.css" />
+    <!-- flag icons -->
+    <link rel="stylesheet" href="/BAT_files/flags.css" />
+    <!-- power tooltips -->
+    <link rel="stylesheet" href="/BAT_files/jquery.css" />
+    <!-- google web fonts -->
+    <link rel="stylesheet" href="/BAT_files/css_002.css" />
+    <link rel="stylesheet" href="/BAT_files/css.css" />
+
+    <!-- aditional stylesheets -->
+    <!-- colorbox -->
+    <link rel="stylesheet" href="/BAT_files/colorbox.css" />
+    <!--fullcalendar -->
+    <link rel="stylesheet" href="/BAT_files/fullcalendar_beoro.css" />
+
+
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="/BAT_files/beoro.css" />
+    <link href="/site_resources/css/sstyles.css" rel="stylesheet" />
+
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css"><![endif]-->
+    <!--[if IE 9]><link rel="stylesheet" href="css/ie9.css"><![endif]-->
+
+    <!--[if lt IE 9]>
+            <script src="js/ie/html5shiv.min.js"></script>
+            <script src="js/ie/respond.min.js"></script>
+            <script src="js/lib/flot-charts/excanvas.min.js"></script>
+        <![endif]-->
+
+
+    <script src="/js/jquery-1.9.1.js"></script>
+    <script src="/js/jquery-ui-1.10.0.custom.js"></script>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+<%--    <link href="/js/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <script src="/js/ui/1.10.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <link href="/js/ui/1.10.1/themes/base/jquery-ui.css" rel="stylesheet" />--%>
+
+    <script language="javascript" type="text/javascript">
+    <!--
+    function popitup(url) {
+        newwindow = window.open(url, 'name', 'height=500,width=850');
+        if (window.focus) { newwindow.focus() }
+        return false;
+    }
+
+    // -->
+    </script>
+        <script>
+            $(document).ready(function () {
+                $(document).on("click", "#icsprintbt", function () {
+                    var allElements = $("#maincntdiv").find(":input");
+                    allElements.each(function () {
+                        var elemval = $(this).val();
+                        var spanelmt = $("<span style='padding:3px'>" + elemval + "</span>");
+                        $(this).replaceWith(spanelmt);
+                    });
+                });
+            });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $ulslks = "";
+            var j = 1;
+
+            $(".subh2,.profilehead").each(function () {
+                $ulslks = $ulslks + "<li class='usl'><a href='#is" + j.toString() + "'>" + $(this).html() + "</a></li>";
+
+                j = j + 1;
+            });
+
+            $('body').append("<ul class='ulsidelinks'>" + $ulslks + "</ul>");
+
+            var i = 1;
+
+            $(".subh2").each(function () {
+                $(this).before("<span class='isanchor' id='is" + i.toString() + "'></span>");
+
+                i = i + 1;
+            });
+            $(".profilehead").each(function () {
+                $(this).append("<span class='isanchor' id='is" + i.toString() + "'></span>");
+
+                i = i + 1;
+            });
+
+            //$(document).on("click", ".usl a", function () {
+            //    var href = $.attr(this, 'href');
+
+            //    //alert($("div:contains('" + $(this).html() + "')").offset().top);
+            //    var target = $("div:contains('" + $(this).html() + "')");
+
+            //    $('html,body').animate({
+            //        scrollTop: target.first().position().top
+            //    }, 1000);
+            //});
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('a[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                    || location.hostname == this.hostname) {
+
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top - 20
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
+            Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(InIEvent);
+
+            function InIEvent(sender, args) {
+                $('input[type=datepic]').datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    dateFormat: 'dd/mm/yy',
+                    onSelect: function () { $(".ui-datepicker  a").removeAttr("href"); }
+                });
+                return false;
+            }
+        });
+        //$(document).ready(InIEvent);
+    </script>
+    <style>
+        .ui-autocomplete { max-height: 200px; overflow-y: scroll; overflow-x: hidden;}
+    </style>
+    <script>
+        function autoCompleteBind() {
+            $("[name$='txtSearchText']").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/acomp.asmx/GetItemsWithAbbr",
+                        dataType: "json",
+                        data: "{ itemstr: '" + $("[id$='txtSearchText']").val() + "', itemtype: '" + $("[id$='ddlSearchBy']").val() + "' }",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            response(data.d);
+                        },
+                        failure: function (data) {
+                            alert("failed");
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus + XMLHttpRequest.responseText + errorThrown);
+                        }
+                    });
+                },
+                minLength: 2,
+                select: function (event, ui) {
+                    //$('#state_id').val(ui.item.id);
+                    //$('#abbrev').val(ui.item.abbrev);
+                }
+            });
+        }
+        $(document).ready(autoCompleteBind);
+    </script>
+    <link href="select/select2.css" rel="stylesheet" />
+    <script src="select/select2.js"></script>
+    <style type ="text/css" >
+       body{
+ /*background:#e5e5e5; 
+ font-family: sans-serif;*/
+}
+
+.msg_box{
+ position:fixed;
+ bottom:-5px;
+ width:450px;
+ background:white;
+ border-radius:5px 5px 0px 0px;
+}
+
+.msg_head{ 
+ background:black;
+ color:white;
+ padding:8px;
+ font-weight:bold;
+ cursor:pointer;
+ border-radius:5px 5px 0px 0px;
+}
+
+.msg_body{
+ background:white;
+ height:200px;
+ width :100%;
+ font-size:15px;
+ padding:15px;
+ padding-left :10px;
+ overflow:auto;
+ overflow-x: hidden;
+}
+.msg_input{
+ width:100%;
+ height: 55px;
+ border: 2px solid white;
+ border-top:2px solid #DDDDDD;
+ -webkit-box-sizing: border-box; 
+ -moz-box-sizing: border-box;   
+ box-sizing: border-box;  
+}
+
+.close{
+ float:right;
+ cursor:pointer;
+}
+.minimize{
+ float:right;
+ cursor:pointer;
+ padding-right:5px;
+ 
+}
+
+.msg-left{
+ position:relative;
+ background:#e2e2e2;
+ padding:5px;
+ min-height:10px;
+ margin-bottom:5px;
+ margin-right:10px;
+ border-radius:5px;
+ word-break: break-all;
+}
+
+.msg-right{
+ background:#d4e7fa;
+ padding:5px;
+ min-height:15px;
+ margin-bottom:5px;
+ position:relative;
+ margin-left:10px;
+ border-radius:5px;
+ word-break: break-all;
+}
+/**** Slider Layout Popup *********/
+</style>
+    <script type ="text/javascript" >
+        $(document).ready(function () {
+
+            var arr = []; // List of users 
+
+            $(document).on('click', '.msg_head', function () {
+                var chatbox = $(this).parents().attr("rel");
+                $('[rel="' + chatbox + '"] .msg_wrap').slideToggle('fast');
+                return false;
+            });
+
+
+            //$(document).on('click', '.close', function () {
+            //    var chatbox = $(this).parents().parents().attr("rel");
+            //    $('[rel="' + chatbox + '"]').hide();
+            //    arr.splice($.inArray(chatbox, arr), 1);
+            //    displayChatBox();
+            //    return false;
+            //});
+
+            $(document).on('click', '#sidebar-user-box', function () {
+
+                var userID = $(this).attr("class");
+                var username = $(this).children().text();
+
+                if ($.inArray(userID, arr) != -1) {
+                    arr.splice($.inArray(userID, arr), 1);
+                }
+
+                arr.unshift(userID);
+                chatPopup = '<div class="msg_box" style="right:270px" rel="' + userID + '">' +
+                   '<div class="msg_head">' + username +
+                   '<div class="close">x</div> </div>' +
+                   '<div class="msg_wrap"> <div class="msg_body"> <div class="msg_push"></div> </div>' +
+                   '<div class="msg_footer"><textarea class="msg_input" rows="4"></textarea></div>  </div>  </div>';
+
+                $("body").append(chatPopup);
+                displayChatBox();
+            });
+
+
+            $(document).on('keypress', 'textarea', function (e) {
+                if (e.keyCode == 13) {
+                    var msg = $(this).val();
+                    $(this).val('');
+                    if (msg.trim().length != 0) {
+                        var chatbox = $(this).parents().parents().parents().attr("rel");
+                        $('<div class="msg-right">' + msg + '</div>').insertBefore('[rel="' + chatbox + '"] .msg_push');
+                        $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
+                    }
+                }
+            });
+
+
+
+            function displayChatBox() {
+                i = 270; // start position
+                j = 260;  //next position
+
+                $.each(arr, function (index, value) {
+                    if (index < 4) {
+                        $('[rel="' + value + '"]').css("right", i);
+                        $('[rel="' + value + '"]').show();
+                        i = i + j;
+                    }
+                    else {
+                        $('[rel="' + value + '"]').hide();
+                    }
+                });
+            }
+
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%--<cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></cc1:ToolkitScriptManager>--%>
+        <asp:scriptmanager runat="server"></asp:scriptmanager>        
+        <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+         <ContentTemplate>--%>
+        <!-- main wrapper (without footer) -->
+        <div class="main-wrapper">
+            <!-- top bar -->
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <%--<div class="pull-right top-search">
+
+                            <input name="q" id="q-main" type="text">
+                            <button class="btn"><i class="icon-search"></i></button>
+
+                        </div>--%>
+
+                        <div id="fade-menu" class="pull-left">
+
+                            <%--Main Menu--%>
+                            <ul class="clearfix" id="mobile-nav">
+                                <asp:ContentPlaceHolder ID="toplinksCPH" runat="server"></asp:ContentPlaceHolder>
+                                
+                                <li>
+                                    <a href="#">
+                                        <img src="/n_Images/Help.png" /></a>
+                                    <ul>
+                                        <li><a href="popupex.html" onclick="return popitup('/HelpDoc.aspx')">About ValueApp</a></li>
+                                        <%--<li><a href="popupex.html" onclick="return popitup('/abouthelp.aspx?purl=<%=getPageRawUrl()%>')">About ValueApp</a></li>--%>
+                                        <li><a href="#">Feedback</a></li>
+                                        <li class="last"><a href="popupex.html" onclick="return popitup('/Report_a_bug.aspx?purl=<%=getPageRawUrl()%>')">Report a Bug</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <%--End Of Main Menu--%>
+
+                            <select class="selectnav" id="selectnav1">
+                                <option selected="selected" value="">- Navigation -</option>
+                                <option value="javascript:void(0)">Forms</option>
+                                <option value="http://valuelineapp.com/index.php?page=form_elements">- Form elements</option>
+                                <option value="http://valuelineapp.com/index.php?page=form_validation">- Form validation</option>
+                                <option value="javascript:void(0)">Components</option>
+                                <option value="http://valuelineapp.com/index.php?page=calendar">- Calendar</option>
+                                <option value="http://valuelineapp.com/index.php?page=charts">- Charts</option>
+                                <option value="http://valuelineapp.com/index.php?page=contact_list">- Contact List</option>
+                                <option value="http://valuelineapp.com/index.php?page=datatables">- Datatables</option>
+                                <option value="http://valuelineapp.com/index.php?page=editable_elements">- Editable Elements</option>
+                                <option value="http://valuelineapp.com/index.php?page=file_manager">- File manager</option>
+                                <option value="http://valuelineapp.com/index.php?page=gallery">- Gallery</option>
+                                <option value="http://valuelineapp.com/index.php?page=gmaps">- Google Maps</option>
+                                <option value="http://valuelineapp.com/#">- Tables</option>
+                                <option value="http://valuelineapp.com/index.php?page=tables_regular">-- Regular Tables</option>
+                                <option value="http://valuelineapp.com/index.php?page=table_stacking">-- Stacking Table</option>
+                                <option value="http://valuelineapp.com/index.php?page=table_examples">-- Table examples</option>
+                                <option value="http://valuelineapp.com/index.php?page=wizard">- Wizard</option>
+                                <option value="javascript:void(0)">UI Elements</option>
+                                <option value="http://valuelineapp.com/index.php?page=alerts_buttons">- Alerts, Buttons</option>
+                                <option value="http://valuelineapp.com/index.php?page=grid">- Grid</option>
+                                <option value="http://valuelineapp.com/index.php?page=icons">- Icons</option>
+                                <option value="http://valuelineapp.com/index.php?page=js_grid">- JS Grid</option>
+                                <option value="http://valuelineapp.com/index.php?page=notifications">- Notifications</option>
+                                <option value="http://valuelineapp.com/index.php?page=tabs_accordions">- Tabs, Accordions</option>
+                                <option value="http://valuelineapp.com/index.php?page=tooltips_popovers">- Tooltips, Popovers</option>
+                                <option value="http://valuelineapp.com/index.php?page=typography">- Typography</option>
+                                <option value="http://valuelineapp.com/index.php?page=widgets">- Widgets</option>
+                                <option value="javascript:void(0)">Other pages</option>
+                                <option value="http://valuelineapp.com/index.php?page=ajax_content">- Ajax content</option>
+                                <option value="http://valuelineapp.com/index.php?page=blank">- Blank page</option>
+                                <option value="http://valuelineapp.com/index.php?page=blog_page">- Blog page</option>
+                                <option value="http://valuelineapp.com/index.php?page=blog_page_single">- Blog page (single)</option>
+                                <option value="http://valuelineapp.com/index.php?page=chat">- Chat</option>
+                                <option value="http://valuelineapp.com/error_404.php">- Error 404</option>
+                                <option value="http://valuelineapp.com/index.php?page=help_faq">- Help/Faq</option>
+                                <option value="http://valuelineapp.com/index.php?page=invoices">- Invoices</option>
+                                <option value="http://valuelineapp.com/login.php">- Login Page</option>
+                                <option value="http://valuelineapp.com/index.php?page=mailbox">- Mailbox</option>
+                                <option value="http://valuelineapp.com/index.php?page=user_profile">- User profile</option>
+                                <option value="http://valuelineapp.com/index.php?page=settings">- Site Settings</option>
+                                <option value="javascript:void(0)">Sub-menu</option>
+                                <option value="http://valuelineapp.com/#">- Section 1</option>
+                                <option value="http://valuelineapp.com/#">- Section 2</option>
+                                <option value="http://valuelineapp.com/#">- Section 3</option>
+                                <option value="http://valuelineapp.com/#">- Section 4</option>
+                                <option value="http://valuelineapp.com/#">-- Section 4.1</option>
+                                <option value="http://valuelineapp.com/#">-- Section 4.2</option>
+                                <option value="http://valuelineapp.com/#">-- Section 4.3</option>
+                                <option value="http://valuelineapp.com/#">-- Section 4.4</option>
+                                <option value="http://valuelineapp.com/#">--- Section 4.4.1</option>
+                                <option value="http://valuelineapp.com/#">--- Section 4.4.2</option>
+                                <option value="http://valuelineapp.com/#">--- Section 4.4.4</option>
+                                <option value="http://valuelineapp.com/#">--- Section 4.4.5</option>
+                                <option value="http://valuelineapp.com/#">- Section5</option>
+                                <option value="http://valuelineapp.com/#">- Section6</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- header -->
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="span3">
+                            <div class="main-logo" >
+                                <a href="#">
+                                    <asp:Image ID="cpImage1" runat="server" ImageUrl="/BAT_files/beoro_logo.png" Width="180px" Height="60px" />
+                                    <%--<img src="/BAT_files/beoro_logo.png" alt="Beoro Admin" width="150px">--%></a>
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <nav class="nav-icons">
+                                <ul>
+                                    <li>
+                                        <asp:LinkButton ID="lkbtDBoard1" ValidationGroup="DashBoardLink" runat="server" CssClass="ptip_s" OnClick="lkbtDBoard1_Click"><i class="icsw16-home"></i></asp:LinkButton></li>
+                                        <%--<li><a href="/Modules/Home/Default.aspx" class="ptip_s"><i class="icsw16-home"></i></a></li>--%><%--                                    <li class="dropdown">
+                                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="icsw16-create-write"></i><span class="caret"></span></a>
+                                        <ul role="menu" class="dropdown-menu">
+                                            <li role="presentation"><a href="#" role="menuitem">Action</a></li>
+                                            <li role="presentation"><a href="#" role="menuitem">Another action</a></li>
+                                            <li class="divider" role="presentation"></li>
+                                            <li role="presentation"><a href="#" role="menuitem">Separated link</a></li>
+                                        </ul>
+                                    </li>--%>
+                                    <li>
+                                        <a href="/Modules/Home/my_inbox.aspx" class="ptip_s">
+                                            <i class="icsw16-mail"></i>
+                                            <asp:Literal ID="litInboxUnreadCnt1" runat="server"></asp:Literal>
+                                        </a>
+                                    </li>
+                                    <li><a href="/Modules/Home/notifications_Def.aspx" class="ptip_s"><i class="icsw16-speech-bubbles"></i>
+                                        <asp:Literal ID="litnoticount1" runat="server"></asp:Literal>
+                                        </a></li>
+                                        <%--<li><span class="ptip_s"><i class="icsw16-graph"></i></span></li>--%>
+                                    <li><a id="icsprintbt" class="ptip_s" href="javascript:void(0)"><i class="icsw16-printer"></i></a></li>
+                                    <li><a href="/Modules/Home/ChangePassword.aspx" class="ptip_s"><i class="icsw16-cog"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="span4">
+                            <div class="user-box">
+                                <div class="user-box-inner">
+                                    <%--<img src="/BAT_files/avatar.png" alt="" class="user-avatar img-avatar">--%>
+                                    <asp:Label ID="lblEmpId" runat="server" Visible="false"></asp:Label>
+                                    <asp:Image ID="Image1" runat="server"  class="user-avatar img-avatar"></asp:Image>
+                                    <div class="user-info">
+                                        Welcome, <strong>
+                                            <asp:Literal ID="litusername1" runat="server"></asp:Literal></strong>
+                                        <ul class="unstyled">
+                                            <li>
+                                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Modules/Home/ChangePassword.aspx">Change Password</asp:HyperLink></li>
+                                            <li>·</li>
+                                            <li>
+                                                <asp:Literal ID="litprofilelnk1" runat="server"></asp:Literal></li>
+                                            <li>·</li>
+                                            <li>
+                                                <asp:LinkButton ID="lkbtLogout1" runat="server" OnClick="lkbtLogout1_Click" CausesValidation="false">Logout</asp:LinkButton>
+                                            </li>
+                                        </ul>
+                                        <asp:DropDownList ID="ddlCompanyProfile1" runat="server" Width="200px" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="ddlCompanyProfile1_SelectedIndexChanged">
+                                            <asp:ListItem Value="0">-- Select --</asp:ListItem>
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="compsds1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCon %>" SelectCommand="SELECT a.CP_ID, a.CP_SHORT_NAME AS COMP_NAME FROM YANTRA_COMP_PROFILE"></asp:SqlDataSource>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style ="height :50px">
+                    <marquee direction="scroll" style="height: 25px">
+                    <asp:Button ID="btnBdyClick" runat ="server" Width ="180px" CssClass ="button "  Text="Click Here" 
+                               OnClientClick ="window.open('http://183.82.108.55/Modules/HR/BirthdayWishes.aspx','resume','resizable=yes,scrool=yes,width=900,height=600,status=yes,toolbar=no,menubar=no,scrollbars=yes')"
+                                CausesValidation="False" EnableTheming="False"/></marquee>
+                </div>
+                
+            </header>
+           <%-- <div style ="background-color :transparent; background-image :url('/Images/Bdy5.png')">
+             <asp:Panel ID="pnlbdy" runat ="server" role="alert" >
+                    <%--<div style="/*position: absolute; width: 48px; height: 48px; right:20px; background-image:url('/n_Images/Bdy.png'); background-repeat: no-repeat*/"></div>--%>
+                    <%--<asp:DataList ID="BDYDataList1" runat="server" DataKeyField="EMP_ID" DataSourceID="SqlDataSource1" ForeColor="#FFFF66"  CellPadding="10" CellSpacing="5" >
+                    <ItemTemplate>
+                        <table>
+                            <br />
+                            <tr><td style ="width :15%"></td>
+                                <td style="text-align :left"><h4>Wishing You a Happy Birthday to <asp:Label ID="lblEmpName" runat="server" Text='<%# Eval("Emp_Name") %>' /> -  <asp:Label ID="lblDesg" runat="server" Text='<%# Eval("DESG_NAME") %>' /></h4></td>
+                            </tr>
+                            
+                            <%--<tr> 
+                                <td>DOB : <asp:Label ID="lblDOB" runat="server" Text='<%# Eval("EMP_DOB") %>' /></td>
+                           </tr>--%>
+                        <%--</table>
+                    </ItemTemplate>
+                </asp:DataList>
+                </asp:Panel>
+                  </div>
+             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCon %>" 
+                    SelectCommand="Select YANTRA_EMPLOYEE_MAST.EMP_ID ,EMP_FIRST_NAME +' '+ EMP_LAST_NAME as Emp_Name, EMP_GENDER,EMP_DOB,DESG_NAME from YANTRA_EMPLOYEE_MAST inner join YANTRA_EMPLOYEE_DET on YANTRA_EMPLOYEE_MAST .EMP_ID =YANTRA_EMPLOYEE_DET .EMP_ID inner join YANTRA_DESG_MAST on YANTRA_EMPLOYEE_DET .DESG_ID =YANTRA_DESG_MAST .DESG_ID   where DATEPART(m, EMP_DOB)=DATEPART(m,GETDATE()) AND DATEPART(d, EMP_DOB) = DATEPART(d, GETDATE()) and YANTRA_EMPLOYEE_MAST.STATUS=1"></asp:SqlDataSource>--%>
+
+            <asp:Panel ID="PnlSiteAlert1" runat="server" class="alert alert-warning" role="alert">
+                <div style="position: absolute; width: 48px; height: 48px; right:20px; background-image: url('/n_Images/metro.icons/black/i.png'); background-repeat: no-repeat"></div>
+                <asp:DataList ID="AlertDataList1" runat="server" DataKeyField="id" DataSourceID="siteAlertsds1" ForeColor="Red" CellPadding="10" CellSpacing="5" Width="100%">
+                    <ItemTemplate>
+                        <asp:Label ID="messagetitleLabel" runat="server" Text='<%# Eval("messagetitle") %>' />
+                        <br />
+                        <asp:Label ID="messagedescLabel" runat="server" Text='<%# Eval("messagedesc") %>' />
+                        <br />
+                        Time Window:
+                        <asp:Label ID="starttimeLabel" runat="server" Text='<%# Eval("starttime") %>' />
+                        &nbsp;-
+                        <asp:Label ID="endtimeLabel" runat="server" Text='<%# Eval("endtime") %>' />
+                        <br />
+                    </ItemTemplate>
+                </asp:DataList>
+                <asp:SqlDataSource ID="siteAlertsds1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCon %>" SelectCommand="SELECT id, messagetitle, messagedesc, starttime, endtime, dt_modified, isEnabled FROM dboardAlert_tbl WHERE (DATEADD(minute, - 15, starttime) &lt;= GETDATE()) AND (endtime &gt;= GETDATE())"></asp:SqlDataSource>
+                <asp:Button ID="btnlog" runat ="server" CssClass ="button " Visible ="false"  CausesValidation="False" EnableTheming="False" OnClick ="btnlog_Click"  Text="Open comments here" />
+            </asp:Panel>
+            <!-- breadcrumbs -->
+            <div class="container">
+                <%--                <ul id="breadcrumbs">
+                    <li><a href="javascript:void(0)"><i class="icon-home"></i></a></li>
+                    <li><a href="javascript:void(0)">Content</a></li>
+                    <li><a href="javascript:void(0)">Article: Lorem ipsum dolor...</a></li>
+                    <li><a href="javascript:void(0)">Comments</a></li>
+                    <li><span>Lorem ipsum dolor sit amet...</span></li>
+                </ul>--%>
+                <div style="padding: 10px;">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+                </div>
+                <%--=SiteMap()--%>
+            </div>
+
+            <!-- main content -->
+            <div class="container">
+                <div id="maincntdiv">
+                    <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>--%>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+                                                </asp:ContentPlaceHolder>
+                    <%--</ContentTemplate>
+                    </asp:UpdatePanel>--%>
+                    
+                </div>
+            </div>
+            <div class="footer_space" aria-dropeffect="none" aria-expanded="undefined"></div>
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span5">
+                        <div>
+                          <%--<button class="button " aria-hidden ="true"  id ="btnBdyClick1" onclick ="window.open('../HR/EmpBdy.aspx','resume','resizable=yes,scrool=yes,width=600,height=400,status=yes,toolbar=no,menubar=no,scrollbars=yes')">Look at Me!</button>--%>
+                           
+                        </div>
+                        <div>© Valueline               </div>
+                    <div class="span7">
+                        <ul class="unstyled">
+                            <li><a href="#">Go to the Top</a></li>
+                            <li>··</li>
+                            <li><a href="http://valueline.in/" target="_blank">Powered By Valueline</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+         <%--    <script>
+
+                 $(document).ready(function () {
+                     $('#<%=Books.ClientID%>').select2({ placeholder: 'Send Message To :' });
+
+
+             //$("#ContentPlaceHolder1_Books").select2({ placeholder: 'Find and Select Books' });
+
+
+         });
+
+
+         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+         function EndRequestHandler(sender, args) {
+             //Binding Code Again
+             $(<%=Books.ClientID%>).select2({ placeholder: 'Send Message To :' });
+            }
+
+
+
+
+         </script>
+    <script>
+
+        $(document).ready(function () {
+            $('#<%=Books1.ClientID%>').select2({ placeholder: 'CC :' });
+
+
+            //$("#ContentPlaceHolder1_Books").select2({ placeholder: 'Find and Select Books' });
+
+
+        });
+
+
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+        function EndRequestHandler(sender, args) {
+            //Binding Code Again
+            $(<%=Books1.ClientID%>).select2({ placeholder: 'CC : ' });
+         }
+
+
+
+
+         </script>--%>
+    
+    <div id="msg_box"  class="msg_box" style="right:10px" rel="' + userID + '">
+        <div class="msg_head">Send Message
+         <div class="close">x</div> </div>
+         <div class="msg_wrap" style="display: none"> 
+             <div class="msg_body"  >
+                       <div class="msg_push" ></div> 
+
+                <%-- <div class ="row">
+                     <div class="col-md-11">
+                <select id="Books" class="form-control" style ="width :350px" runat="server"></select>
+                         <asp:SqlDataSource ID="usersds1" runat="server" ConnectionString="<%$ ConnectionStrings:DBCon %>" SelectCommand="SELECT [USER_ID], [USER_NAME] FROM [YANTRA_USER_DETAILS] where EXPIRY_DATE >='2019-12-31 00:00:00.000' ORDER BY [USER_NAME]"></asp:SqlDataSource>
+                                        <asp:HiddenField ID="hffromuid1" runat="server" />
+                <script>
+                    $(document).ready(function () {
+                        $("#Books").select2({ placeholder: 'Send Message To' });
+                    });
+                </script>
+            </div> 
+                     </div> 
+                <br />
+                 <div class ="row">
+                     <div class="col-md-11">
+                         <select id="Books1" class="form-control" style ="width :350px" runat="server"></select>
+
+                                           <script>
+                                               $(document).ready(function () {
+                                                   $("#Books1").select2({ placeholder: 'CC : ' });
+                                               });
+                                               </script>
+                     </div>
+                 </div>
+             <br />
+                 <div class ="row">
+                     <div class="col-md-12">
+                         <asp:TextBox class ="form-control" TextMode ="MultiLine" style ="width :400px"  runat ="server" id="txtsub" placeholder ="Subject" ></asp:TextBox>
+                     </div>
+                 </div>--%>
+               </div>
+         <div class="msg_footer">
+             <textarea class="msg_input" rows="4" placeholder ="Type Message here!"></textarea></div>
+<%--             <asp:TextBox class="msg_input" id="txtmsg" TextMode ="MultiLine" runat ="server" placeholder ="Message" rows="4"></asp:TextBox>
+             <asp:Button id="btnsend" runat ="server"  CssClass="btn btn-lg btn-danger " OnClick ="btnsend_Click"   Text ="send" EnableTheming ="false"  ></asp:Button>--%>
+         </div>  
+
+         </div>  
+
+    </div>
+       
+        </form>
+        <!-- Common JS -->
+        <!-- jQuery framework -->
+        <script src="/BAT_files/ga.js" async="" type="text/javascript"></script>
+    <%--<script src="/BAT_files/jquery_015.js"></script>
+        <script src="/BAT_files/jquery-migrate.js"></script>--%>
+        <!-- bootstrap Framework plugins -->
+    <%--<script src="/BAT_files/bootstrap.js"></script>--%>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <!-- top menu -->
+        <script src="/BAT_files/jquery_003.js"></script>
+        <!-- top mobile menu -->
+        <script src="/BAT_files/selectnav.js"></script>
+        <!-- actual width/height of hidden DOM elements -->
+        <script src="/BAT_files/jquery_006.js"></script>
+        <!-- jquery easing animations -->
+        <script src="/BAT_files/jquery_009.js"></script>
+        <!-- power tooltips -->
+        <script src="/BAT_files/jquery_012.js"></script>
+        <!-- date library -->
+        <script src="/BAT_files/moment.js"></script>
+        <!-- common functions -->
+        <script src="/BAT_files/beoro_common.js"></script>
+
+
+        <!-- Dashboard JS -->
+        
+        
+        <!-- jQuery UI -->
+    <%--        <script src="/BAT_files/jquery-ui-1.js"></script>--%>
+
+
+
+
+        <!-- touch event support for jQuery UI -->
+        <script src="/BAT_files/jquery_002.js"></script>
+        <!-- colorbox -->
+        <script src="/BAT_files/jquery_004.js"></script>
+        <!-- fullcalendar -->
+        <script src="/BAT_files/fullcalendar.js"></script>
+        <!-- flot charts -->
+        <script src="/BAT_files/jquery.js"></script>
+        <script src="/BAT_files/jquery_005.js"></script>
+        <script src="/BAT_files/jquery_013.js"></script>
+        <script src="/BAT_files/jquery_007.js"></script>
+        <script src="/BAT_files/jquery_011.js"></script>
+        <script src="/BAT_files/jquery_010.js"></script>
+        <!-- responsive carousel -->
+        <script src="/BAT_files/plugin.js"></script>
+        <!-- responsive image grid -->
+        <script src="/BAT_files/jquery_008.js"></script>
+        <script src="/BAT_files/jquery_014.js"></script>
+
+        <script src="/BAT_files/beoro_dashboard.js"></script>
+
+        <link href="/BAT_files/sticky.css" rel="stylesheet" />
+        <script src="/BAT_files/sticky.min.js"></script>
+        <script src="/BAT_files/bootbox.min.js"></script>
+        <script src="/BAT_files/beoro_notifications.js"></script>
+
+        <script>
+            if ($(window).width() > '1280') {
+                $('body').append('<a href="javascript:void" class="fluid_lay" style="position:fixed;top:6px;right:10px;z-index:10000" title="fluid layout"><i class="splashy-arrow_state_grey_left"></i><i class="splashy-arrow_state_grey_right"></i></a>');
+                $('.fluid_lay').click(function () {
+                    var url = window.location.href;
+                    if (url.indexOf('?') > -1) {
+                        url += '&fluid=1'
+                    } else {
+                        url += '?fluid=1'
+                    }
+                    window.location.href = url;
+                });
+                $(window).on('resize', function () {
+                    if ($(window).width() > '1280') {
+                        $('.fluid_lay').show();
+                    } else {
+                        $('.fluid_lay').hide();
+                    }
+                })
+            }
+        </script>
+        <a href="javascript:void" class="fluid_lay" style="position: fixed; top: 6px; right: 10px; z-index: 10000;" title="fluid layout"><i class="splashy-arrow_state_grey_left"></i><i class="splashy-arrow_state_grey_right"></i></a>
+
+        <div id="powerTip">
+        </div>
+
+        <a href="javascript:void(0)" class="scrollup" style="display: none;">
+            <i class="icon-chevron-up icon-white"></i></a>
+        <div style="display: none;" id="cboxOverlay"></div>
+    <%--<div style="display: none;" tabindex="-1" role="dialog" class="" id="colorbox">
+            <div id="cboxWrapper">
+                <div>
+                    <div style="float: left;" id="cboxTopLeft"></div>
+                    <div style="float: left;" id="cboxTopCenter"></div>
+                    <div style="float: left;" id="cboxTopRight"></div>
+                </div>
+                <div style="clear: left;">
+                    <div style="float: left;" id="cboxMiddleLeft"></div>
+                    <div style="float: left;" id="cboxContent">
+                        <div style="float: left;" id="cboxTitle"></div>
+                        <div style="float: left;" id="cboxCurrent"></div>
+                        <button id="cboxPrevious"></button>
+                        <button id="cboxNext"></button>
+                        <button id="cboxSlideshow"></button>
+                        <div style="float: left;" id="cboxLoadingOverlay"></div>
+                        <div style="float: left;" id="cboxLoadingGraphic"></div>
+                        <button id="cboxClose"></button>
+                    </div>
+                    <div style="float: left;" id="cboxMiddleRight"></div>
+                </div>
+                <div style="clear: left;">
+                    <div style="float: left;" id="cboxBottomLeft"></div>
+                    <div style="float: left;" id="cboxBottomCenter"></div>
+                    <div style="float: left;" id="cboxBottomRight"></div>
+                </div>
+            </div>
+            <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+        </div>--%>
+        <div style="display: none; position: absolute;" id="flotTip"></div>
+    <%--        </ContentTemplate>
+        </asp:UpdatePanel>--%>
+    
+</body>
+</html>

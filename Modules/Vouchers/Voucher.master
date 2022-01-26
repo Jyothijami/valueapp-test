@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MPs/FinanceMP1.master" AutoEventWireup="true" CodeFile="Voucher.master.cs" Inherits="Modules_Vouchers_Voucher" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+    <table class="stacktable">
+                <tr>
+                    <td style="vertical-align:top; width: 20%">
+                        <asp:Button ID="btnPaymentVoucher" runat="server" Text="Payment Voucher" Width="150" PostBackUrl="~/Modules/Vouchers/PaymentVoucher.aspx" /><br />
+                        <%--<asp:LinkButton ID="lbtnpv" runat="server" PostBackUrl="~/Modules/Vouchers/PaymentVoucher.aspx">Payment Voucher</asp:LinkButton><br />--%>
+                        
+                        <asp:Button ID="btnPaymentVoucher1" runat="server" Text="Payment Voucher1" Width="150px" PostBackUrl="~/Modules/Vouchers/PaymentVoucher1.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Modules/Vouchers/PaymentVoucher1.aspx">Payment Voucher1</asp:LinkButton><br />--%>
+                        
+                        <asp:Button ID="btnBankReceiptVoucher" runat="server" Text="Bank Receipt Voucher" Width="150px" PostBackUrl="~/Modules/Vouchers/BankReceiptVoucher.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Modules/Vouchers/BankReceiptVoucher.aspx">Bank Receipt Voucher</asp:LinkButton><br />--%>
+
+                        <asp:Button ID="btnBankReceiptVoucher1" runat="server" Text="Bank Receipt Voucher1" Width="150px" PostBackUrl="~/Modules/Vouchers/BankReceiptVoucher1.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Modules/Vouchers/BankReceiptVoucher1.aspx">Bank Receipt Voucher1</asp:LinkButton><br />--%>
+
+                        <asp:Button ID="btnContraVoucher" runat="server" Text="Contra Voucher" Width="150px" PostBackUrl="~/Modules/Vouchers/ContraVoucher.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/Modules/Vouchers/ContraVoucher.aspx">Contra Voucher</asp:LinkButton><br />--%>
+
+                        <asp:Button ID="btnCreditNote" runat="server" Text="Credit Note" Width="150px" PostBackUrl="~/Modules/Vouchers/CreditNote.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Modules/Vouchers/CreditNote.aspx">Credit Note</asp:LinkButton><br />--%>
+                        
+                        <asp:Button ID="btnDebitNote" runat="server" Text="Debit Note" Width="150px" PostBackUrl="~/Modules/Vouchers/DebitNote.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/Modules/Vouchers/DebitNote.aspx">Debit Note</asp:LinkButton><br />--%>
+
+                          <asp:Button ID="btnTaxInvoice" runat="server" Text="Tax Invoice" Width="150px" PostBackUrl="~/Modules/Vouchers/TaxInvoice.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/Modules/Vouchers/TaxInvoice.aspx">Tax Invoice Voucher</asp:LinkButton><br />--%>
+                        
+                        <asp:Button ID="btnJournalVoucher" runat="server" Text="Journal Voucher" Width="150px" PostBackUrl="~/Modules/Vouchers/JournalVoucher.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton8" runat="server" PostBackUrl="~/Modules/Vouchers/JournalVoucher.aspx">Journal Voucher</asp:LinkButton><br />--%>
+
+                          <asp:Button ID="btnMRN" runat="server" Text="MRN" Width="150px" PostBackUrl="~/Modules/Vouchers/MRNVoucher.aspx" /><br />
+                        <%--<asp:LinkButton ID="LinkButton9" runat="server" PostBackUrl="~/Modules/Vouchers/MRNVoucher.aspx">MRN</asp:LinkButton><br />--%>
+                        
+                        <asp:Button ID="btnStockJournalVoucher" runat="server" Text="Stock Journal Voucher" Width="150px" PostBackUrl="~/Modules/Vouchers/StockJournalVoucher.aspx" />
+                        <%--<asp:LinkButton ID="lbtnSJV" runat="server" PostBackUrl="~/Modules/Vouchers/StockJournalVoucher.aspx">Stock Journal Voucher</asp:LinkButton>--%>
+                    </td>
+
+               
+                    <td  style="width: 80%; vertical-align: 5%">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+</asp:Content>
+

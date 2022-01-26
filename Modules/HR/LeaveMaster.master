@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="LeaveMaster.master.cs" Inherits="Modules_HR_LeaveMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+        <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" runat="Server">
+       
+            <table class="stacktable">
+                <tr>
+                    <td>
+                        <asp:Button ID="btnLeaveAllocation" runat="server" Text="Leave Allocation" Width="130px" PostBackUrl="~/Modules/HR/LeaveAllocation.aspx"  />
+                        
+                        <asp:Button ID="btnLeaveHistory" runat="server" Text="Leave History" Width="130px" PostBackUrl="~/Modules/HR/LeaveHistory.aspx" />
+                        
+                        <asp:Button ID="btnHodApproval" runat="server" Text="HOD Approval" Width="130px" PostBackUrl="~/Modules/HR/HODApproval.aspx" />
+
+                        <asp:Button ID="btnHrApproval" runat="server" Text="HR Approval" Width="130px" PostBackUrl="~/Modules/HR/HRApproval.aspx" />
+
+                        <asp:Button ID="btnMdApproval" runat="server" Text="MD Approval" Width="130px" PostBackUrl="~/Modules/HR/MDApproval.aspx" />
+
+                        <asp:Button ID="btnApplyBackLeave" runat="server" Text="Apply Back Leave" Width="130px" PostBackUrl="~/Modules/HR/ApplyBackLeave.aspx" />
+                        
+                        <asp:Button ID="btnCalender" runat="server" Text="Holiday Calender" Width="130px" PostBackUrl="~/Modules/HR/Calender.aspx" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <td  style="padding-left: 50px;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+       
+</asp:Content>
+

@@ -1,0 +1,127 @@
+﻿    <li class="">
+        <a class="arrow_down" href="/Modules/Masters/Masters.aspx" title="Products">Masters</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/Masters/User.aspx">Value App Users</a></li>
+            <li><a href="/Modules/Masters/Masters.aspx">Masters</a></li>
+            <li><a href="/Modules/Masters/ItemMasterDetails.aspx">Item Masters</a></li>
+            <li><a href="/Modules/Masters/Item_Purchase.aspx">Purchase Price</a></li>
+            <li><a href="/Modules/Masters/Item_Purchase_Price_History.aspx">Purchase Price Update</a></li>
+            <li><a href="/Modules/Masters/ItemPriceUpdate.aspx">Sales Price</a></li>
+            <%--<li><a href="/Modules/Masters/Item_Price_History.aspx">Sales Price Update</a></li>--%>
+            <li><a href="/Modules/Masters/Item_Sales_Price_History.aspx">Sales Price Update</a></li>            
+            <li class="last"><a href="/Modules/Masters/Default3.aspx">Product Master</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/Modules/SM/CustomerInformation.aspx" title="Products">Sales & Marketing</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/SM/CustomerInformation.aspx">Customer Info</a></li>
+            <li><a href="/Modules/SM/SalesEnquiry.aspx">Sales Lead</a></li>
+            <li><a href="/Modules/SM/SalesAssignments.aspx">Sales Assignment</a></li>
+            <li><a href="/Modules/SM/SalesQuotation.aspx">Sales Quotation</a></li>
+            <li><a href="/Modules/SM/SalesOrder.aspx">Purchase Order</a></li>
+            <li><a href="/Modules/SM/WorkOrder.aspx">Internal Order</a></li>
+            <li><a href="/Modules/SM/ProcessStatus.aspx">Process Status</a></li>
+            <li><a href="/Modules/SM/PaymentsReceived.aspx">Payment Received</a></li>
+            <li class="last"><a href="/Modules/SM/DailyReport.aspx">Daily Report</a></li>
+        </ul>
+
+    </li>
+    <li>
+        <a href="/Modules/SCM/SupplierMaster.aspx" title="Events">Purchases</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/SCM/SupplierMaster.aspx">Supplier Master</a></li>
+            <li><a href="/Modules/SCM/IndentHistory.aspx">Indent History</a></li>
+            <li><a href="/Modules/SCM/IndentRecords.aspx">Indent Records</a></li>
+            <li><a href="/Modules/SCM/SupplierQuationDetails.aspx">Supplier Enquiry</a></li>
+            <li><a href="/Modules/SCM/Quotation.aspx">Proforma Invoice</a></li>
+            <li><a href="/Modules/SCM/PurchaseOrderDetails.aspx">Purchase Order</a></li>
+            <li><a href="/Modules/SCM/PurchaseInvoice.aspx">Purchase Invoice</a></li>
+            <li><a href="/Modules/SCM/ShipmentDetails.aspx">Shipment Details</a></li>
+            <li><a href="/Modules/SM/ClaimForm.aspx">Insurance Claim Form</a></li>
+            <li><a href="/Modules/SCM/ItemHistory.aspx">Item History</a></li>
+            <%--<li><a href="/Modules/SCM/SelfPurchaseOrderDetails.aspx">Self Purchase Order</a></li>--%>
+            <li class="last"><a href="/Modules/SCM/SelfPurchaseOrderq.aspx">Purchase Order Search</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/Modules/SCM/ChangedIndent.aspx" title="Pages">Inventory</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/SCM/ChangedIndent.aspx">Indent</a></li>
+            <li><a href="/Modules/SCM/CheckingFormat.aspx">MRN</a></li>
+            <li><a href="/Modules/Inventory/StockStatement.aspx">Stock Statement</a></li>
+            <li><a href="/Modules/SCM/ItemMaster.aspx">Stock Entry</a></li>
+            <li><a href="/Modules/Inventory/DeliveryChallan.aspx">Delivery Challan</a></li>
+            <li><a href="/Modules/Inventory/InternalOrderApproval.aspx">Internal Order Approval</a></li>
+            <%--<li><a href="/Modules/Inventory/ReserveStockHistory.aspx">Reserve Stock History</a></li>--%>
+            <li><a href="/Modules/Inventory/Reserved_Stock.aspx">Reserve Stock History</a></li>
+            
+            <li><a href="/Modules/Inventory/SampleDc.aspx">Sample & Cash</a></li>
+            <li><a href="/Modules/Inventory/UnbilledDC.aspx">Unbilled DC's</a></li>
+            <li class="last"><a href="/Modules/SM/Dispatchform.aspx">Dispatch</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/Modules/Services/ComplaintRegister.aspx" title="Links">Services</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/Services/Courier_Master.aspx">Courier Master</a></li>
+            <li><a href="/Modules/Services/Service_Customers.aspx">Service Customer Information</a></li>
+            <li><a href="/Modules/Services/ComplaintRegister.aspx">Complaint Register</a></li>
+            <li><a href="/Modules/Services/ServiceReport.aspx">Service Report</a></li>
+            <li><a href="/Modules/Services/SiteInspection_Report.aspx">Site Inspection Report</a></li>            
+            <li><a href="/Modules/Services/SparePartsIndent.aspx">Spare Parts Indent</a></li>
+            <li><a href="/Modules/Services/AMCQuotation.aspx">AMC Quotation</a></li>
+            <li><a href="/Modules/Services/AMCOrder.aspx">AMC Order</a></li>
+            <li><a href="/Modules/Services/AMCWorkOrder.aspx">AMC Order Profile</a></li>
+            <li><a href="/Modules/Services/AMCOrderAcceptance.aspx">AMC Order Acceptance</a></li>
+            <li><a href="/Modules/Services/WarrantyClaim.aspx">Warranty Claim</a></li>
+            <li><a href="/Modules/Services/AMCInvoice.aspx">AMC Invoice</a></li>
+            <li class="last"><a href="/Modules/Services/AMCPaymentsReceived.aspx">AMC Payments Received</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/Modules/HR/EmployeeMaster.aspx" title="Settings">HR</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/HR/EmployeeEnrollment.aspx">Employee Enrollment</a></li>
+            <li><a href="/Modules/HR/EmployeeMaster.aspx">Employee Master</a></li>
+            <li><a href="/Modules/HR/EmpMemo.aspx">MEMO</a></li>
+            <li><a href="/Modules/HR/Circular.aspx">Circular</a></li>
+            <li><a href="/Modules/HR/OfferLetter.aspx">Offer Letter</a></li>
+            <li><a href="/Modules/HR/SalaryBreakUps.aspx">Salary Break Ups</a></li>
+            <li class="last"><a href="/Modules/HR/Selfhelp.aspx">Self Help</a></li>
+
+        </ul>
+    </li>
+    <li>
+        <a href="~/Modules/Inventory/Invoice.aspx" title="Settings">Finance</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/Vouchers/vouchers.aspx">Vouchers</a></li>
+            <li><a href="/Modules/Inventory/Invoice.aspx">Sales Invoice</a></li>
+            <li><a href="/Modules/SCM/SalesReturn.aspx">Sales Return</a></li>
+            <li><a href="/Modules/Inventory/PaymentsReceived.aspx">Payments Received From Sales</a></li>
+            <%--<li><a href="/Modules/Inventory/Payments.aspx">Payments Received From Services</a></li>--%>
+            <li><a href="/Modules/Inventory/StatementOfAccount1.aspx">Statement Of Account</a></li>
+            <li><a href="/Modules/Inventory/CashInvoice.aspx">Sample & Cash Invoice</a></li>
+            <li class="last"><a href="/Modules/SCM/SampleReturn.aspx">Sample Return</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/Modules/Reports/SM.aspx" title="Settings">Reports</a>
+        <ul>
+            <li><a href="/Modules/Reports/SM.aspx">SM EOD Reports</a></li>
+            <li><a href="/Modules/Reports/SCM.aspx">SCM EOD Reports</a></li>
+            <li class="last"><a href="/Modules/Reports/Services.aspx">Service EOD Reports</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/Modules/Warehouse/Warehouse.aspx" title="Warehouse">Warehouse</a>
+        <ul>
+            <%--<li><a href="/Modules/Warehouse/Warehouse.aspx">Warehouse</a></li>--%>
+            <li><a href="/Modules/Warehouse/Stock_Report.aspx">Warehouse Stock Report</a></li>
+            <li><a href="/Modules/Warehouse/Manage_Locations2.aspx">Manage Locations</a></li>
+            <li><a href="/Modules/Warehouse/InwardStock2.aspx">Inward Stock</a></li>
+            <li><a href="/Modules/Warehouse/SpareInward.aspx">Spare Inward</a></li>
+            <li><a href="/Modules/Warehouse/OutwardStock.aspx">Outward Stock</a></li>
+            <li class="last"><a href="/Modules/Warehouse/DamageReport.aspx">Damage Report</a></li>
+        </ul>
+    </li>

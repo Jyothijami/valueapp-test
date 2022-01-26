@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Modules/Home/Default.aspx" title="Home"  description="">
+    <siteMapNode url="~/Modules/Masters/Default.aspx" title="Masters"  description="">
+      <siteMapNode url="~/Modules/Masters/Add_User.aspx" title="Users"  description="" />
+      <siteMapNode url="~/Modules/Masters/Masters.aspx" title="Masters"  description="" />
+      <siteMapNode url="~/Modules/Masters/ItemMasterDetails.aspx" title="Item Masters"  description="" />
+      <siteMapNode url="~/Modules/Masters/Default3.aspx" title="Product Masters"  description="" />
+      <siteMapNode url="~/Modules/SCM/Manage_SupplierPO_Templates.aspx" title="Supplier PO Templates"  description="" />
+      <siteMapNode url="~/Modules/Masters/user_Activity_Log.aspx" title="User Log Activity"  description="" />
+      <siteMapNode url="~/Modules/Masters/Manage_Locations.aspx" title="Manage Warehouse Location"  description="" />
+      <siteMapNode url="~/Modules/Warehouse/Manage_Warehouse.aspx" title="Manage Warehouse Sub Location"  description="" />
+      <siteMapNode url="~/Modules/Masters/Attendance_Report.aspx" title="Attendance Report"  description="" />
+      <siteMapNode url="~/Modules/HR/Employee_Images.aspx" title="Employee Details"  description="" />
+      <siteMapNode url="~/Modules/Masters/ItemMaster.aspx" title="Add New Item"  description="" />
+      <siteMapNode url="~/Modules/Masters/ItemEdit.aspx" title="Edit Item"  description="" />
+      <siteMapNode url="~/Modules/Masters/Item_Purchase.aspx" title="Add Item Purchase Price"  description="" />
+      <siteMapNode url="~/Modules/Masters/Item_Purchase_Price_History.aspx" title="Edit Item Purchase Price"  description="" />
+      <siteMapNode url="~/Modules/Masters/ItemPriceUpdate.aspx" title="New Item Sales Price"  description="" />
+      <siteMapNode url="~/Modules/Masters/Item_Sales_Price_History.aspx" title="Edit Item Sales Price"  description="" />
+      
+    </siteMapNode>
+    
+    <siteMapNode url="~/Modules/SM/Default.aspx" title="Sales and Marketing"  description="">
+      <siteMapNode url="~/Modules/SM/CustomerInformation.aspx" title="Customer Information"  description="" >
+        <siteMapNode url="~/Modules/SM/CustomerInformation_Details.aspx" title="Customer Details"  description="" />
+      </siteMapNode>
+      
+      <siteMapNode url="~/Modules/SM/Customer_Info_Log_Activity.aspx" title="Customer Log Activity"  description="" />
+
+      <siteMapNode url="~/Modules/eQuotation/eQuotation_App.aspx" title="Executive Quotation"  description="" />
+
+      <siteMapNode url="~/Modules/Reports/SalesOrder_Search.aspx" title="Sales Order Search"  description="" />
+
+      <siteMapNode url="~/Modules/SM/SalesEnquiry.aspx" title="Sales Enquiry"  description="">
+      <siteMapNode url="~/Modules/SM/SalesEnquiryDetails.aspx" title="Sales Enquiry Details"  description="" />
+      </siteMapNode>
+      
+      <siteMapNode url="~/Modules/SM/SalesAssignments.aspx" title="Sales Assignment"  description="" />
+    
+      <siteMapNode url="~/Modules/SM/SalesQuotation.aspx" title="Sales Quotation's"  description="">
+        <siteMapNode url="~/Modules/SM/SalesQuotationDetails.aspx" title="Sales Quotation Details"  description="" />  
+      </siteMapNode>
+      
+      <siteMapNode url="~/Modules/SM/SalesOrder.aspx" title="Purchase Order"  description="" />
+      <siteMapNode url="~/Modules/SM/WorkOrder.aspx" title="Internal Order"  description="" >
+      <siteMapNode url="~/Modules/SM/WorkOrderDetails.aspx" title="Sales Purchase Order Details"  description="" />
+    </siteMapNode>
+        
+      <siteMapNode url="~/Modules/SM/ProcessStatus.aspx" title="Process Status"  description="" />
+      <siteMapNode url="~/Modules/SM/PaymentsReceived.aspx" title="Payments Received"  description="" >
+      <siteMapNode url="~/Modules/SM/PaymentsReceivedNew.aspx" title="Payments Received Details"  description="" />
+        
+    </siteMapNode>
+        
+      <siteMapNode url="~/Modules/SM/DailyReport.aspx" title="Daily Report"  description="" />
+
+    </siteMapNode>
+    
+      
+    <siteMapNode url="~/Modules/SCM/Default.aspx" title="Purchases"  description="">
+      <siteMapNode url="~/Modules/SCM/SupplierMaster.aspx" title="Supplier Master"  description="" >
+      <siteMapNode url="~/Modules/SCM/SupplierMasterNew.aspx" title="Suppliers Master Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/SCM/IndentHistory.aspx" title="Indent History"  description="" />
+      <siteMapNode url="~/Modules/SCM/IndentRecords.aspx" title="Indent Records"  description="" />
+        
+      <siteMapNode url="~/Modules/SCM/SupplierQuationDetails.aspx" title="Suppliers Enquiry"  description="" >
+      <siteMapNode url="~/Modules/SCM/SupplierQuation.aspx" title="Suppliers Enquiry"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/SCM/Quotation.aspx" title="Proforma Invoice"  description="" />
+      <siteMapNode url="~/Modules/SCM/FixedPurchaseOrderDetails.aspx" title="Purchase Order"  description="" />
+    
+      <siteMapNode url="~/Modules/SCM/PurchaseInvoice.aspx" title="Purchase Invoice"  description="" >
+      <siteMapNode url="~/Modules/SCM/PurchaseInvoiceNew.aspx" title="Purchase Invoice Details"  description="" />        
+      </siteMapNode>
+      <siteMapNode url="~/Modules/SCM/ShipmentDetails.aspx" title="Shipment Details"  description="" >
+      <siteMapNode url="~/Modules/SCM/ShipmentDetailsNew.aspx" title="New Shipment Details"  description="" />
+      </siteMapNode>
+      
+      <siteMapNode url="~/Modules/SM/ClaimForm.aspx" title="Insurance Claim Form"  description="" >
+      <siteMapNode url="~/Modules/SM/ClaimFormNew.aspx" title="Claim Form Details"  description="" />
+      </siteMapNode>
+      
+      <siteMapNode url="~/Modules/SCM/ItemHistory.aspx" title="Item History"  description="" />
+      <siteMapNode url="~/Modules/SCM/SelfPurchaseOrderDetails.aspx" title="Self Purchase Order"  description="" />
+      <siteMapNode url="~/Modules/SCM/SelfPurchaseOrderq.aspx" title="Purchase Order Search"  description="" />
+      <siteMapNode url="~/Modules/SCM/PurchaseOrderDetails.aspx" title="Purchase Orders List"  description="">
+        <siteMapNode url="~/Modules/SCM/PurchaseOrder.aspx" title="Purchase Order Detail"  description="" />
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Modules/Inventory/Default.aspx" title="Inventory"  description="">
+      <siteMapNode url="~/Modules/SCM/ChangedIndent.aspx" title="Indent"  description="" >
+        <siteMapNode url="~/Modules/SCM/ChangedIndentDetails.aspx" title="Indent Details"  description="" />
+        </siteMapNode>
+        <siteMapNode url="~/Modules/SCM/CheckingFormat.aspx" title="MRN"  description="" >
+          <siteMapNode url="~/Modules/SCM/CheckingFormatDetails.aspx" title="MRN Details"  description="" />
+          </siteMapNode>
+        <siteMapNode url="~/Modules/Inventory/StockStatement.aspx" title="Stock Statement"  description="" />
+          <siteMapNode url="~/Modules/SCM/ItemMaster.aspx" title="Stock Entry"  description="" />
+          <siteMapNode url="~/Modules/Inventory/DeliveryChallan.aspx" title="Delivery Challan"  description="" >
+            <siteMapNode url="~/Modules/Inventory/DeliveryChallanDetails.aspx" title="Delivery Challan Details"  description="" />
+          </siteMapNode>
+          <siteMapNode url="~/Modules/Inventory/InternalOrderApproval.aspx" title="Internal Order Approval"  description="" >
+            <siteMapNode url="~/Modules/Inventory/InternalOrderApprovalDetails.aspx" title="Internal Order Approval Details"  description="" />
+          </siteMapNode>
+
+          <siteMapNode url="~/Modules/Inventory/ReserveStockHistory.aspx" title="Reserve Stock History"  description="" />
+          <siteMapNode url="~/Modules/Inventory/Reserved_Stock.aspx" title="Reserved Stock History"  description="" />
+          <siteMapNode url="~/Modules/Inventory/SampleDc.aspx" title="Sample and Cash"  description="" >
+            <siteMapNode url="~/Modules/Inventory/SampleDcDetails.aspx" title="Sample and Cash Details"  description="" />
+          </siteMapNode>
+
+          <siteMapNode url="~/Modules/Inventory/UnbilledDC.aspx" title="Unbilled DC's"  description="" />
+          <siteMapNode url="~/Modules/SM/Dispatchform.aspx" title="Dispatch"  description="" >
+            <siteMapNode url="~/Modules/SM/DispatchformDetails.aspx" title="Dispatch Details"  description="" />
+          </siteMapNode>
+
+        </siteMapNode>
+    <siteMapNode url="~/Modules/Services/Default.aspx" title="Services"  description="">
+      <siteMapNode url="~/Modules/Services/Courier_Master.aspx" title="Courier Master"  description="" />
+      <siteMapNode url="~/Modules/Services/Service_Customers.aspx" title="Services Customer Info"  description="" >
+      <siteMapNode url="~/Modules/Services/ServiceCustomerInformation.aspx" title="Services Customer Info Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Services/SiteInspection_Report.aspx" title=" Site Inspection"  description="" >
+      <siteMapNode url="~/Modules/Services/Site_Inspection_Report_Details.aspx" title=" Site Inspection Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Services/ComplaintRegister.aspx" title="Complaint Register"  description="" />
+      <siteMapNode url="~/Modules/Services/ServiceReport.aspx" title="Service Report"  description="" >
+      <siteMapNode url="~/Modules/Services/ServiceReportNew.aspx" title="Service Report Details"  description="" />
+    </siteMapNode>
+      <!--<siteMapNode url="~/Modules/Services/CustomerInformation.aspx" title="Customer Info"  description="" />-->
+      <siteMapNode url="~/Modules/Services/AMCQuotation.aspx" title="AMC Quotation"  description="" >
+      <siteMapNode url="~/Modules/Services/AMCQuotationNew.aspx" title="AMC Quotation Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Services/SparePartsIndent.aspx" title=" Spare Parts Indent"  description="" >
+      <siteMapNode url="~/Modules/Services/SparesIndentPrint.aspx" title=" Spare Parts Indent Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Services/AMCOrder.aspx" title="AMC Order"  description="" />
+      <siteMapNode url="~/Modules/Services/AMCWorkOrder.aspx" title="AMC Order Profile"  description="" >
+      <siteMapNode url="~/Modules/Services/AMCWorkOrderNew.aspx" title="AMC Order Profile Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Services/AMCOrderAcceptance.aspx" title="AMC Order Acceptance"  description="" >
+      <siteMapNode url="~/Modules/Services/AMCOrderAcceptanceNew.aspx" title="AMC Order Acceptance Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Services/WarrantyClaim.aspx" title="Warranty Claim"  description="" >
+      <siteMapNode url="~/Modules/Services/WarrantyClaimNew.aspx" title="Warranty Claim Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Services/AMCInvoice.aspx" title="AMC Invoice"  description="" >
+      <siteMapNode url="~/Modules/Services/AMCInvoiceNew.aspx" title="AMC Invoice Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Services/AMCPaymentsReceived.aspx" title="AMC Payments Received"  description="" >
+      <siteMapNode url="~/Modules/Services/AMCPaymentsReceivedNew.aspx" title="AMC Payments Received Details"  description="" />
+    </siteMapNode>
+    </siteMapNode>
+    
+    <siteMapNode url="~/Modules/HR/Default3.aspx" title="HR"  description="">
+      <siteMapNode url="~/Modules/HR/EmployeeMaster.aspx" title="Employee Master"  description="" />
+      <siteMapNode url="~/Modules/HR/LeaveAllocation.aspx" title="Leave Allocation"  description="" />
+      <siteMapNode url="~/Modules/HR/LeaveHistory.aspx" title="Leave History"  description="" />
+      <siteMapNode url="~/Modules/HR/HODApproval.aspx" title="HOD Approval"  description="" />
+      <siteMapNode url="~/Modules/HR/HRApproval.aspx" title="HR Approval"  description="" />
+      <siteMapNode url="~/Modules/HR/MDApproval.aspx" title="MD Approval"  description="" />
+      <siteMapNode url="~/Modules/HR/ApplyBackLeave.aspx" title="Apply Back Leave"  description="" />
+      <siteMapNode url="~/Modules/HR/EmpMemo.aspx" title="Employee Memo"  description="" />
+      <siteMapNode url="~/Modules/HR/Calender.aspx" title="Holiday Calender"  description="" />
+      <siteMapNode url="~/Modules/HR/EmployeeEnrollment.aspx" title="Employee Enrollment"  description="" />
+      <siteMapNode url="~/Modules/HR/Emp_Interview.aspx" title="Employee Interview Schedule"  description="" />
+      <siteMapNode url="~/Modules/HR/Emp_InterviewResult.aspx" title="Employee Interview Result Details"  description="" />
+      <siteMapNode url="~/Modules/HR/Emp_OfferLetter.aspx" title="Employee OfferLetter Details"  description="" />
+      
+      <siteMapNode url="~/Modules/HR/Selfhelp.aspx" title="Self Help"  description="" >
+      <siteMapNode url="~/Modules/HR/EmpOnDutyForm.aspx" title="Employee OnDuty Form "  description="" />
+      <siteMapNode url="~/Modules/HR/EmpOneHourPermission.aspx" title="Employee One Hour Permission Form "  description="" />
+        
+        <siteMapNode url="~/Modules/HR/AdvanceSalaryReqForm.aspx" title="Employee Advance Salary Request Form "  description="" />
+        <siteMapNode url="~/Modules/HR/Staff_Tour_Advance.aspx" title="Staff Tour Advance Form "  description="" />
+        <siteMapNode url="~/Modules/HR/MobileAdvanceReqForm.aspx" title="Employee Mobile Advance Request Form "  description="" />
+        <siteMapNode url="~/Modules/HR/CV1.aspx" title="Employee Convenience Voucher Form "  description="" />
+
+        <siteMapNode url="~/Modules/HR/EmpOverTimeForm.aspx" title="Employee Over Time Form "  description="" />
+      <siteMapNode url="~/Modules/HR/EmpShiftChange.aspx" title="Employee Shift Change Form "  description="" />
+      <siteMapNode url="~/Modules/HR/LeaveApplication.aspx" title="Employee Leave Application Form "  description="" />
+      <siteMapNode url="~/Modules/HR/TicketDetails.aspx" title="Employee Ticket Details Form "  description="" />
+      <siteMapNode url="~/Modules/HR/PaySlip.aspx" title="Employee Pay Slip Form "  description="" />
+    </siteMapNode>
+
+      <siteMapNode url="~/Modules/HR/SelfhelpHR.aspx" title="Self Help HR "  description="" >
+        <siteMapNode url="~/Modules/HR/Emp_PersonalDetailsUpdate.aspx" title="Employee Personal Details Update"  description="" />
+        <siteMapNode url="~/Modules/HR/EmpOnDutyFormApprove.aspx" title="Employee OnDuty Approve Form "  description="" />
+        <siteMapNode url="~/Modules/HR/EmpOneHourPermissionApprove.aspx" title="Employee One Hour Permission Approve Form "  description="" />
+
+        <siteMapNode url="~/Modules/HR/EmpOverTimeFormApprove.aspx" title="Employee Over Time Approve Form "  description="" />
+        <siteMapNode url="~/Modules/HR/EmpShiftChangeApprove.aspx" title="Employee Shift Change Approve Form "  description="" />
+        <siteMapNode url="~/Modules/HR/TicketDetailsApprove.aspx" title="Employee Ticket Details Approve Form "  description="" />
+      </siteMapNode>
+      
+      <siteMapNode url="~/Modules/HR/Bio_Maping.aspx" title="Biometric-Mapping"  description="" />
+      <siteMapNode url="~/Modules/HR/Emp_Attendance.aspx" title="Biometric-Attendance"  description="" />
+      
+      <siteMapNode url="~/Modules/HR/Memo.aspx" title="Memo"  description="" />
+      <siteMapNode url="~/Modules/HR/Circular.aspx" title="Circular"  description="" />
+      <siteMapNode url="~/Modules/HR/OfferLetter.aspx" title="Offer Letter"  description="" />
+      <siteMapNode url="~/Modules/HR/SalaryBreakUps.aspx" title="Salary BreakUps"  description="" />
+    </siteMapNode>
+    
+    
+    <!--<siteMapNode url="~/Modules/HR/Default.aspx" title="Finance"  description="">
+      <siteMapNode url="~/Modules/Inventory/Invoice.aspx" title="Sales Invoice"  description="" />
+    </siteMapNode>-->
+    
+    
+    <siteMapNode url="~/Modules/Vouchers/Default.aspx" title="Finance"  description="">
+      <siteMapNode url="~/Modules/Vouchers/vouchers.aspx" title="Vouchers"  description="" />
+      <siteMapNode url="~/Modules/Inventory/Invoice.aspx" title="Sale Invoice"  description="" >
+      <siteMapNode url="~/Modules/Inventory/InvoiceDetails.aspx" title="Sale Invoice Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/SCM/SalesReturn.aspx" title="Sale Return"  description="" >
+      <siteMapNode url="~/Modules/SCM/SalesReturnDetails.aspx" title="Sale Return Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Inventory/PaymentsReceived.aspx" title="Payments Received From Sales"  description="" >
+      <siteMapNode url="~/Modules/Inventory/PaymentsReceivedDetails.aspx" title="Payments Received From Sales Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Inventory/StatementOfAccount1.aspx" title="Statement Of Account"  description="" >
+      <siteMapNode url="~/Modules/Inventory/Statementprint.aspx" title="Statement Of Account Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Inventory/CashInvoice.aspx" title="Cash Sample Invoice"  description="" >
+      <siteMapNode url="~/Modules/Inventory/CashInvoiceNew.aspx" title="Cash Sample Invoice Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/SCM/SampleReturn.aspx" title="Sample Return"  description="" >
+      <siteMapNode url="~/Modules/SCM/SampleReturnNew.aspx" title="Sample Return Details"  description="" />
+    </siteMapNode>
+    </siteMapNode>
+    
+    
+    <siteMapNode url="~/Modules/Reports/Default.aspx" title="Reports"  description="">
+      <siteMapNode url="~/Modules/Reports/SM.aspx" title="SM EOD Reports"  description="" />
+      <siteMapNode url="~/Modules/Reports/SCM.aspx" title="SCM EOD Reports"  description="" />
+      <siteMapNode url="~/Modules/Reports/Services.aspx" title="Services EOD Reports"  description="" />
+
+    </siteMapNode>
+
+
+    <siteMapNode url="~/Modules/Warehouse/Warehouse.aspx" title="Warehouse"  description="">
+      <siteMapNode url="~/Modules/Warehouse/Stock_Report.aspx" title="Warehouse Stock Report"  description="" />
+      <siteMapNode url="~/Modules/Warehouse/Manage_Locations2.aspx" title="Manage Locations"  description="" />
+      <siteMapNode url="~/Modules/Warehouse/InwardStock2.aspx" title="Inward Stock"  description="" >
+      <siteMapNode url="~/Modules/SCM/CheckingFormatDetails2.aspx" title="MRN Details"  description="" />
+    </siteMapNode>
+      <siteMapNode url="~/Modules/Warehouse/SpareInward.aspx" title="Spare Inward"  description="" />
+      <siteMapNode url="~/Modules/Warehouse/OutwardStock.aspx" title="Outward Stock"  description="" />
+      <siteMapNode url="~/Modules/Warehouse/DamageReport.aspx" title="Damage Report"  description="" />
+      <siteMapNode url="~/Modules/Warehouse/Inward_Management.aspx" title="Inward Management"  description="" />
+    </siteMapNode>
+  
+  </siteMapNode>
+</siteMap>

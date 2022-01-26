@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_backup.master.cs" Inherits="MasterPage_backup" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxControls" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>|| YANTRA || </title>
+    <link href="App_Themes/Master/Master.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../SilverLightMenu/Silverlight.js"></script>
+
+    <script type="text/javascript" src="../../SilverLightMenu/Scene.xaml.js"></script>
+
+    <script type="text/javascript" src="../../SilverLightMenu/ERPUrls.js"></script>
+
+</head>
+<body style="text-align: center; width: 100%; height: 100%; background-position-x: center; background-repeat: no-repeat;">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="0">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%"
+                    class="table">
+                    <tr>
+                        <td style="text-align: center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="masterheadpipe" colspan="3" style="text-align: left">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="text-align: left">
+                                                    <asp:Label ID="lblUserName" runat="server" CssClass="linkbutton" Font-Bold="True"
+                                                        Font-Size="8pt" Text="User Name" EnableTheming="False"></asp:Label><asp:Image ID="Image3"
+                                                            runat="server" ImageUrl="~/Images/password.gif" Style="vertical-align: middle" /><asp:LinkButton
+                                                                ID="lbtnChangePassword" runat="server" CausesValidation="False" CssClass="linkinmaster"
+                                                                Font-Bold="False" EnableTheming="False" PostBackUrl="~/Modules/Home/ChangePassword.aspx">Change Password</asp:LinkButton><asp:Image ID="Image2" runat="server" ImageUrl="~/Images/logout.gif" Style="vertical-align: middle" />&nbsp;
+                                                    <asp:LinkButton
+                                                        ID="lbtnLogout" runat="server" CausesValidation="False" CssClass="linkinmaster"
+                                                        Font-Bold="False" EnableTheming="False" OnClick="lbtnLogout_Click">Logout</asp:LinkButton>
+                                                    <asp:Label ID="lblEmpIdHidden" runat="server" Visible="False"></asp:Label>
+                                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Home.png" Style="vertical-align: middle" />
+                                                    <asp:LinkButton ID="lbtnHome" runat="server" CausesValidation="False" CssClass="linkinmaster"
+                                                        EnableTheming="False" Font-Bold="False" OnClick="lbtnHome_Click" PostBackUrl="~/Modules/Home/Default.aspx">Home</asp:LinkButton>
+                                                </td>
+                                                <td style="text-align: right">
+                                                    <asp:LinkButton ID="LinkButton107" runat="server" CssClass="linkbutton" EnableTheming="False"
+                                                        Font-Bold="True" ForeColor="#067B94" Style="padding-right: 15px" Font-Strikeout="False"
+                                                        OnClientClick='window.open("../SilverLightMenu/Silverlight.2.0.exe");'>Install Silverlight</asp:LinkButton></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="headerleft" align="left" valign="top">
+                                        <asp:Image ID="imgComapany" runat="server" ImageAlign="Middle" Height="124px" Width="158px" />
+                                        <table style="width: 100%">
+                                            <tr>
+                                                <td style="width: 100px; height: 9px; text-align: left" valign="middle"></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 100px; text-align: left" valign="middle">
+                                                    <asp:Label ID="lblCName" runat="server" CssClass="linkbutton1" EnableTheming="False"
+                                                        Font-Bold="False" Width="221px" Font-Names="Arial" Font-Size="Large">Value Line</asp:Label></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="headermiddle" style="height: 102px">&nbsp;</td>
+                                    <td valign="top" class="headerright" style="height: 102px">
+                                        <table border="0" cellpadding="0" cellspacing="0" style="height: 220px">
+                                            <tr>
+                                                <td valign="top">
+                                                    <asp:HiddenField ID="HiddenFieldDoNotRemove" runat="server" Value="0" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="bottom">
+                                                    <asp:Label ID="lblCurrentDateTime" runat="server" Font-Size="8pt" ForeColor="#FFFFC0"
+                                                        Text="Current Date" Font-Bold="True" Font-Names="Verdana" EnableTheming="False"
+                                                        Style="padding-right: 15px; vertical-align: text-bottom"></asp:Label></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" height="360px" style="text-align: center;">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100%; height: 20px; background-color: #067b94; font-size: 8pt; vertical-align: middle; text-transform: capitalize; color: white; font-family: Verdana; text-align: right;">
+                            <table width="100%">
+                                <tr>
+                                    <td align="left">
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" OnClick="LinkButton1_Click" ForeColor="#067B94">Full Access</asp:LinkButton><asp:HiddenField ID="HiddenField1" runat="server" />
+                                    </td>
+                                    <td>2009 N-Infosoft &nbsp;@&nbsp; All Rights Reserved</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="lbtnChangePassword" EventName="Click" />
+                <asp:AsyncPostBackTrigger ControlID="lbtnLogout" EventName="Click" />
+            </Triggers>
+        </asp:UpdatePanel>
+        <table border="0" cellpadding="0" cellspacing="0" class="mainmenutable" style="right: 60px; top: 70px;">
+            <tr>
+                <td colspan="13" style="width: 12px">
+                    <div id="SilverlightPlugInHost">
+
+                        <script type="text/javascript">
+                            createSilverlight();
+                        </script>
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

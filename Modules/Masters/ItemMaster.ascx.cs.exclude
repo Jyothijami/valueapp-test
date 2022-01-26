@@ -1,0 +1,622 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using YantraBLL.Modules;
+using Yantra.MessageBox;
+using System.IO;
+
+public partial class Modules_Masters_ItemMaster : System.Web.UI.UserControl
+{
+    FileUpload fu1 = new FileUpload();
+
+    #region PAGE LOAD
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+        if (!IsPostBack)
+        {
+            lblSearchItemHidden.Text = ddlSearchBy.SelectedValue;
+            lblSearchValueHidden.Text = txtSearchText.Text;
+           // lblCPID.Text = (string)cp.getPresentCompanySessionValue();
+          gvItemsMasterDetails.DataBind();
+            FillPurchaseItemType();
+           // FillItemType();
+            FillUOM();
+            FillItemTypeForPrint();
+            FillItemCategory();
+            FillBrand();
+          PartOf();
+            txtMinimum.Text = "10";
+            txtFinacalYear.Text = "09-10";
+            txtRate.Text = "0";
+            txtSeries.Text = "0";
+            ddlItemUOM.SelectedValue = "1";
+            ddlPurchaseItemType.SelectedValue = "2";
+            ddlBrandName.SelectedValue = "1";
+
+           
+           
+        }
+    }
+    #endregion
+
+    #region Page PreRender
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        if (btnSave.Text == "Save") { btnRefresh.Visible = true; } else if (btnSave.Text == "Update") { btnRefresh.Visible = false; }
+    }
+    #endregion
+
+    #region FillItemUOM
+    private void FillUOM()
+    {
+        try
+        {
+            Masters.UnitMaster.UnitMaster_Select(ddlItemUOM);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message.ToString());
+        }
+        finally
+        {
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+    //#region Fill Item Type
+    //private void FillItemType()
+    //{
+    //    try
+    //    {
+    //        Masters.ItemMaster.ItemMaster1_Select(ddlType, ddlItemCategory.SelectedValue);
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        MessageBox.Show(this, ex.Message);
+    //    }
+    //    finally
+    //    {
+    //        Masters.Dispose();
+    //    }
+    //}
+    //#endregion
+
+    #region Fill Item Type For Print
+    private void FillItemTypeForPrint()
+    {
+        try
+        {
+            Masters.ItemType.ItemType_Select(ddlSubCategoryForPrint);
+            ddlSubCategoryForPrint.Items.FindByText("--").Text = "All";
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message);
+        }
+        finally
+        {
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+
+    #region PartOf
+    private void PartOf()
+    {
+        try
+        {
+            Masters.ItemMaster.PartOf_Select(ddlPartof);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message);
+        }
+        finally
+        {
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+    #region Fill Purchase Item Type
+    private void FillPurchaseItemType()
+    {
+        try
+        {
+            Masters.PurchaseItemType.ItemType_Select(ddlPurchaseItemType);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message.ToString());
+        }
+        finally
+        {
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+    #region Fill Item Category
+    private void FillItemCategory()
+    {
+        try
+        {
+            Masters.ItemCategory.ItemCategory_Select(ddlItemCategory);
+            Masters.ItemCategory.ItemCategory_Select(ddlCategoryForPrint);
+            ddlCategoryForPrint.Items.FindByText("--").Text = "All";
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message.ToString());
+        }
+        finally
+        {
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+    #region Fill Brand master
+    private void FillBrand()
+    {
+        try
+        {
+            Masters.ProductCompany.ProductCompany_Select(ddlBrandName);
+            Masters.ProductCompany.ProductCompany_Select(ddlBrandForPrint);
+            ddlBrandForPrint.Items.FindByText("--").Text = "All";
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message.ToString());
+        }
+        finally
+        {
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+    #region Button SAVE/UPDATE  Click
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        txtSpecification.Text = txtSpecification.Text.Replace("'", " ");
+        txtPurchaseSpec.Text = txtPurchaseSpec.Text.Replace("'", " ");
+        if (btnSave.Text == "Save")
+        {
+            ItemMasterSave();
+            //tblItDetails.Visible = false;
+        }
+        else if (btnSave.Text == "Update")
+        {
+            ItemMasterUpdate();
+          //  tblItDetails.Visible = false;
+        }
+        gvItemsMasterDetails.SelectedIndex = -1;
+    }
+    #endregion
+
+    #region ItemMasterSave
+    private void ItemMasterSave()
+    {
+        try
+        {
+            Masters.ItemMaster objMaster = new Masters.ItemMaster();
+            objMaster.ItemName = txtItemName.Text;
+            objMaster.ItemSpec = txtSpecification.Text;
+            objMaster.ItemMinStockQty = txtMinimum.Text;
+            objMaster.ItemMaterialType = txtMatirealType.Text;
+            objMaster.ItemType = ddlType.SelectedItem.Value;
+            objMaster.ItemQtyInHand = "0";
+            objMaster.UOMId = ddlItemUOM.SelectedItem.Value;
+            objMaster.ItemRate = txtRate.Text;
+            objMaster.ItemPrincipalName = txtPrincipalName.Text;
+            objMaster.ItemSeries = txtSeries.Text;
+            objMaster.ItemPurchaseSpec = txtPurchaseSpec.Text;
+            objMaster.ItemPurchaseTypeId = ddlPurchaseItemType.SelectedItem.Value;
+            objMaster.ModelNo = txtModelNo.Text;
+            objMaster.ItemCategoryId = ddlItemCategory.SelectedItem.Value;
+            objMaster.BrandName = ddlBrandName.SelectedItem.Value;
+            objMaster.Color = txtColor.Text;
+            objMaster.IFY = txtFinacalYear.Text;
+            if (ddlPartof.SelectedItem.Value == "")
+            {
+                objMaster.PartOf = "0";
+            }
+            else
+            {
+                objMaster.PartOf = ddlPartof.SelectedItem.Value;
+            }
+            if (FileUpload1.HasFile)
+            {
+                objMaster.ItemAttachments = System.IO.Path.GetFileName(FileUpload1.PostedFile.FileName);
+            }
+            else
+            {
+                objMaster.ItemAttachments = "";
+            }
+            MessageBox.Show(this, objMaster.ItemMaster_Save());
+            //if (FileUpload1.HasFile)
+            //{
+            //    FileUpload1.PostedFile.SaveAs(AppDomain.CurrentDomain.BaseDirectory + "Modules/Masters/Items/" + objMaster.ItemCode + System.IO.Path.GetExtension(FileUpload1.PostedFile.FileName).ToString());
+            //}
+            
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message);
+        }
+        finally
+        {
+
+            gvItemsMasterDetails.DataBind();
+           // Masters.ClearControls(this);
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+    #region ItemMasterUpdate
+    private void ItemMasterUpdate()
+    {
+        try
+        {
+            Masters.ItemMaster objMaster = new Masters.ItemMaster();
+            objMaster.ItemCode = gvItemsMasterDetails.SelectedRow.Cells[1].Text;
+            objMaster.ItemName = txtItemName.Text;
+            objMaster.ItemSpec = txtSpecification.Text;
+            objMaster.ItemMinStockQty = txtMinimum.Text;
+            objMaster.ItemMaterialType = txtMatirealType.Text;
+            objMaster.ItemType = ddlType.SelectedItem.Value;
+          //  objMaster.ItemType = ddlType.SelectedItem.Text;
+            objMaster.ItemQtyInHand = "0";
+            objMaster.UOMId = ddlItemUOM.SelectedItem.Value;
+            objMaster.ItemRate = txtRate.Text;
+            objMaster.ItemPrincipalName = txtPrincipalName.Text;
+            objMaster.ItemSeries = txtSeries.Text;
+            objMaster.ItemPurchaseSpec = txtPurchaseSpec.Text;
+            objMaster.ItemPurchaseTypeId = ddlPurchaseItemType.SelectedItem.Value;
+            objMaster.ModelNo = txtModelNo.Text;
+            objMaster.ItemCategoryId = ddlItemCategory.SelectedItem.Value;
+            objMaster.BrandName = ddlBrandName.SelectedItem.Value;
+            objMaster.Color = txtColor.Text;
+            objMaster.IFY = txtFinacalYear.Text;
+            objMaster.PartOf = ddlPartof.SelectedItem.Value;
+            if (FileUpload1.HasFile)
+            {
+                objMaster.ItemAttachments = System.IO.Path.GetFileName(FileUpload1.PostedFile.FileName);
+            }
+            else
+            {
+                objMaster.ItemAttachments = lbtnAttachedFile.Text;
+            }
+            MessageBox.Show(this, objMaster.ItemMaster_Update());
+            if (FileUpload1.HasFile)
+            {
+                FileUpload1.PostedFile.SaveAs(AppDomain.CurrentDomain.BaseDirectory + "Modules/Masters/Items/" + objMaster.ItemCode + System.IO.Path.GetExtension(FileUpload1.PostedFile.FileName).ToString());
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message);
+        }
+        finally
+        {
+
+            gvItemsMasterDetails.DataBind();
+            Masters.ClearControls(this);
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+    #region gvItemsMasterDetails_RowDataBound
+    protected void gvItemsMasterDetails_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType != DataControlRowType.Pager)
+        {
+            e.Row.Cells[0].Visible = false;
+            e.Row.Cells[9].Visible = false;
+           // e.Row.Cells[10].Visible = false;
+            //e.Row.Cells[11].Visible = false;
+        }
+        
+    }
+    #endregion
+
+    #region Button EDIT Click
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+        if (gvItemsMasterDetails.SelectedIndex > -1)
+        {
+            tblItDetails.Visible = true;
+
+        
+            Masters.ItemMaster objmaster = new Masters.ItemMaster();
+            if (objmaster.ItemMaster_Select(gvItemsMasterDetails.SelectedRow.Cells[1].Text) > 0)
+            {
+                txtItemName.Text = objmaster.ItemName;
+                ddlItemUOM.SelectedValue = objmaster.ItemUOMId;
+                txtSpecification.Text = objmaster.ItemSpec;
+                txtMatirealType.Text = objmaster.ItemMaterialType;
+               // FillItemType();
+               // ddlType.SelectedItem.Text = gvItemsMasterDetails.SelectedRow.Cells[5].Text;
+                
+                txtMinimum.Text = objmaster.ItemMinStockQty;
+                lbtnAttachedFile.Text = objmaster.ItemAttachments;
+                txtRate.Text = objmaster.ItemRate;
+                txtPrincipalName.Text = objmaster.ItemPrincipalName;
+                txtSeries.Text = objmaster.ItemSeries;
+                txtPurchaseSpec.Text = objmaster.ItemPurchaseSpec;
+                ddlPurchaseItemType.SelectedValue = objmaster.ItemPurchaseTypeId;
+                Image1.ImageUrl = "~/Modules/Masters/ItemMasterimageupload.ashx?id=" + gvItemsMasterDetails.SelectedRow.Cells[1].Text + "";
+                Image2.ImageUrl = "~/Modules/Masters/itemimagespecification.ashx?id=" + gvItemsMasterDetails.SelectedRow.Cells[1].Text + "";
+                txtColor.Text = objmaster.Color;
+                txtModelNo.Text = objmaster.ModelNo;
+                ddlBrandName.SelectedValue = objmaster.BrandName;
+                ddlItemCategory.SelectedValue = objmaster.ItemCategoryId;
+                ddlItemCategory_SelectedIndexChanged(sender, e);
+                ddlType.SelectedValue = objmaster.ItemTypeId;
+                txtFinacalYear.Text = objmaster.IFY;
+                ddlPartof.SelectedValue = objmaster.PartOf;
+                //string[] ext = lbtnAttachedFile.Text.Split('.');
+                // lbtnAttachedFile.Attributes.Add("onclick", "window.open('Items/" + objmaster.ItemCode + "." + ext[1] + "','ItemFiles','resizable=yes,width=900,height=600,status=yes,toolbar=no,menubar=no');");
+
+                if (lbtnAttachedFile.Text != "")
+                {
+                    string[] ext = lbtnAttachedFile.Text.Split('.');
+                    if (System.IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory + "Modules/Masters/Items/" + objmaster.ItemCode + "." + ext[1]))
+                    {
+                        lbtnAttachedFile.Attributes.Add("onclick", "window.open('Items/" + objmaster.ItemCode + "." + ext[1] + "','ItemFiles','resizable=yes,width=800,height=600,status=yes,toolbar=no,menubar=no');");
+                    }
+                    else
+                    {
+                        lbtnAttachedFile.Text = "";
+                        lbtnAttachedFile.Attributes.Clear();
+                    }
+                }
+
+            }
+            btnSave.Text = "Update";
+           
+        }
+        else
+        {
+            MessageBox.Show(this, "Please select atleast a Record");
+        }
+    }
+    #endregion
+
+    #region Button DELETE Click
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        if (gvItemsMasterDetails.SelectedIndex > -1)
+        {
+            try
+            {
+                Masters.ItemMaster objMaster = new Masters.ItemMaster();
+                objMaster.ItemCode = gvItemsMasterDetails.SelectedRow.Cells[1].Text;
+                MessageBox.Show(this, objMaster.ItemMaster_Delete());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message);
+            }
+            finally
+            {
+                tblItDetails.Visible = false;
+
+                gvItemsMasterDetails.DataBind();
+                gvItemsMasterDetails.SelectedIndex = -1;
+
+                Masters.ClearControls(this);
+                Masters.Dispose();
+            }
+        }
+        else
+        {
+            MessageBox.Show(this, "Please select atleast a Record");
+        }
+    }
+    #endregion
+
+    #region Button NEW Ckick
+    protected void btnNew_Click(object sender, EventArgs e)
+    {
+        Masters.ClearControls(this);
+        ddlType.Items.Clear();
+        btnSave.Text = "Save";
+        tblItDetails.Visible = true;
+        tblPrint.Visible =false;
+    }
+    #endregion
+
+    #region  Button Refresh
+    protected void btnRefresh_Click(object sender, EventArgs e)
+    {
+        Masters.ClearControls(this);
+    }
+    #endregion
+
+    #region Button CLOSE Click
+    protected void btnClose_Click(object sender, EventArgs e)
+    {
+        tblItDetails.Visible = false;
+    }
+    #endregion
+
+    #region Button SEARCH GO Click
+    protected void btnSearchGo_Click(object sender, EventArgs e)
+    {
+        lblSearchItemHidden.Text = ddlSearchBy.SelectedValue;
+        lblSearchValueHidden.Text = txtSearchText.Text;
+       // lblCPID.Text = (string)cp.getPresentCompanySessionValue();
+        gvItemsMasterDetails.DataBind();
+    }
+    #endregion
+
+
+
+    #region Subcategory
+    private void subcategory()
+    {
+        try
+        {
+            Masters.ItemMaster.ItemMaster1_Select(ddlType, ddlItemCategory.SelectedValue);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.Message.ToString());
+        }
+        finally
+        {
+            Masters.Dispose();
+        }
+    }
+    #endregion
+
+
+
+
+    #region DDl Item category Change
+    protected void ddlItemCategory_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+        subcategory();
+
+
+        //Masters.ItemMaster.ItemMaster1_Select(ddlType, ddlItemCategory.SelectedValue);
+        //FillItemType();
+    }
+    #endregion
+
+    #region Edit Qty Change
+    protected void btnEditQty_Click(object sender, EventArgs e)
+    {
+        Masters.ItemMaster obj = new Masters.ItemMaster();
+        
+        if (gvItemsMasterDetails.HeaderRow.Cells[9].Visible == true)
+        {
+            gvItemsMasterDetails.HeaderRow.Cells[9].Visible = false;
+            foreach (GridViewRow gvrow in gvItemsMasterDetails.Rows)
+            {
+                if (gvrow.RowType != DataControlRowType.Pager)
+                {
+                    gvrow.Cells[9].Visible = false;
+                }
+                if (gvrow.RowType == DataControlRowType.DataRow)
+                {
+                    TextBox t1 = gvrow.FindControl("txtEditQty") as TextBox;
+                    string resQty = gvrow.Cells[11].Text;
+                    obj.ItemMaster_Update(Convert.ToInt64(gvrow.Cells[1].Text), Convert.ToInt64(t1.Text), resQty);
+
+                }
+                MessageBox.Show(this, "Data Updated Successfully");
+            }
+
+        }
+        else
+        {
+        gvItemsMasterDetails.HeaderRow.Cells[9].Visible = true;
+        foreach (GridViewRow gvrow in gvItemsMasterDetails.Rows)
+        {
+            if (gvrow.RowType != DataControlRowType.Pager)
+            {
+                gvrow.Cells[9].Visible = true;
+            }
+
+        }
+        }
+    }
+    #endregion
+
+    #region LinkBtn Change
+    protected void lbtnItemMasterName_Click(object sender, EventArgs e)
+    {
+        tblItDetails.Visible = false;
+        LinkButton lbtnItemMasterName;
+        lbtnItemMasterName = (LinkButton)sender;
+        GridViewRow gvRow = (GridViewRow)lbtnItemMasterName.Parent.Parent;
+        gvItemsMasterDetails.SelectedIndex = gvRow.RowIndex;
+        btnDelete.Attributes.Add("onclick", "return confirm('Are you sure you want to delete this Record !');");
+    }
+    #endregion
+
+    #region Print Click
+    protected void btnPrint_Click(object sender, EventArgs e)
+    {
+        tblPrint.Visible = true;
+        tblItDetails.Visible = false;
+
+
+    }
+    #endregion
+
+    protected void ddlCategoryForPrint_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (ddlBrandForPrint.SelectedValue != "0" && ddlCategoryForPrint.SelectedValue != "0")
+        {
+            try
+            {
+                Masters.ItemCategory.ItemCategory_SelectForPrint(ddlSubCategoryForPrint, ddlBrandForPrint.SelectedValue, ddlCategoryForPrint.SelectedValue);
+                ddlSubCategoryForPrint.Items.FindByText("--").Text = "All";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message.ToString());
+            }
+            finally
+            {
+                Masters.Dispose();
+            }
+        }
+        else if (ddlCategoryForPrint.SelectedValue != "0")
+        {
+            try
+            {
+                Masters.ItemMaster.ItemMaster1_Select(ddlSubCategoryForPrint, ddlItemCategory.SelectedValue);
+                ddlSubCategoryForPrint.Items.FindByText("--").Text = "All";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message);
+            }
+            finally
+            {
+                Masters.Dispose();
+            }
+        }
+        else 
+        {
+            FillItemTypeForPrint();        
+        }
+    }
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        string pagenavigationstr = "../Reports/MastersReportViewer.aspx?type=ItemMaster&b="+ddlBrandForPrint.SelectedValue +"&c="+ ddlCategoryForPrint.SelectedValue +"&s="+ ddlSubCategoryForPrint.SelectedValue +"";
+        System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "rptwindow", "window.open('" + pagenavigationstr + "','rptview','resizable=yes,scrool=yes,width=900,height=600,status=yes,toolbar=no,menubar=no,scrollbars=yes')", true);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MobileApp.master.cs" Inherits="MobileApp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <title>Valueline</title>
+         <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="BAT_files/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="BAT_files/icsw2_16.css" />
+    <!-- splashy icon pack -->
+    <link rel="stylesheet" href="/BAT_files/splashy.css" />
+    <!-- flag icons -->
+    <link rel="stylesheet" href="/BAT_files/flags.css" />
+    <!-- power tooltips -->
+    <link rel="stylesheet" href="/BAT_files/jquery.css" />
+    <!-- google web fonts -->
+    <link rel="stylesheet" href="/BAT_files/css_002.css" />
+    <link rel="stylesheet" href="/BAT_files/css.css" />
+
+    <!-- aditional stylesheets -->
+    <!-- colorbox -->
+    <link rel="stylesheet" href="/BAT_files/colorbox.css" />
+    <!--fullcalendar -->
+    <link rel="stylesheet" href="/BAT_files/fullcalendar_beoro.css" />
+
+
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="/BAT_files/beoro.css" />
+    <link href="/site_resources/css/sstyles.css" rel="stylesheet" />
+ <script src="/js/jquery-1.9.1.js"></script>
+    <script src="/js/jquery-ui-1.10.0.custom.js"></script>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+    <div class="main-wrapper">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div id="fade-menu" class="pull-left">
+                        <ul class="clearfix" id="mobile-nav">
+                            <li><a href="Dailyreport.aspx" onclick="return popitup('/Dailyreport.aspx')">Daily Report</a></li>
+                                        <li><%--<a href="popupex.html" onclick="return popitup('/abouthelp.aspx?purl=<%=getPageRawUrl()%>')">About ValueApp</a>--%></li>
+                                        <li><a href="Emp_Cr.aspx">Complaint Register</a></li>
+                            <li>
+                                 <a href="#">
+                                        <img src="/n_Images/Help.png" /></a>
+                                <ul>
+                                        
+                                        <%--<li class="last"><a href="popupex.html" onclick="return popitup('/Report_a_bug.aspx?purl=<%=getPageRawUrl()%>')">Report a Bug</a></li>--%>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></cc1:ToolkitScriptManager>
+
+            <asp:UpdatePanel runat ="server"  >
+                <ContentTemplate >
+
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

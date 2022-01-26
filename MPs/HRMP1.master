@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/BATMP1.master" AutoEventWireup="true" CodeFile="HRMP1.master.cs" Inherits="MPs_HRMP1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="toplinksCPH" runat="Server">
+     <li>
+        <a href="/Modules/HR/EmployeeMaster.aspx" title="Settings">HR</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/HR/EmployeeEnrollment.aspx">Employee Enrollment</a></li>
+            <li><a href="/Modules/HR/EmployeeMaster.aspx">Employee Master</a></li>
+            <li><a href="/Modules/HR/EmpMemo.aspx">MEMO</a></li>
+            <li><a href="/Modules/HR/Circular.aspx">Circular</a></li>
+            <li><a href="/Modules/HR/OfferLetter.aspx">Offer Letter</a></li>
+            <li><a href="/Modules/HR/SalaryBreakUps.aspx">Salary Break Ups</a></li>
+             <li><a href="/Modules/HR/Payroll_Statement.aspx">Payroll Statement</a></li>
+            <li class="last"><a href="/Modules/HR/Selfhelp.aspx">Self Help</a></li>
+
+        </ul>
+    </li>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

@@ -1,0 +1,45 @@
+﻿<asp:GridView runat="server" CssClass="table_border" CellPadding="5" BorderColor="#D6D6D6">
+    <HeaderStyle BackColor="#EEEEEE" ForeColor="#6e6e6e" HorizontalAlign="Left" />
+    <RowStyle BackColor="#ffffff" ForeColor="#676767" />
+    <AlternatingRowStyle BackColor="#ffffff" ForeColor="#676767" />
+    <PagerStyle CssClass="gpager" />
+    <EmptyDataTemplate>
+        No Records to Display
+    </EmptyDataTemplate>
+</asp:GridView>
+
+<asp:GridView skinId="Defaulttemp" runat="server" CssClass="table_border" CellPadding="5" BorderColor="#D6D6D6">
+    <HeaderStyle BackColor="#EEEEEE" ForeColor="#6e6e6e" HorizontalAlign="Left" />
+    <RowStyle BackColor="#ffffff" ForeColor="#676767" />
+    <AlternatingRowStyle BackColor="#F4F4F4" ForeColor="#6E6E6E" />
+    <EmptyDataTemplate>
+        No Records to Display
+    </EmptyDataTemplate>
+</asp:GridView>
+
+<asp:CheckBoxList
+     runat="server"  
+     >  
+</asp:CheckBoxList>
+
+<asp:CheckBoxList SkinID="DefaultSkn"
+     runat="server"  
+     BackColor="DodgerBlue"  
+     ForeColor="AliceBlue"  
+     Font-Size="Large"  
+     BorderColor="Navy"  
+     BorderWidth="2"  
+     >  
+</asp:CheckBoxList>  
+  
+<asp:CheckBoxList   
+     SkinID="Tomato"  
+     runat="server"  
+     BackColor="Tomato"  
+     ForeColor="Snow"  
+     Font-Bold="true"  
+     Font-Italic="true"  
+     Font-Underline="true"  
+     >  
+</asp:CheckBoxList>  
+<asp:Button CssClass="btn btn-default" runat="server" />

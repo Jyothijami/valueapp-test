@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/BATMP1.master" AutoEventWireup="true" CodeFile="AdminMP1.master.cs" Inherits="MPs_AdminMP1" %>
+
+<%@ Register Src="~/Modules/widgets/userLinks.ascx" TagPrefix="uc1" TagName="userLinks" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="toplinksCPH" runat="Server">
+
+    <uc1:userLinks runat="server" ID="userLinks" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

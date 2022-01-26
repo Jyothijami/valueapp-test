@@ -1,0 +1,237 @@
+[{
+"id":"L_019136",
+"text":"Hyd"
+,"children":[{
+"id":"W_20143",
+"text":"HGodown"
+,"children":[{
+"id":"S_184",
+"text":"WH1-2"
+}
+,{
+"id":"S_185",
+"text":"WH1-3"
+}
+,{
+"id":"S_186",
+"text":"WH1-4"
+}
+,{
+"id":"S_187",
+"text":"WH2-1"
+}
+,{
+"id":"S_188",
+"text":"WH2-2"
+}
+,{
+"id":"S_189",
+"text":"WH2-3"
+}
+,{
+"id":"S_190",
+"text":"WH2-4"
+}
+,{
+"id":"S_193",
+"text":"WH1-1"
+}
+]}
+,{
+"id":"W_1422188",
+"text":"Bahadurguda"
+,"children":[{
+"id":"S_271",
+"text":"Rack No-1"
+,"children":[{
+"id":"S_272",
+"text":"R0001A"
+}
+,{
+"id":"S_273",
+"text":"R0001B"
+}
+,{
+"id":"S_274",
+"text":"R0001C"
+}
+,{
+"id":"S_275",
+"text":"R0001D"
+}
+]}
+,{
+"id":"S_276",
+"text":"Rack No-2"
+,"children":[{
+"id":"S_277",
+"text":"R0002A"
+}
+]}
+]}
+,{
+"id":"W_1530153",
+"text":"Incomplete Stock"
+,"children":[{
+"id":"S_278",
+"text":"Bahadurguda"
+}
+,{
+"id":"S_279",
+"text":"Office"
+}
+,{
+"id":"S_280",
+"text":"Godown"
+}
+,{
+"id":"S_281",
+"text":"Warehouse"
+}
+]}
+,{
+"id":"W_2221144",
+"text":"HOffice"
+,"children":[{
+"id":"S_220",
+"text":"Store Office"
+}
+,{
+"id":"S_226",
+"text":"xxxxxxx"
+}
+]}
+,{
+"id":"W_5281045",
+"text":"Testing"
+,"children":[{
+"id":"S_230",
+"text":"Testing Purpose"
+}
+,{
+"id":"S_248",
+"text":"test"
+}
+]}
+,{
+"id":"W_9191050",
+"text":"HYD DISPLAY"
+,"children":[{
+"id":"S_249",
+"text":"SHOWROOM DISPLAY"
+}
+]}
+,{
+"id":"W_14281421",
+"text":"Warehouse"
+,"children":[{
+"id":"S_259",
+"text":"Base Location"
+}
+]}
+]}
+,{
+"id":"L_119137",
+"text":"VSK"
+,"children":[{
+"id":"W_23526",
+"text":"Vizag Store"
+,"children":[{
+"id":"S_217",
+"text":"store VIZ"
+}
+,{
+"id":"S_219",
+"text":"Display viz"
+}
+]}
+]}
+,{
+"id":"L_20498817",
+"text":"VIJ"
+,"children":[{
+"id":"W_1181857",
+"text":"VIJ DISPLAY"
+,"children":[{
+"id":"S_255",
+"text":"SHOWROOM DISPLAY"
+}
+]}
+,{
+"id":"W_10121325",
+"text":"VIJ STORE"
+,"children":[{
+"id":"S_254",
+"text":"store VIJ"
+}
+]}
+]}
+,{
+"id":"L_21322784",
+"text":"KRL"
+,"children":[{
+"id":"W_89111",
+"text":"Kerala Store"
+,"children":[{
+"id":"S_238",
+"text":"Base Location"
+}
+,{
+"id":"S_242",
+"text":"Store KRL"
+}
+]}
+]}
+,{
+"id":"L_319137",
+"text":"BLR"
+,"children":[{
+"id":"W_45663",
+"text":"BGodown"
+,"children":[{
+"id":"S_216",
+"text":"BWH"
+}
+]}
+,{
+"id":"W_471614",
+"text":"BOffice"
+,"children":[{
+"id":"S_222",
+"text":"BLRDSP"
+}
+,{
+"id":"S_223",
+"text":"BLRD2"
+}
+]}
+,{
+"id":"W_6101853",
+"text":"Hyd_Bts"
+,"children":[{
+"id":"S_232",
+"text":"Branch Transfer"
+}
+]}
+]}
+,{
+"id":"L_49217444",
+"text":"CHNN"
+,"children":[{
+"id":"W_7241511",
+"text":"Chennai Store"
+,"children":[{
+"id":"S_237",
+"text":"Stores CHN"
+}
+]}
+,{
+"id":"W_12191244",
+"text":"Chennai display"
+,"children":[{
+"id":"S_256",
+"text":"Base Location"
+}
+]}
+]}
+]

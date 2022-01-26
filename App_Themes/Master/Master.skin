@@ -1,0 +1,133 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:Button 
+    runat="server" 
+    BorderStyle="None"
+    BackColor="#1AA8BE" 
+    BorderColor="#00C0C0" 
+    Font-Bold="True" 
+    Font-Names="Verdana"
+    Font-Size="8pt"    
+    CssClass="button"
+    Width="95px"
+    Height="23px"
+    Style="padding-right: 2px; padding-left: 2px;text-transform: capitalize;"       
+/>  
+
+<asp:TextBox 
+    runat="server" 
+    BackColor="White"
+    BorderColor="#27736F"
+    BorderWidth="1px" 
+    Font-Names="Verdana"
+    Font-Size="8pt"
+    ForeColor="#000040"
+    Width="150px"
+    Style="padding-right: 2px; padding-left: 3px;margin: 3px"
+/>
+<asp:DropDownList 
+    runat="server" 
+    BackColor="White"
+    BorderColor="#27736F"
+    BorderWidth="1px" 
+    Font-Names="Verdana"
+    Font-Size="8pt"
+    ForeColor="#000040"
+    Width="157px"
+    Style="margin: 3px"
+/>
+<asp:Label 
+    runat="server"
+    Font-Names="Verdana"
+    Font-Size="8pt"
+    ForeColor="#000040"
+    Style="padding-right: 4px; padding-left: 2px;vertical-align: middle; text-align: right;text-transform: capitalize"  
+/>
+<asp:RadioButton
+    runat="server"
+    Font-Names="Verdana"
+    Font-Size="8pt"
+    ForeColor="#000040"
+    Style="padding-right: 4px; padding-left: 2px;text-transform: capitalize;margin: 3px"  
+/>
+<asp:CheckBox
+    runat="server"
+    Font-Names="Verdana"
+    Font-Size="8pt"
+    ForeColor="#000040"
+    Style="padding-right: 4px; padding-left: 2px;text-transform: capitalize;margin: 3px"  
+/>
+<asp:ListBox 
+    runat="server" 
+    BackColor="White"
+    BorderColor="#27736F"
+    BorderWidth="1px" 
+    Font-Names="Verdana"
+    Font-Size="8pt"
+    ForeColor="#000040"
+    Width="157px"
+    Style="padding-right: 2px; padding-left: 3px;margin: 3px"     
+/> 
+<asp:LinkButton
+     runat="server" 
+     font-name="verdana"
+     font-size = "8"
+     BorderColor="Blue"     
+     font-color="Blue"
+     Style="padding-right: 4px; padding-left: 2px;vertical-align: middle;text-transform: capitalize;margin: 3px"  
+/>
+
+<asp:GridView 
+    runat="server" 
+    Font-Names="Verdana" 
+    Font-Size="8pt" 
+    Width="100%"
+    cellpadding="4"   
+    >
+    <rowstyle 
+        backcolor="#EFF3FB" 
+    />
+    <selectedrowstyle 
+        backcolor="LightSteelBlue" 
+    />
+    <pagerstyle
+        backcolor="#1AA8BE" 
+    />
+    <headerstyle 
+        backcolor="#1AA8BE" 
+        font-bold="True" 
+        font-names="Verdana" 
+        font-size="8pt" 
+        forecolor="White" 
+    />
+    <alternatingrowstyle 
+        backcolor="White"
+    />
+    <EmptyDataRowStyle
+        ForeColor="Red"
+        
+    />
+  
+      
+</asp:GridView>
+
+<asp:ValidationSummary 
+     runat="server"
+     DisplayMode="List"
+     ShowMessageBox="True"
+     ShowSummary="False"
+/>
+

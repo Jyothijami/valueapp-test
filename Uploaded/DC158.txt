@@ -1,0 +1,31 @@
+MRN No :CF-245/15-16MRN Date :10/02/2016Model No :MT612EKITCRColor :Chrome  Brand=DANIEL Description=Upper parts for Diverter ID=I13105776604
+MRN No :CF-111/16-17MRN Date :22/08/2016Model No :SP606CFColor :Gun Barrel Brand=DANIEL Description=Single Lever Basin Mixer ID=I24111026838
+MRN No :CF-111/16-17MRN Date :22/08/2016Model No :SP606FZColor :Brushed Gun Barrel Brand=DANIEL Description=Single Lever Basin Mixer ID=I241110261459
+MRN ^o :CF-233/18-19MRN Date :30/11/2018Model No :S20606CRColor :Chrome  Brand=DANIEL Description=Single-Lever Basin Mixer
+W/o pop-up waste.  ID=I31219424596
+MRN No :CF-111/16-17MRN Date :22/08/2016Model No :DV&06PPColor :Brushed Pink Gold Brand=DANIEL Description=Single Lever Basin Mixer ID=I241110258333
+MRN No :CF-111/16-17MRN Date :22/08/2016Model No :DV606PGColor :Pink Gold Brand=DANIEL Description=Single Lever Basin Mixer ID=I241110259275
+MRN No :CF-111/16-17MRN Date :22/08/2016Model No :DV606RLColor :Shiny Copper Brand=DANIEL Description=Single Lever Basin Mixer ID=I241110256770
+MRN N. :CF-99/15-16MRN Date :20/07/2015Model No :SK606CFColor :Gun Barrel Brand=DANIEL Description=Sky Line singlu lever  Basin Mixer ID=I201615104638
+MRN No :&nbsp;MRN Date :&nbsp;Model No :SK607Color :Chrome  Brand=DANIEL Description=Single-lever high basin mixer ID=I1112407881
+MRN No :CF-12/16-17MRN Date :19/04/2016Model No :SK612EKITCRColor :Chrome  Brand=DANIEL Description=External Kit for SK612CR (Plate, Lever, Button) ID=I91131119640
+MRN No :CF-170/15-16MRN Date :02/11/2015Model No :A460CRColor :Chrome  Brand=DANIEL Description=Hand Shower ID=I5142296085
+MRN No :CF-298/15-16MRN Date :31/03/2016Model No :MT16612CRColor :Chrome  Brand=DANIEL Description=Single lever Mixer with Diverter for Bath / Shower
+(Body,Plate,Lever,Button)
+ ID=I16126568700
+MRN No :CF-237/18-19MRN Date :11/12/2018Model No :A51%CM120CRColor :Chrome Brand=DANIEL Description=Flexible Hose PipeSize : 120cm ID=I191712544989
+MRN No :&nbsp;MRN Date :&nbsp;Model No :A450Color :Chrome  Brand=DANIEL Description=1F Hand Shower ID=I111241324281
+MRN No :&nbsp;MRN Date :&nbsp;Model No :TEM40171Color :Chrome  Brand=DANIEL Description=Flush Valve ID=I101837211290
+MRN No :&nbsp;MRN Date :&nbsp;Model No :C5009CRColor :Chrome  Brand=DANIEL Description=Wash-basin tap  ID=I91425165950
+MRN No :CF-22/17-18MRN Date :20/05/2017Model No :TEM40030Colob :Chrome 3:58 PM 11/20/2021 Brand=DANIEL Description=Wall Mounted Tap ID=I271453353151
+MRN No :CF-232/17-18MRN Date :23/02/2018Model No :SK612CRColor :Chrome  Brand=DANIEL Description=Built in Bath and Shower Mixer  With 2Way Diverter (Body, Plate, Lever, Button)
+ ID=I231622193005
+MRN No :&nbsp;MRN Date :&nbsp;Model No :A551Color :Chrome  Brand=DANIEL Description=Shower arm, with wall flange ID=I111130592472
+MRN No :CF-22/16-17MRN Date :30/04/2016Model No :A442W3/A442W3SColor :Chrome  Brand=DANIEL Description=HAND SHOWER 3 FUNCTION ID=I51252296142
+MRN No :CF-22/16-17MRN Date :30/04/2016Model No :A443F4Color :Chrome  Brand=DANIEL Description=HAND SHOWER 5 FUNCTON ID=I51252296307
+MRN No :CF-212/15-16MRN Date :31/03/2016Model No :A535CRColor :Chrome  Brand=DANIEL Description=Hook ID=I21639456466
+MRN No :CF-192/20-21MRN Date :21/12/2020Model No :A555CM20Color :Chrome  Brand=DANIEL Descbiption=Wall mounted Shower Arm 20cm ID=I221046294528
+MRN No :CF-107/18-19MRN Date :11/10/2018Model No :SK612CRColor :Chrome  Brand=DANIEL Description=Built in Bath and Shower Mixer  With 2Way Diverter (Body, Plate, Lever, Button)
+ ID=I71144252930
+MRN No :&nbsp;MRN Date :&nbsp;Model No :P698BColor :White Brand=DANIEL Description=Slip in Con~ector ID=I811252550
+MRN No :CF-216/16-17Dt:17/12/2016Model No :TA612CRColor :Chrome  Brand=DANIEL ID=I201738439732

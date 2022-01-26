@@ -1,0 +1,483 @@
+﻿// JScript File
+
+
+function NavigateToUrl(UrlLabel)
+{
+    if(UrlLabel.split("_",1)=="Master")
+    {
+        MasterNavigation(UrlLabel); 
+        window.navigate(setUrl);   
+    }
+    else if(UrlLabel.split("_",1)=="SM")
+    {
+        SMNavigation(UrlLabel); 
+        window.navigate(setUrl);   
+    }
+    else if(UrlLabel.split("_",1)=="SCM")
+    {
+        SCMNavigation(UrlLabel); 
+        window.navigate(setUrl);   
+    }
+    else if(UrlLabel.split("_",1)=="Inventory")
+    {
+        InventoryNavigation(UrlLabel); 
+        window.navigate(setUrl);   
+    }
+    else if(UrlLabel.split("_",1)=="Support")
+    {
+        SupportNavigation(UrlLabel); 
+        window.navigate(setUrl);   
+    }
+    else if(UrlLabel.split("_",1)=="HR")
+    {
+//        HRNavigation(UrlLabel); 
+//        window.navigate(setUrl);   
+    }
+   else if(UrlLabel.split("_",1)=="Reports")
+    {
+//        ReportsNavigation(UrlLabel); 
+//        window.navigate(setUrl);   
+    }
+}
+
+function MasterMenuLoad(rootElement)
+{
+    rootElement.findName("Master_1").Text="Users";
+    rootElement.findName("Master_2").Text="Masters"; 
+    rootElement.findName("Master_3").Text="Back Up & Restore"; 
+    rootElement.findName("Master_4").Text="Logs";
+   
+    for (var i=1;i<=4;i++)
+    {  
+        MasterNavigation("Master_"+i);
+        if(setUrl=="../"+currentUrl)
+        {   
+            Key="Master"; 
+            SubKey="Master_"+i;
+            MainMenuSelect(rootElement,Key);
+            SubMenuItemsSelect(rootElement,SubKey);
+            return;
+        }
+    }
+}
+
+function MasterNavigation(ItemName)
+{  
+    if(ItemName=="Master_1")
+    {
+        setUrl ="../Masters/Users.aspx";
+    }   
+    else if(ItemName=="Master_2")
+    {
+        setUrl ="../Masters/Masters.aspx";
+    }    
+    else if(ItemName=="Master_3")
+    {
+        setUrl ="../Masters/BackUpRestore.aspx";
+    }
+    else if(ItemName=="Master_4")
+    {
+        setUrl ="../Masters/Logs.aspx";
+    }    
+}
+
+function SMMenuLoad(rootElement)
+{
+    rootElement.findName("SM_1").Text="Customer Info";   
+    rootElement.findName("SM_2").Text="Sales Enquiry";
+    rootElement.findName("SM_3").Text="Sales Assignments";   
+    rootElement.findName("SM_4").Text="Sales Quotation";   
+    rootElement.findName("SM_5").Text="Sales Order";
+    rootElement.findName("SM_6").Text="Sales Order Acceptance";
+    rootElement.findName("SM_7").Text="Work Order";
+    
+    for (var i=1;i<=7;i++)
+    {  
+        SMNavigation("SM_"+i);
+        if(setUrl=="../"+currentUrl)
+        {   
+            Key="SM"; 
+            SubKey="SM_"+i;
+            MainMenuSelect(rootElement,Key);
+            SubMenuItemsSelect(rootElement,SubKey);
+            return;
+        }
+    }
+}
+
+function SMNavigation(ItemName)
+{  
+    if(ItemName=="SM_1")
+    {
+        setUrl ="../SM/CustomerInformation.aspx";
+    }
+    else if(ItemName=="SM_2")
+    {
+        setUrl ="../SM/SalesEnquiry.aspx";
+    }
+    else if(ItemName=="SM_3")
+    {
+        setUrl ="../SM/SalesAssignments.aspx";
+    }
+     else if(ItemName=="SM_4")
+    {
+        setUrl ="../SM/SalesQuotation.aspx";
+    }
+    else if(ItemName=="SM_5")
+    {
+        setUrl ="../SM/SalesOrder.aspx";
+    }
+    else if(ItemName=="SM_6")
+    {
+        setUrl ="../SM/SalesOrderAcceptance.aspx";
+    }
+    else if(ItemName=="SM_7")
+    {
+        setUrl ="../SM/WorkOrder.aspx";
+    }
+}
+
+function SCMMenuLoad(rootElement)
+{
+   rootElement.findName("SCM_1").Text="Indent";
+   rootElement.findName("SCM_2").Text="Indent Approved List";
+   rootElement.findName("SCM_3").Text="Suppliers Enquiry";
+   rootElement.findName("SCM_4").Text="Quotation";
+   rootElement.findName("SCM_5").Text="Fixed Purchase Order Details";
+   rootElement.findName("SCM_6").Text="PO Scheduling Details";
+   rootElement.findName("SCM_7").Text="Suppliers Master";
+   rootElement.findName("SCM_8").Text="Purchase Invoice";
+    
+    for (var i=1;i<=8;i++)
+    {  
+        SCMNavigation("SCM_"+i);
+        if(setUrl=="../"+currentUrl)
+        {   
+            Key="SCM"; 
+            SubKey="SCM_"+i;
+            MainMenuSelect(rootElement,Key);
+            SubMenuItemsSelect(rootElement,SubKey);
+            return;
+        }
+    }
+}
+
+function SCMNavigation(ItemName)
+{  
+    if(ItemName=="SCM_1")
+    {
+        setUrl ="../SCM/Indent.aspx";
+    }
+    else if(ItemName=="SCM_2")
+    {
+        setUrl ="../SCM/IndentApprovedList.aspx";
+    }
+    else if(ItemName=="SCM_3")
+    {
+        setUrl ="../SCM/SuppliersEnquiry.aspx";
+    }
+    else if(ItemName=="SCM_4")
+    {
+        setUrl ="../SCM/Quotation.aspx";
+    }
+    else if(ItemName=="SCM_5")
+    {
+        setUrl ="../SCM/FixedPurchaseOrderDetails.aspx";
+    }
+    else if(ItemName=="SCM_6")
+    {
+        setUrl ="../SCM/POSchedulingDetails.aspx";
+    }
+    else if(ItemName=="SCM_7")
+    {
+        setUrl ="../SCM/SupplierMaster.aspx";
+    }
+    else if(ItemName=="SCM_8")
+    {
+        setUrl ="../SCM/PurchaseInvoice.aspx";
+    }       
+}
+
+function InventoryMenuLoad(rootElement)
+{
+   rootElement.findName("Inventory_1").Text="MRIR";
+   rootElement.findName("Inventory_2").Text="GRN Details";
+   rootElement.findName("Inventory_3").Text="Material Issue";
+   rootElement.findName("Inventory_4").Text="Sales Invoice";
+   rootElement.findName("Inventory_5").Text="Delivery Challan";
+   rootElement.findName("Inventory_6").Text="Purchase Return";
+   rootElement.findName("Inventory_7").Text="Sales Return";
+    
+   for (var i=1;i<=7;i++)
+    {  
+        InventoryNavigation("Inventory_"+i);
+        if(setUrl=="../"+currentUrl)
+        {   
+            Key="Inventory"; 
+            SubKey="Inventory_"+i;
+            MainMenuSelect(rootElement,Key);
+            SubMenuItemsSelect(rootElement,SubKey);
+            return;
+        }
+    }
+}
+
+function InventoryNavigation(ItemName)
+{  
+    if(ItemName=="Inventory_1")
+    {
+        setUrl ="../Inventory/MRIR.aspx";
+    }
+    else if(ItemName=="Inventory_2")
+    {
+        setUrl ="../Inventory/GRNDetails.aspx";
+    }
+    else if(ItemName=="Inventory_3")
+    {
+        setUrl ="../Inventory/MaterialIssue.aspx";
+    }
+    else if(ItemName=="Inventory_4")
+    {
+        setUrl ="../Inventory/Invoice.aspx";
+    }
+    else if(ItemName=="Inventory_5")
+    {
+        setUrl ="../Inventory/DeliveryChallan.aspx";
+    }
+    else if(ItemName=="Inventory_6")
+    {
+        setUrl ="../Inventory/PurchaseReturn.aspx";
+    }
+    else if(ItemName=="Inventory_7")
+    {
+        setUrl ="../Inventory/SalesReturn.aspx";
+    }        
+}
+
+function SupportMenuLoad(rootElement)
+{
+   rootElement.findName("Support_1").Text="Installation Report";
+   rootElement.findName("Support_2").Text="Customer Info";
+   rootElement.findName("Support_3").Text="AMC Enquiry";
+   rootElement.findName("Support_4").Text="AMC Assignments";
+   rootElement.findName("Support_5").Text="AMC Quotation";
+   rootElement.findName("Support_6").Text="AMC Order";
+   rootElement.findName("Support_7").Text="AMC Order Acceptance";
+   rootElement.findName("Support_8").Text="AMC Work Order";
+
+   for (var i=1;i<=8;i++)
+    {  
+        SupportNavigation("Support_"+i);
+        if(setUrl=="../"+currentUrl)
+        {   
+            Key="Support"; 
+            SubKey="Support_"+i;
+            MainMenuSelect(rootElement,Key);
+            SubMenuItemsSelect(rootElement,SubKey);
+            return;
+        }
+    }
+}
+
+function SupportNavigation(ItemName)
+{  
+    if(ItemName=="Support_1")
+    {
+        setUrl ="../Services/InstallationReport.aspx";
+    }
+    else if(ItemName=="Support_2")
+    {
+        setUrl ="../Services/AMCCustomerInformation.aspx";
+    }
+    else if(ItemName=="Support_3")
+    {
+        setUrl ="../Services/AMCEnquiry.aspx";
+    }
+    else if(ItemName=="Support_4")
+    {
+        setUrl ="../Services/AMCAssignments.aspx";
+    }
+    else if(ItemName=="Support_5")
+    {
+        setUrl ="../Services/AMCQuotation.aspx";
+    }
+    else if(ItemName=="Support_6")
+    {
+        setUrl ="../Services/AMCOrder.aspx";
+    }
+    else if(ItemName=="Support_7")
+    {
+        setUrl ="../Services/AMCOrderAcceptance.aspx";
+    }
+    else if(ItemName=="Support_8")
+    {
+        setUrl ="../Services/AMCWorkOrder.aspx";
+    }
+}
+
+function HRMenuLoad(rootElement)
+{
+   rootElement.findName("HR_1").Text="Employee Master";
+   rootElement.findName("HR_2").Text="Salary Heads";
+   rootElement.findName("HR_3").Text="Grade Master";
+   rootElement.findName("HR_4").Text="Overtime Rule";
+   rootElement.findName("HR_5").Text="Loan Management";
+   rootElement.findName("HR_6").Text="Appraisal";
+   rootElement.findName("HR_7").Text="Training Plan Schedule";
+   rootElement.findName("HR_8").Text="Attendance";
+   for (var i=1;i<=8;i++)
+    {  
+        HRNavigation("HR_"+i);
+        if(setUrl=="../"+currentUrl)
+        {   
+            Key="HR"; 
+            SubKey="HR_"+i;
+            MainMenuSelect(rootElement,Key);
+            SubMenuItemsSelect(rootElement,SubKey);
+            return;
+        }
+    }
+}
+
+function HRNavigation(ItemName)
+{  
+    if(ItemName=="HR_1")
+    {
+        setUrl ="../HR/EmployeeMaster.aspx";
+    }
+    else if(ItemName=="HR_2")
+    {
+        setUrl ="../HR/SalaryHeads.aspx";
+    }
+    else if(ItemName=="HR_3")
+    {
+        setUrl ="../HR/GradeMaster.aspx";
+    }  
+    else if(ItemName=="HR_4")
+    {
+        setUrl ="../HR/OvertimeRule.aspx";
+    }  
+    else if(ItemName=="HR_5")
+    {
+        setUrl ="../HR/LoanManagment.aspx";
+    }  
+    else if(ItemName=="HR_6")
+    {
+        setUrl ="../HR/Apprisal.aspx";
+    }  
+    else if(ItemName=="HR_7")
+    {
+        setUrl ="../HR/TrainingPlanShecdule.aspx";
+    }  
+    else if(ItemName=="HR_8")
+    {
+        setUrl ="../HR/Attendance.aspx";
+    }  
+}
+
+function ReportsMenuLoad(rootElement)
+{
+    rootElement.findName("Reports_1").Text="Planned Vs Actual Production";
+    rootElement.findName("Reports_2").Text="Profitability Report";
+    rootElement.findName("Reports_3").Text="Cost Center Wise Analysis";
+//    for (var i=1;i<=3;i++)
+//    {  
+//        ReportsNavigation("Reprots_"+i);
+//        if(setUrl=="../"+currentUrl)
+//        {   
+//            Key="Reprots"; 
+//            SubKey="Reprots_"+i;
+//            MainMenuSelect(rootElement,Key);
+//            SubMenuItemsSelect(rootElement,SubKey);
+//            return;
+//        }
+//    }
+}
+
+function ReportsNavigation(ItemName)
+{  
+//    if(ItemName=="Master_1")
+//    {
+//        setUrl ="../CRM/SalesPromotionCampaign.aspx";
+//    }
+//    else if(ItemName=="Master_2")
+//    {
+//        setUrl ="../CRM/SalesEnquiry.aspx";
+//    }
+//    else if(ItemName=="Master_3")
+//    {
+//        setUrl ="../CRM/CustomerInformation.aspx";
+//    }    
+}
+
+// To De-Select all the Labels and its rectangles
+function DeSelect(sender)
+{
+    sender.findName("Master_Rectangle").width="0";   
+    sender.findName("SM_Rectangle").width="0";   
+    sender.findName("SCM_Rectangle").width="0";   
+    sender.findName("Inventory_Rectangle").width="0";   
+    sender.findName("Support_Rectangle").width="0";   
+    sender.findName("HR_Rectangle").width="0";   
+    sender.findName("Reports_Rectangle").width="0"; 
+    
+    sender.findName("Master_Menu_Canvas").Opacity=0;   
+    sender.findName("SM_Menu_Canvas").Opacity=0;   
+    sender.findName("SCM_Menu_Canvas").Opacity=0;   
+    sender.findName("Inventory_Menu_Canvas").Opacity=0;   
+    sender.findName("Support_Menu_Canvas").Opacity=0;   
+    sender.findName("HR_Menu_Canvas").Opacity=0;   
+    sender.findName("Reports_Menu_Canvas").Opacity=0; 
+    
+    sender.findName("Master").Foreground="White";
+    sender.findName("SM").Foreground="White";
+    sender.findName("SCM").Foreground="White";
+    sender.findName("Inventory").Foreground="White";
+    sender.findName("Support").Foreground="White";
+    sender.findName("HR").Foreground="White";
+    sender.findName("Reports").Foreground="White";
+    
+    sender.findName("Master_Menu_Canvas")["Canvas.Top"]="140";  
+    sender.findName("SM_Menu_Canvas")["Canvas.Top"]="140";  
+    sender.findName("SCM_Menu_Canvas")["Canvas.Top"]="140";  
+    sender.findName("Inventory_Menu_Canvas")["Canvas.Top"]="140";  
+    sender.findName("Support_Menu_Canvas")["Canvas.Top"]="140";  
+    sender.findName("HR_Menu_Canvas")["Canvas.Top"]="140";  
+    sender.findName("Reports_Menu_Canvas")["Canvas.Top"]="140";
+}
+
+function LoadMainMenuHeads(rootElement)
+{  
+    var widthcount;
+    widthcount = rootElement.findName("Master").Actualwidth;
+    widthcount=widthcount+10;
+    rootElement.findName("Pipe1")["Canvas.Left"]=widthcount;
+    widthcount=widthcount+5;    
+    rootElement.findName("SM_Canvas")["Canvas.Left"]=widthcount;
+    widthcount=widthcount+15;
+    widthcount =widthcount +rootElement.findName("SM").Actualwidth;
+    rootElement.findName("SCM_Canvas")["Canvas.Left"]=widthcount;
+    rootElement.findName("Pipe2")["Canvas.Left"]=widthcount-5;
+    widthcount=widthcount+15;
+    widthcount =widthcount +rootElement.findName("SCM").Actualwidth;
+    rootElement.findName("Inventory_Canvas")["Canvas.Left"]=widthcount;
+    rootElement.findName("Pipe3")["Canvas.Left"]=widthcount-5;
+    widthcount=widthcount+15;
+    widthcount =widthcount +rootElement.findName("Inventory").Actualwidth;
+    rootElement.findName("Support_Canvas")["Canvas.Left"]=widthcount;
+    rootElement.findName("Pipe4")["Canvas.Left"]=widthcount-5;
+    widthcount=widthcount+15;
+    widthcount =widthcount +rootElement.findName("Support").Actualwidth;
+    rootElement.findName("HR_Canvas")["Canvas.Left"]=widthcount;
+    rootElement.findName("Pipe5")["Canvas.Left"]=widthcount-5;
+    widthcount=widthcount+15;
+    widthcount =widthcount +rootElement.findName("HR").Actualwidth;
+    rootElement.findName("Reports_Canvas")["Canvas.Left"]=widthcount;
+    rootElement.findName("Pipe6")["Canvas.Left"]=widthcount-5;
+    widthcount=widthcount+15;
+    widthcount =widthcount +rootElement.findName("Reports").Actualwidth;
+    rootElement.findName("Help_Canvas")["Canvas.Left"]=widthcount;
+    rootElement.findName("Pipe7")["Canvas.Left"]=widthcount-5;
+    widthcount=widthcount+15;
+    widthcount =widthcount +rootElement.findName("Help").Actualwidth;
+}

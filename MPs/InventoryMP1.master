@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/BATMP1.master" AutoEventWireup="true" CodeFile="InventoryMP1.master.cs" Inherits="MPs_InventoryMP1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="toplinksCPH" runat="Server">
+     <li>
+        <a href="/Modules/SCM/ChangedIndent.aspx" title="Pages">Inventory</a>
+        <ul style="top: 34px; visibility: visible; left: 0px; width: 160px; display: none;">
+            <li><a href="/Modules/SCM/ChangedIndent.aspx">Indent</a></li>
+            <li><a href="/Modules/SCM/CheckingFormat.aspx">MRN</a></li>
+            <li><a href="/Modules/Inventory/StockStatement.aspx">Stock Statement</a></li>
+            <li><a href="/Modules/SCM/ItemMaster.aspx">Stock Entry</a></li>
+            <li><a href="/Modules/Inventory/DeliveryChallan.aspx">Delivery Challan</a></li>
+            <li><a href="/Modules/Inventory/InternalOrderApproval.aspx">Internal Order Approval</a></li>
+            <li><a href="/Modules/Inventory/ReserveStockHistory.aspx">Reserve Stock History</a></li>
+            <li><a href="/Modules/Inventory/SampleDc.aspx">Sample & Cash</a></li>
+            <li><a href="/Modules/Inventory/UnbilledDC.aspx">Unbilled DC's</a></li>
+            <li class="last"><a href="/Modules/SM/Dispatchform.aspx">Dispatch/Credit Approval</a></li>
+        </ul>
+    </li>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" Runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

@@ -1,0 +1,797 @@
+﻿
+
+.lnkbtn{
+    color:#1736DD;
+}
+
+.table_border {
+    border:none !important;    
+}
+.table_border tr{
+    border:none !important;
+    color:red ;
+}
+.table_border tr:hover td{
+    background-color:rgb(230,230,230);
+    /*cursor:pointer;*/
+}
+.table_border tr td{
+    border:1px solid #d3d3d3;
+}
+.table_border tr td, .table_border tr th{
+    padding:5px;
+}
+    .table_border th {
+        border: 1px solid #d3d3d3 !important;
+        background-image: linear-gradient(bottom, rgb(230,230,230) 41%, rgb(228,232,240) 71%, rgb(232,233,235) 86%);
+        background-image: -o-linear-gradient(bottom, rgb(230,230,230) 41%, rgb(228,232,240) 71%, rgb(232,233,235) 86%);
+        background-image: -moz-linear-gradient(bottom, rgb(230,230,230) 41%, rgb(228,232,240) 71%, rgb(232,233,235) 86%);
+        background-image: -webkit-linear-gradient(bottom, rgb(230,230,230) 41%, rgb(228,232,240) 71%, rgb(232,233,235) 86%);
+        background-image: -ms-linear-gradient(bottom, rgb(230,230,230) 41%, rgb(228,232,240) 71%, rgb(232,233,235) 86%);
+    }
+    .table_border tr td a {
+        color: #5d5d5d;
+        text-decoration: none;
+    }
+        .table_border tr td a:hover {
+            color: #ff2f00;
+            text-decoration: underline;
+        }
+
+        .table_border tr td input[type="text"]{
+            width:40px;
+            margin:-3px;
+        }
+        .table_border tr td input[type="number"]{
+            width:40px;
+            margin:-3px;
+        }
+
+.highlight_row td {
+    background-color: #E7F4F6;
+}
+    /*.table_border tr td:hover {
+         background-color:rgba(86, 160, 245, 0.55);
+    }*/
+
+    .gpager table tr td{
+        padding:5px 10px 5px 10px;
+    }
+
+.btn-default {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+    margin:3px;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    color: #333;
+}
+.btn {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**Old CSS*/
+    body
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px; /*background-color: #dfe6ec;*/ /*background-color:#E1E9F3;*/
+	/*background-color: #E7F4F6;*/
+	table-layout: fixed; /*  font-family:Verdana;     font-size:8pt;     color:#000040;     text-transform: capitalize;  */
+}
+
+
+.normal .righttab				{ background:url(../../Images/tab-right.gif) no-repeat right; width:4px; }
+.normal .lefttab				{ background:url(../../Images/tab-left.gif) no-repeat; width:3px; }
+.normal .midtab					{ background:url(../../Images/tab.gif) repeat-x; height:29px; padding:0 8px 0 8px;}
+
+.active .righttab				{ background:url(../../Images/tab-active-right.gif) no-repeat right; width:4px; }
+.active .lefttab				{ background:url(../../Images/tab-active-left.gif) no-repeat; width:3px; }
+.active .midtab					{ background:url(../../Images/tab-active.gif) repeat-x; height:29px; padding:0 8px 0 8px;}
+
+
+
+
+/* Master Page View Styles */
+
+.masterbody
+{
+	height: 100%;
+	text-align: center;
+	width: 100%;
+}
+
+.footmasterright
+{
+	background-image: url(../../Images/foot master back.gif);
+	height: 32px;
+	width: auto;
+	font-size: 8pt;
+	color: aliceblue;
+	font-family: Verdana;
+	font-weight: normal;
+	text-align: right;
+	background-repeat: repeat;
+	background-position: left;
+	vertical-align: bottom;
+}
+.footmasterleft
+{
+	background-image: url(../../Images/foot master left.gif);
+	height: 32px;
+	width: auto;
+	font-size: 8pt;
+	color: aliceblue;
+	font-family: Verdana;
+	font-weight: normal;
+	text-align: left;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.masterheadpipe
+{
+	background-image: url(../../Images/Master Head Pipe.png);
+	background-repeat: repeat-x;
+	padding-left: 0;
+	vertical-align: top;
+	height: 21px;
+}
+.headerleft
+{
+	background-image: url(../../Images/Header Left.png);
+	text-align: left;
+	background-repeat: no-repeat;
+	padding-left: 0;
+	vertical-align: middle;
+	height: 223px;
+	width: 332px;
+}
+.headermiddle
+{
+	background-image: url(../../Images/Header Middle.png);
+	background-repeat: repeat-x;
+	padding-left: 0;
+	vertical-align: top;
+	height: 223px;
+}
+.headerright
+{
+	background-image: url(../../Images/Header Right.png);
+	text-align: right;
+	background-repeat: no-repeat;
+	padding-left: 0;
+	vertical-align: top;
+	height: 223px;
+	width: 456px;
+}
+.leftmenubutton
+{
+	background-image: url(../../Images/LeftButton.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #067B94;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+}
+.leftmenubuttonhover
+{
+	background-image: url(../../Images/LeftButtonHover.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	color: White;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+}
+.mainmenutable
+{
+	color: White;
+	z-index: 100; /* right:38px; */
+	right: 65px;
+	position: absolute;
+	top: 70px; /*top: 65px;*/
+	text-decoration: none;
+	height: 34px;
+}
+.mainmenutable:hover
+{
+	color: White;
+	z-index: 100;
+	right: 65px;
+	position: absolute;
+	top: 70px;
+	text-decoration: none;
+	height: 34px; /*background-image: url(../../Images/SubPipe.png); 	background-repeat:repeat-x; 	background-position:top; 	text-transform:capitalize;		*/
+}
+.mainsubmenutable
+{
+	width: 90%;
+}
+.mainmenulink
+{
+	color: White;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font: bold 11px verdana;
+}
+
+.mainmenulink:hover
+{
+	background-image: url(../../Images/Down Arrow.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-bottom: 28px;
+	color: #FFF799;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font: bold 11px verdana;
+}
+.mainmenusublink
+{
+	color: #98EFFB;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font: bold 11px verdana;
+}
+
+.mainmenusublink:hover
+{
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #FEC874;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font: bold 11px verdana;
+}
+.mainmenupanel
+{
+	visibility: hidden;
+	position: absolute;
+	color: White;
+	font: bold 11px verdana;
+	text-decoration: none;
+}
+.mainmenupanelhover
+{
+	background-image: url(../../Images/Down Arrow.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-bottom: 25px;
+	color: #FFF799;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font: bold 11px verdana;
+}
+
+
+/* Pages and Tables View Styles */
+
+.table
+{
+	border: none 0px;
+	width: 100%;
+	padding: 0 0 0 0;
+}
+
+.pagehead
+{
+	/*background-image: url(../../Images/Pipe.png);
+	height: 24px;
+	text-align: left;
+	width: 100%;
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: White;
+	padding-left: 15px;
+	padding-right: 10px;*/
+    /*background: url("/resources/images/colors/blue/title.png") repeat-x scroll 0 0 #336699;
+    width:100%;
+    color:White;*/
+        color: black;
+    width: 100%;
+    text-transform:capitalize;
+
+}
+.pagehead td{
+    /*vertical-align:middle;
+    padding:10px;*/
+        color: #023196;
+    font-family: sans-serif;
+    font-size: 25px;
+    padding: 10px;
+    /*vertical-align: middle;*/
+}
+
+.profilehead
+{
+	/*background-image: url(../../Images/SubPipe.png);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	height: 20px;
+	text-align: left;
+	width: 100%;
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #067B94;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 18px;*/
+    
+    border-bottom: 2px solid #d5d5d5;
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+    text-align:left;
+    text-transform:capitalize;
+}
+
+.searchhead
+{
+	
+    height:30px;
+    font-size:20px;
+    /*background: url("../../../resources/images/colors/blue/title.png") repeat-x scroll 0 0 #336699;*/
+    width:100%;
+    
+}
+
+.menuhead
+{
+	background-image: url(../../Images/Pipe.png);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	height: 20px;
+	text-align: left;
+	width: 100%;
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.errorlabel
+{
+	color: Red;
+	font-size: 8pt;
+	font-family: Verdana;
+	font-weight: normal;
+	text-align: center;
+}
+.pageheadsub
+{
+	/*background-image: url(../../Images/small.png);*/
+	background-color: #067b94;
+	height: 24px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	/*text-transform: uppercase; /////*color:#E7F4F6;*/
+	color: White;
+	padding-left: 15px;
+	padding-right: 10px;
+}
+
+/* General Control Styles */
+.textbox
+{
+	background-color: White;
+	border: solid 1px #27736F;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #000040;
+}
+.textboxqt
+{
+	background-color: White;
+	border: solid 1px #27736F;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #000040;
+	width: 100px;
+	padding-right: 2px;
+	padding-left: 3px;
+	margin: 3px
+}
+.dropdownlist
+{
+	background-color: White;
+	border: solid 1px #27736F;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #000040;
+	width: 67px;
+	margin: 3px;
+}
+.multilinetext
+{
+	background-color: White;
+	border: solid 1px #27736F;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #000040;
+	height:40px;
+	padding-right: 2px;
+	padding-left: 3px;
+	margin: 3px;
+}
+
+.textlabel
+{
+	display: block;
+	background-color: White;
+	border: solid 1px #27736F;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	height:16px;
+	width:150px;
+	vertical-align:bottom;
+	color: #000040;
+	padding-right: 2px;
+	padding-left: 3px;
+	margin: 3px;
+}
+
+.datetext
+{
+	background-color: White;
+	border: solid 1px #27736F;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #000040;
+	padding-right: 3px;
+	padding-left: 3px;
+	margin: 3px;
+	margin-right:5px;
+	width:127px;
+}
+
+
+
+.linkbutton
+{
+	color: #191970;
+	text-decoration: none;
+	margin-right: 10px;
+	margin-left: 10px;
+	font-weight: bold;
+	font: bold 8px verdana;
+	font-size: 8pt;
+	vertical-align: middle;
+}
+.linkbutton1
+{
+	color: #191970;
+	text-decoration: none;
+	margin-right: 10px;
+	margin-left: 10px;
+	font-weight: bold;
+	font: bold 8px Mistral;
+	font-size: 20pt;
+	vertical-align: middle;
+}
+.linkinmaster
+{
+	color: #0072BC;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font: bold 8px verdana;
+	font-size: 8pt;
+	vertical-align: middle;
+}
+
+.linkinmaster:hover
+{
+	color: #CC6408;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font: bold 8px verdana;
+	font-size: 8pt;
+	vertical-align: middle;
+}
+
+.button
+{
+	background-image: url(../../Images/Button.png);
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: verdana;
+	font-size: 8pt;
+	vertical-align: text-bottom;
+	color: #067B94;
+}
+
+.button:hover
+{
+	background-image: url(../../Images/ButtonHOver.png);
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	font-size: 8pt;
+	vertical-align: text-bottom;
+	color: White;
+}
+.loginbutton
+{
+	height: 18px;
+	width: 60px;
+	background-image: url(../../Images/LoginButton.png);
+	background-repeat: no-repeat;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	font-size: 8pt;
+	color: #067B94;
+}
+
+.loginbutton:hover
+{
+	height: 18px;
+	width: 60px;
+	background-image: url(../../Images/LoginButtonHOver.png);
+	background-repeat: no-repeat;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	font-size: 8pt;
+	color: White;
+}
+
+.gobutton:hover
+{
+	/*height: 25px;
+	width: 25px;
+	background-image: url(../../Images/GoButton.png);
+	background-repeat: no-repeat;
+	background-color: Transparent;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	font-size: 8pt;
+	color: #067B94;*/
+
+    background-color: #FEC874;
+    background-repeat: no-repeat;
+    color: White;
+    font-family: Verdana;
+    font-size: 8pt;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 3px 5px;
+    text-decoration: none;
+    width: auto;
+}
+
+.gobutton
+{
+	/*height: 25px;
+	width: 25px;
+	background-image: url(../../Images/GoButtonHover.png);
+	background-repeat: no-repeat;
+	background-color: Transparent;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	font-size: 8pt;
+	color: White;*/
+
+    border-radius: 12px;
+    border: 2px solid #8AC007;
+
+    background-repeat: no-repeat;
+    color: White;
+    font-family: Verdana;
+    font-size: 8pt;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 3px 5px;
+    text-decoration: none;
+    width: auto;
+}
+
+.leftmenu
+{
+	/*text-align: left;
+	font-family: Verdana;
+	color: #006C77;
+	display: block;
+	padding-top: 5px;
+	padding-left: 34px;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 11px;
+	background-image: url(../../Images/LeftMenuBack.png);
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 139px;*/
+
+    display:block;
+    border-style: none solid solid solid; 
+    border-right-width: 1px; 
+    border-bottom-width: 1px; 
+    border-left-width: 3px; 
+    border-right-color: #C0C0C0; 
+    border-bottom-color: #C0C0C0; border-left-color: #C0C0C0;
+    text-decoration:none;
+    padding-left:10px;
+    padding-top:2px;
+    padding-bottom:2px;
+    position:relative;
+}
+
+.leftmenu:hover, leftmenuhighlight
+{
+	/*font-family: Verdana;
+	color: #D7EFF6;
+	display: block;
+	padding-top: 5px;
+	padding-left: 34px;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 11px;
+	background-image: url(../../Images/LeftMenuBackOver.png);
+	height: 20px;
+	width: 139px;
+	text-align: left;*/
+
+
+    background-color: #dce56c;
+    color:#000000;
+    text-decoration:none;
+    padding-left:30px;
+    margin-left:30px;
+}
+
+.leftmenuhighlight
+{
+	/*font-family: Verdana;
+	color: #D7EFF6;
+	display: block;
+	padding-top: 5px;
+	padding-left: 34px;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 11px;
+	background-image: url(../../Images/LeftMenuBackOver.png);
+	height: 20px;
+	width: 139px;
+	text-align: left;*/
+
+    background-color: #dce56c;
+    color:#000000;
+    text-decoration:none;
+    padding-left:30px;
+    margin-left:30px;
+
+    display:block;
+    border-style: none solid solid solid; 
+    border-right-width: 1px; 
+    border-bottom-width: 1px; 
+    border-left-width: 3px; 
+    border-right-color: #C0C0C0; 
+    border-bottom-color: #C0C0C0; border-left-color: #C0C0C0;
+    text-decoration:none;
+    padding-top:2px;
+    padding-bottom:2px;
+    position:relative;
+}
+
+
+
+/* .ajax__tab_header - A container element that wraps all of the tabs at the top of the TabContainer. Child CSS classes:.ajax__tab_outer. */
+/* .ajax__tab_outer - An outer element of a tab, often used to set the left-side background image of the tab.Child CSS classes: .ajax__tab_inner. */
+/* .ajax__tab_inner	 - An inner element of a tab, often used to set the right-side image of the tab. Child CSS classes:.ajax__tab_tab. */
+/* .ajax__tab_tab - An element of the tab that contains the text content. Child CSS classes:none. */
+/* .ajax__tab_body - A container element that wraps the area where a TabPanel is displayed. Child CSS classes: none. */
+/* .ajax__tab_hover - This is applied to a tab when the mouse is hovering over. Child CSS classes:.ajax__tab_outer. */
+/* .ajax__tab_active - This is applied to a tab when it is the currently selected tab. Child CSS classes:.ajax__tab_outer. */   
+
+/* XP IE7 theme - Backgrounds */
+.visoft__tab_xpie7 .ajax__tab_header					{ background:url(../../Images/tab-line.gif) repeat-x bottom; }
+.visoft__tab_xpie7 .ajax__tab_outer						{ background:url(../../Images/tab-right.gif) no-repeat right; }
+.visoft__tab_xpie7 .ajax__tab_inner						{ background:url(../../Images/tab-left.gif) no-repeat; }
+.visoft__tab_xpie7 .ajax__tab_tab						{ background:url(../../Images/tab.gif) repeat-x; }
+.visoft__tab_xpie7 .ajax__tab_hover .ajax__tab_outer	{ background:url(../../Images/tab-hover-right.gif) no-repeat right; }
+.visoft__tab_xpie7 .ajax__tab_hover .ajax__tab_inner	{ background:url(../../Images/tab-hover-left.gif) no-repeat; }
+.visoft__tab_xpie7 .ajax__tab_hover .ajax__tab_tab		{ background:url(../../Images/tab-hover.gif) repeat-x; }
+.visoft__tab_xpie7 .ajax__tab_active .ajax__tab_outer	{ background:url(../../Images/tab-active-right.gif) no-repeat right; }
+.visoft__tab_xpie7 .ajax__tab_active .ajax__tab_inner	{ background:url(../../Images/tab-active-left.gif) no-repeat; }
+.visoft__tab_xpie7 .ajax__tab_active .ajax__tab_tab		{ background:url(../../Images/tab-active.gif) repeat-x; }
+
+/* XP IE7 theme - Other Styles */
+.visoft__tab_xpie7 .ajax__tab_header 					{ font-family:verdana,tahoma,helvetica;font-size:11px; }
+.visoft__tab_xpie7 .ajax__tab_outer						{ height:29px; }
+.visoft__tab_xpie7 .ajax__tab_inner						{ padding-left:3px; }
+.visoft__tab_xpie7 .ajax__tab_tab						{ padding:8px 40px;margin:0; }
+.visoft__tab_xpie7 .ajax__tab_body						{ font-family:verdana,tahoma,helvetica;font-size:10pt;border:1px solid #999999;border-top:0;padding:8px;background-color:#E7F4F6; }
+
+
+
+
+
+
+
+
+
+
+
+.rpt
+{
+	background-image: url(../../Images/Smart Logo.jpg);
+	height: 32px;
+	width: auto;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+/*Old CSS*/

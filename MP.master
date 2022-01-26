@@ -1,0 +1,196 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MP.master.cs" Inherits="MP" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <title>Value Line App</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<!-- stylesheets -->
+		<link rel="stylesheet" type="text/css" href="/site_resources/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="/site_resources/css/style.css" media="screen" />
+		<link id="color" rel="stylesheet" type="text/css" href="/site_resources/css/colors/blue.css" />
+		<!-- scripts (jquery) -->
+		<script src="/site_resources/scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
+		<!--[if IE]><script language="javascript" type="text/javascript" src="/site_resources/scripts/excanvas.min.js"></script><![endif]-->
+		<script src="/site_resources/scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/jquery.ui.selectmenu.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/jquery.flot.min.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/tiny_mce/tiny_mce.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
+		<!-- scripts (custom) -->
+		<script src="/site_resources/scripts/smooth.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/smooth.menu.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/smooth.chart.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/smooth.table.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/smooth.form.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/smooth.dialog.js" type="text/javascript"></script>
+		<script src="/site_resources/scripts/smooth.autocomplete.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		    $(document).ready(function () {
+		        style_path = "/site_resources/css/colors";
+
+		        $("#date-picker").datepicker();
+
+		        $("#box-tabs, #box-left-tabs").tabs();
+		    });
+		</script>
+    <style>
+    /*#left{background-color:#fff !important;}*/
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div>
+            
+            <div id="header">
+			<!-- logo -->
+			<div id="logo">
+				<h1><a href="#" title="Smooth Admin"><img src="/site_resources/images/vgh.gif" alt="Smooth Admin" /></a></h1>
+			</div>
+			<!-- end logo -->
+			<!-- user -->
+			<ul id="user">
+				<li class="first"><a href="#">Account</a></li>
+				<li><a href="#">Reset Password</a></li>
+				<li><a href="#">Logout</a></li>
+				<li class="highlight last"><a href="#">View Site</a></li>
+			</ul>
+			<!-- end user -->
+			<div id="header-inner">
+				<div id="home">
+					<a href="ItemMaster.aspx" title="Home"></a>
+				</div>
+				<!-- quick -->
+				<ul id="quick">
+					<li>
+						<a href="/Modules/Masters/Masters.aspx" title="Products"><span class="normal">Masters</span></a>
+						<ul>
+							<li><a href="/Modules/Masters/Add_User.aspx">Users</a></li>
+							<li><a href="/Modules/Masters/Masters.aspx">Masters</a></li>
+							<li><a href="/Modules/Masters/Default2.aspx">Item Masters</a></li>
+							<li class="last"><a href="/Modules/Masters/Default3.aspx">Product Master</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/Modules/SM/CustomerInformation.aspx" title="Products"><span class="icon"><img src="/site_resources/images/icons/application_double.png" alt="Products" /></span><span>Sales & Marketing</span></a>
+						<ul>
+							<li><a href="/Modules/SM/CustomerInformation.aspx">Customer Info</a></li>
+							<li><a href="/Modules/SM/SalesEnquiry.aspx">Sales Lead</a></li>
+							<li><a href="/Modules/SM/SalesAssignments.aspx">Sales Assignment</a></li>
+							<li><a href="/Modules/SM/SalesQuotation.aspx">Sales Quotation</a></li>
+							<li><a href="/Modules/SM/SalesOrder.aspx">Purchase Order</a></li>
+							<li><a href="/Modules/SM/WorkOrder.aspx">Internal Order</a></li>
+							<li><a href="/Modules/SM/ProcessStatus.aspx">Process Status</a></li>
+							<li><a href="/Modules/SM/PaymentsReceived.aspx">Payment Received</a></li>
+							<li class="last"><a href="/Modules/SM/DailyReport.aspx">Daily Report</a></li>
+						</ul>
+						
+					</li>
+					<li>
+						<a href="/Modules/SCM/SupplierMaster.aspx" title="Events"><span class="icon"><img src="/site_resources/images/icons/calendar.png" alt="Events" /></span><span>Purchases</span></a>
+						<ul>
+							<li><a href="/Modules/SCM/SupplierMaster.aspx">Supplier Master</a></li>
+							<li><a href="/Modules/SCM/SuppliersEnquiry.aspx">Supplier Enquiry</a></li>
+							<li><a href="/Modules/SCM/Quotation.aspx">Proforma Invoice</a></li>
+                            <li><a href="/Modules/SCM/FixedPurchaseOrderDetails.aspx">Purchase Order</a></li>
+							<li><a href="/Modules/SCM/PurchaseInvoice.aspx">Purchase Invoice</a></li>
+							<li><a href="/Modules/SCM/ShipmentDetails.aspx">Shipment Details</a></li>
+                            <li><a href="/Modules/SM/ClaimForm.aspx">Insurance Claim Form</a></li>
+							<li><a href="/Modules/SCM/ItemHistory.aspx">Item History</a></li>
+							<li><a href="/Modules/SCM/SelfPurchaseOrderDetails.aspx">Self Purchase Order</a></li>
+							<li class="last"><a href="/Modules/SCM/SelfPurchaseOrderq.aspx">Purchase Order Search</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/Modules/SCM/ChangedIndent.aspx" title="Pages"><span class="icon"><img src="/site_resources/images/icons/page_white_copy.png" alt="Pages" /></span><span>Inventory</span></a>
+						<ul>
+							<li><a href="/Modules/SCM/ChangedIndent.aspx">Indent</a></li>
+							<li><a href="/Modules/SCM/CheckingFormat.aspx">MRN</a></li>
+							<li><a href="/Modules/Inventory/StockStatement.aspx">Stock Statement</a></li>
+                            <li><a href="/Modules/SCM/ItemMaster.aspx">Stock Entry</a></li>
+							<li><a href="/Modules/Inventory/DeliveryChallan.aspx">Delivery Challan</a></li>
+							<li><a href="/Modules/Inventory/InternalOrderApproval.aspx">Internal Order Approval</a></li>
+                            <li><a href="/Modules/Inventory/InternalOrderApproval.aspx">Reserve Stock History</a></li>
+							<li><a href="/Modules/Inventory/SampleDc.aspx">Sample & Cash</a></li>
+							<li><a href="/Modules/Inventory/UnbilledDC.aspx">Unbilled DC's</a></li>
+							<li class="last"><a href="/Modules/SM/Dispatchform.aspx">Dispatch</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/Modules/Services/ComplaintRegister.aspx" title="Links"><span class="icon"><img src="/site_resources/images/icons/world_link.png" alt="Links" /></span><span>Services</span></a>
+						<ul>
+							<li><a href="/Modules/Services/ComplaintRegister.aspx">Complaint Register</a></li>
+							<li><a href="/Modules/Services/ServicesAssignments.aspx">Service Assignments</a></li>
+							<li><a href="/Modules/Services/ServiceReport.aspx">Service Report</a></li>
+                            <li><a href="/Modules/Services/CustomerInformation.aspx">Customer Info</a></li>
+							<li><a href="/Modules/Services/AMCQuotation.aspx">AMC Quotation</a></li>
+							<li><a href="/Modules/Services/AMCOrder.aspx">AMC Order</a></li>
+                            <li><a href="/Modules/Services/AMCWorkOrder.aspx">AMC Order Profile</a></li>
+							<li><a href="/Modules/Services/AMCOrderAcceptance.aspx">AMC Order Acceptance</a></li>
+							<li><a href="/Modules/Services/WarrantyClaim.aspx">Warranty Claim</a></li>
+							<li><a href="/Modules/Services/AMCInvoice.aspx">AMC Invoice</a></li>
+							<li class="last"><a href="/Modules/Services/AMCPaymentsReceived.aspx">AMC Payments Received</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/Modules/HR/EmployeeMaster.aspx" title="Settings"><span class="icon"><img src="/site_resources/images/icons/cog.png" alt="Settings" /></span><span>HR</span></a>
+						<ul>  
+                        <li><a href="//Modules/HR/EmployeeMaster.aspx">Employee Master</a></li>
+							<li><a href="/Modules/HR/Memo.aspx">MEMO</a></li>
+							<li><a href="/Modules/HR/Circular.aspx">Circular</a></li>
+							<li><a href="/Modules/HR/OfferLetter.aspx">Offer Letter</a></li>
+							<li class="last"><a href="/Modules/HR/SalaryPrint.aspx">Salary Break Ups</a></li>
+						</ul>
+					</li>
+                    <li>
+						<a href="/Modules/Inventory/Invoice.aspx" title="Settings"><span class="icon"><img src="/site_resources/images/icons/cog.png" alt="Settings" /></span><span>Finance</span></a>
+						<ul>
+							
+							<li><a href="/Modules/Inventory/Invoice.aspx">Sales Invoice</a></li>
+							<li><a href="/Modules/SCM/SalesReturn.aspx">Sales Return</a></li>
+                            <li><a href="/Modules/Inventory/PaymentsReceived.aspx">Payments Received From Sales</a></li>
+							<li><a href="/Modules/Inventory/Payments.aspx">Payments Received From Services</a></li>
+							<li><a href="/Modules/Inventory/StatementOfAccount1.aspx">Statement Of Account</a></li>
+							<li><a href="/Modules/Inventory/CashInvoice.aspx">Sample & Cash Invoice</a></li>
+							<li class="last"><a href="/Modules/SCM/SampleReturn.aspx">Sample Return</a></li>
+						</ul>
+					</li>
+                    <li>
+						<a href="/Modules/Reports/SM.aspx" title="Settings"><span class="icon"><img src="/site_resources/images/icons/cog.png" alt="Settings" /></span><span>Reports</span></a>
+						<ul>
+							<li><a href="/Modules/Reports/SM.aspx">SM EOD Reports</a></li>
+							<li><a href="/Modules/Reports/SCM.aspx">SCM EOD Reports</a></li>
+							<li class="last"><a href="/Modules/Reports/Services.aspx">Service EOD Reports</a></li>
+						</ul>
+					</li>
+                    <li>
+						<a href="#" title="Settings"><span class="icon"><img src="/site_resources/images/icons/cog.png" alt="Settings" /></span><span>Help</span></a>
+						<%--<ul>
+							<li><a href="#">Manage Settings</a></li>
+							<li class="last"><a href="#">New Setting</a></li>
+						</ul>--%>
+					</li>
+				</ul>
+				<!-- end quick -->
+				<div class="corner tl"></div>
+				<div class="corner tr"></div>
+			</div>
+		</div>
+        </div>
+    <div id="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <!-- footer -->
+		<div id="footer">
+			<p>Copyright &copy; Datum Info Systems. All Rights Reserved.</p>
+		</div>
+		<!-- end footert -->
+    </form>
+</body>
+</html>

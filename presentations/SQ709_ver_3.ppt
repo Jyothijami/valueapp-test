@@ -1,0 +1,61 @@
+1.  The GridView 'gvDetails' fired event PageIndexChanging which wasn't handled.  at ASP.dev_pages/view_logs.aspx
+2. 106.51.115.50 - Auron - System.Web.HttpException (0x80004005): The client disconnected. ---> System.Web.UI.ViewStateException: Invalid viewstate. 
+	Client IP: 106.51.115.50
+	Port: 1491
+	Referer: http://www.valuelineapp.com/Modules/SM/SalesQuotationDetails.aspx?QuoNo=SQtn-179/15-16%20&QuoId=657&AppBy=Auron%20&Status=Open&lbtn=lbtn
+	Path: /Modules/SM/SalesQuotationDetails.aspx
+3. 192.168.1.1 - Bsrinivas - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.FormatException: Input string was not in a correct format.  at Modules_SM_SalesQuotationDetails.btnAdd_Click(Object sender, EventArgs e) in d:\valueapp\Modules\SM\SalesQuotationDetails.aspx.cs:line 1469
+4. 192.168.1.1 - srikanth - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.FormatException: Input string was not in a correct format.  at ASP.modules_scm_suppliermaster_aspx
+5. ksr - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.at YantraDAL.DBManager.ExecuteReader(CommandType commandType, String commandText)
+   at YantraBLL.Modules.Masters.ItemMaster.TtlStockAvailNew_select(String Itemcode, String Color, String locId) in d:\valueapp\App_Code\Master.cs:line 2223
+   at Modules_Inventory_ReserveItems.ddlLocation_SelectedIndexChanged(Object sender, EventArgs e) in d:\valueapp\Modules\Inventory\ReserveItems.aspx.cs:line 316
+   at System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(EventArgs e)
+6. srikanth - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.InvalidOperationException: The connection was not closed. The connection's current state is open.
+   at System.Data.ProviderBase.DbConnectionBusy.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions) at dboards_user_Dashboard.Page_Init(Object sender, EventArgs e) in d:\valueapp\dboards\user_Dashboard.aspx.cs:line 19
+7. 192.168.1.1 - ksr - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at YantraDAL.DBManager.ExecuteReader(CommandType commandType, String commandText)
+   at YantraBLL.Modules.Masters.ItemMaster.TtlStockAvailNew_select(String Itemcode, String Color, String locId) in d:\valueapp\App_Code\Master.cs:line 2223
+   at Modules_Inventory_ReserveItems.ddlLocation_SelectedIndexChanged(Object sender, EventArgs e) in d:\valueapp\Modules\Inventory\ReserveItems.aspx.cs:line 316
+   at System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(EventArgs e)
+8. 192.168.1.1 - ksr - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at YantraDAL.DBManager.Close()
+   at YantraDAL.DBManager.Dispose()
+   at YantraBLL.Modules.Masters.Dispose() in d:\valueapp\App_Code\Master.cs:line 48
+   at MASTERS_ItemEdit.btnSave_Click(Object sender, EventArgs e) in d:\valueapp\Modules\Masters\ItemEdit.aspx.cs:line 467
+9. 192.168.1.1 - Bsrinivas - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at YantraDAL.DBManager.Close()
+   at YantraDAL.DBManager.Dispose()
+   at YantraBLL.Modules.Masters.Dispose() in d:\valueapp\App_Code\Master.cs:line 48
+   at Modules_SM_SalesOrder.ddlModelNo_SelectedIndexChanged(Object sender, EventArgs e) in d:\valueapp\Modules\SM\SalesOrder.aspx.cs:line 1980
+   at Modules_SM_SalesOrder.btnSearchModelNo_Click(Object sender, EventArgs e) in d:\valueapp\Modules\SM\SalesOrder.aspx.cs:line 2331
+10. 192.168.1.1 - Bsrinivas - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at YantraDAL.DBManager.Close()
+   at YantraDAL.DBManager.Dispose()
+   at YantraBLL.Modules.Masters.Dispose() in d:\valueapp\App_Code\Master.cs:line 48
+   at Modules_SM_SalesOrder.ddlModelNo_SelectedIndexChanged(Object sender, EventArgs e) in d:\valueapp\Modules\SM\SalesOrder.aspx.cs:line 1980
+   at Modules_SM_SalesOrder.btnSearchModelNo_Click(Object sender, EventArgs e) in d:\valueapp\Modules\SM\SalesOrder.aspx.cs:line 2331
+11. 106.51.115.50 - Auron - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at YantraDAL.DBManager.Close()
+   at YantraDAL.DBManager.Dispose()
+   at YantraBLL.Modules.Masters.Dispose() in d:\valueapp\App_Code\Master.cs:line 48
+   at Modules_SM_SalesEnquiryDetails.ddlModelNo_SelectedIndexChanged(Object sender, EventArgs e) in d:\valueapp\Modules\SM\SalesEnquiryDetails.aspx.cs:line 1532
+   at Modules_SM_SalesEnquiryDetails.btnSearchModelNo_Click(Object sender, EventArgs e) in d:\valueapp\Modules\SM\SalesEnquiryDetails.aspx.cs:line 1632
+12. 122.166.220.34 - NareshK - System.Web.HttpException (0x80004005): The client disconnected. ---> System.Web.UI.ViewStateException: Invalid viewstate. 
+	Client IP: 122.166.220.34
+	Port: 22146
+	Referer: http://valuelineapp.com/Modules/Inventory/SampleDc2.aspx
+	Path: /Modules/Inventory/SampleDc2.aspx
+13. 192.168.1.1 - Seema - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.InvalidOperationException: The connection was not closed. The connection's current state is open.  at vllib.usre.getUserID(String username)
+   at Modules_Masters_Add_User_Permissions.btnSaveSCM_Click(Object sender, EventArgs e) in d:\valueapp\Modules\Masters\Add_User_Permissions.aspx.cs:line 152
+14. 192.168.1.1 - ksr - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.InvalidOperationException: Internal connection fatal error.    at Modules_Warehouse_Inward_Management_New.BindGrid() in d:\valueapp\Modules\Warehouse\Inward_Management_New.aspx.cs:line 168
+   at Modules_Warehouse_Inward_Management_New.btnSave_Click(Object sender, EventArgs e) in d:\valueapp\Modules\Warehouse\Inward_Management_New.aspx.cs:line 285
+15. 122.166.220.34 - NareshK - System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.FormatException: Input string was not in a correct format.  at Modules_SCM_SampleReturnNew.btnAdd_Click(Object sender, EventArgs e) in d:\valueapp\Modules\SCM\SampleReturnNew.aspx.cs:line 466
+16. 106.51.115.50 - Sandeep - System.InvalidOperationException: The connection name 'helpCon' was not found in the applications configuration or the connection string is empty.  at System.Web.Compilation.ConnectionStringsExpressionBuilder.GetConnectionString(String connectionStringName)
+   at ASP.abouthelp_aspx.__BuildControlhlpcntsds1() in d:\valueapp\abouthelp.aspx:line 68
+   at ASP.abouthelp_aspx.__BuildControl__control12(Control __ctrl) in d:\valueapp\abouthelp.aspx:line 39
+   at System.Web.UI.UpdatePanel.CreateContents()
+   at ASP.abouthelp_aspx.__BuildControlUpdatePanel1() in d:\valueapp\abouthelp.aspx:line 39
+   at ASP.abouthelp_aspx.__BuildControlform1() in d:\valueapp\abouthelp.aspx:line 28
+   at ASP.abouthelp_aspx.__BuildControlTree(abouthelp_aspx __ctrl) in d:\valueapp\abouthelp.aspx:line 1
+   at ASP.abouthelp_aspx.FrameworkInitialize() in d:\valueapp\abouthelp.aspx.cs:line 912307
+17. 
